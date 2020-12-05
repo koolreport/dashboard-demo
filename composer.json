@@ -1,0 +1,12 @@
+{
+    "name": "koolreport/dashboard-demo",
+    "description": "Demonstration of KoolReport Dashboard framework",
+    "keywords": ["framework", "koolreport", "dashoard"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0",
+        "koolreport/pro": "4.7",
+        "koolreport/dashboard": "*"
+    }
+}
