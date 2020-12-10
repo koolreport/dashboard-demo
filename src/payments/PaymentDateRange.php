@@ -17,6 +17,7 @@ class PaymentDateRange extends DateRangePicker
         //On client change, update table
         $this->sibling("PaymentByDate")->update();
         $this->sibling("PaymentTable")->update();
+        $this->sibling("PaymentByCustomer")->update();
         
     }
 }

@@ -35,7 +35,8 @@ class OrderTable extends Table
             Date::create("orderDate")
                 ->displayFormat("F j, Y")
                 ->sortable(true)
-                ->sort("desc"),
+                ->sort("desc")
+                ,
 
             Badge::create("status")->type(function($row){
                 switch($row["status"]){

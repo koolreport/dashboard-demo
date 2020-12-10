@@ -13,8 +13,8 @@ class PaymentTable extends Table
     protected function onInit()
     {
         $this
-            ->pageSize(10)
-            ->updateEffect("none");
+            ->pageSize(10);
+            // ->updateEffect("none");
     }
 
     protected function dataSource()

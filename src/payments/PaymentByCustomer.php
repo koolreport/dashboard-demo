@@ -15,7 +15,7 @@ class PaymentByCustomer extends BarChart
         $this
             ->title("Payment By Customer")
             ->updateEffect("none")
-            ->height("150px");
+            ->height("240px");
     }
     protected function dataSource()
     {

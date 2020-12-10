@@ -13,9 +13,10 @@ class App extends \koolreport\dashboard\Application
     protected function dashboards() {
         return [
             "Home"=>HomeBoard::create(),
-            "AutoMaker Business"=>Section::create()->sub([
+            "AutoMaker"=>Section::create()->sub([
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
                 "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
+                "Products"=>products\ProductBoard::create(),
             ]),
             "Components"=>Section::create()->sub([
                 "Table"=>table\TableBoard::create()->icon("fa fa-table"),
