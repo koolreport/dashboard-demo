@@ -14,7 +14,7 @@ class PaymentByDate extends ColumnChart
     {
         $this
             ->title("Payment By Date")
-            ->updateEffect("none")
+            //->updateEffect("none")
             ->height("240px");
     }
     protected function dataSource()

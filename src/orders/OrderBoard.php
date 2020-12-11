@@ -12,11 +12,10 @@ class OrderBoard extends Dashboard
     protected function widgets()
     {
         return [
-            Text::create("<h1>Orders</h1>")->asHtml(true),
             Row::create()->sub([
-                OrderQuantity::create()->type("primary"),
-                OrderAmount::create()->type("warning"),
-                OrderStatus::create()->type("success")    
+                OrderQuantity::create()->type("primary")->width(1/3),
+                OrderAmount::create()->type("warning")->width(1/3),
+                OrderStatus::create()->type("success")->width(1/3),    
             ]),
             OrderTable::create()
         ];

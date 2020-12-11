@@ -38,8 +38,8 @@ class OrderTable extends Table
                 ->sort("desc")
                 ,
 
-            Badge::create("status")->type(function($row){
-                switch($row["status"]){
+            Badge::create("status")->type(function($status){
+                switch($status){
                     case "Shipped":
                     case "Resolved":
                         return "success";
