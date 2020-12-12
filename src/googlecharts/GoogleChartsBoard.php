@@ -29,9 +29,13 @@ class GoogleChartsBoard extends Dashboard
                     DonutChartDemo::create()
                 ]),
             ]),
+
             Row::create([
                 Panel::create()->header("LineChart")->width(1/2)->sub([
                     LineChartDemo::create()
+                ]),
+                Panel::create()->header("GeoChart")->width(1/2)->sub([
+                    GeoChartDemo::create()
                 ]),
             ]),
     ];
