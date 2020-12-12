@@ -12,7 +12,7 @@ class StyledTable extends Table
 {
     protected function onInit()
     {
-        $this->pageSize(5)
+        $this
         ->tableHover(true)
         ->tableOutline(true)
         ->tableStriped(true)
@@ -24,7 +24,8 @@ class StyledTable extends Table
     protected function dataSource()
     {
         return AutoMaker::table("customers")
-                ->select("customerName","phone");
+                ->select("customerName","phone")
+                ->limit(5);
     }
 
     protected function fields()
