@@ -54,3 +54,7 @@ You may run the demo now
 ```
 http://localhost/dashboard-demo/
 ```
+
+## Thank you!
+
+__*<3 koolreport team *__
