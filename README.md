@@ -19,10 +19,38 @@ KoolReport's Dashboard is a PHP Dashboard Framework to facilitate dashboard cons
 
 ## Installation
 
-## Dashboards
+__Step1:__ Clone our dashboard demo
 
-### Home Dashboard
+To clone our dashboard demo, please run
 
-The main dashboard which acts as default entrance for application.
+```
+git clone git@github.com:koolreport/dashboard-demo.git
+```
 
-### Sale Dashboard
+__Step 2:__ Add authentication
+
+Please login into our website, navigating the [My Licenses](https://www.koolreport.com/my-licensed-packages) and click to [Get Token For Composer] button.
+
+Near existed `composer.json`, please create `auth.json` and fill it with authentication information from Token For Composer pop up.
+
+__Step 3:__ Run composer to update
+
+```
+composer update
+```
+
+__Step 4:__ Install database
+
+Please locate the `automaker.sql` inside `data` folder and then import it to your databases.
+
+__Step 5:__ Provide connection inside `AutoMaker.php`
+
+Please locate the `AutoMaker.php` and provide detail connection to your installed AutoMaker.
+
+__Step 6:__ Run
+
+You may run the demo now
+
+```
+http://localhost/dashboard-demo/
+```
