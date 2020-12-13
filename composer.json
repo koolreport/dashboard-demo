@@ -4,9 +4,12 @@
     "keywords": ["framework", "koolreport", "dashoard"],
     "license": "MIT",
     "type": "project",
+    "repositories":[
+        {"type":"composer","url":"https://repo.koolreport.com"}
+    ],
     "require": {
         "php": ">=7.0",
-        "koolreport/pro": "4.7",
+        "koolreport/pro": "*",
         "koolreport/dashboard": "*"
     }
 }
