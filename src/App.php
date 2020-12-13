@@ -8,7 +8,8 @@ class App extends \koolreport\dashboard\Application
 {
     protected function onInit()
     {
-        $this->debugMode(true);
+        $this->debugMode(true)
+        ->footerLeft("<a class='btn btn-success' target='_blank' href='https://github.com/koolreport/dashboard-demo'>Source Code</a>");
     }
     protected function dashboards() {
         return [

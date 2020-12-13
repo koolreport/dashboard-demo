@@ -19,24 +19,24 @@ class MetricsBoard extends Dashboard
                     
                     
                     ValueMetric::create("customRangeForValue")->width(1/3)
-                    ->type("warning")
-                    ->title("Custom Range")
-                    ->defaultRange("This Quarter")
-                    ->ranges([
-                        "This Month"=>ValueMetric::thisMonth(),
-                        "This Quarter"=>ValueMetric::thisQuarter(),
-                        "This Year"=>ValueMetric::thisYear(),
-                    ]),
+                        ->type("warning")
+                        ->title("Custom Range")
+                        ->defaultRange("This Quarter")
+                        ->ranges([
+                            "This Month"=>ValueMetric::thisMonth(),
+                            "This Quarter"=>ValueMetric::thisQuarter(),
+                            "This Year"=>ValueMetric::thisYear(),
+                        ]),
 
                     ValueMetric::create("customTitleForValue")->width(1/3)
-                    ->title("Custom Title")
-                    ->type("danger")
-                    ->defaultRange("This Year")
-                    ->ranges([
-                        "This Month"=>ValueMetric::thisMonth(),
-                        "This Quarter"=>ValueMetric::thisQuarter(),
-                        "This Year"=>ValueMetric::thisYear(),
-                    ]),
+                        ->title("Custom Title")
+                        ->type("danger")
+                        ->defaultRange("This Year")
+                        ->ranges([
+                            "This Month"=>ValueMetric::thisMonth(),
+                            "This Quarter"=>ValueMetric::thisQuarter(),
+                            "This Year"=>ValueMetric::thisYear(),
+                        ]),
                 ]),
 
                 
