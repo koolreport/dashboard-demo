@@ -8,7 +8,7 @@ use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\Container;
 
 use \koolreport\dashboard\widgets\Text;
-
+use \koolreport\dashboard\inputs\Button;
 
 
 class InputsBoard extends Dashboard
@@ -58,6 +58,7 @@ class InputsBoard extends Dashboard
                             RadioListDemo::create(),
                         ]
                     ]),
+                    ButtonDemo::create()
                 ]),
                 Panel::create()->type("success")->header("<b>Result</b>")->width(1/3)->sub([
                     Result::create("Result")
