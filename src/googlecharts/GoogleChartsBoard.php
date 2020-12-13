@@ -6,6 +6,7 @@ use \koolreport\dashboard\Dashboard;
 
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
+use \koolreport\dashboard\widgets\Text;
 
 
 class GoogleChartsBoard extends Dashboard
@@ -34,7 +35,7 @@ class GoogleChartsBoard extends Dashboard
                 Panel::create()->header("LineChart")->width(1/2)->sub([
                     LineChartDemo::create()
                 ]),
-                Panel::create()->header("GeoChart")->width(1/2)->sub([
+                Panel::create()->header("GeoChart (AutoMaker's Sale Worldwide)")->width(1/2)->sub([
                     GeoChartDemo::create()
                 ]),
             ]),
