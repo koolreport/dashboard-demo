@@ -9,6 +9,16 @@ class AutoMaker extends MySQL
     protected function connection()
     {
         /**
+         * Local database connection sample
+         */
+        return [
+            "connectionString"=>"mysql:host=localhost;dbname=automaker",
+            "username"=>"root",
+            "password"=>"",
+            "charset"=>"utf8"
+        ];
+
+        /**
          * Note: We use public sample database of KoolReport so it will work but
          * a little slow. To get the better experience of Dashboard demo, please
          * install the automaker database into your local mysql database and
@@ -20,16 +30,5 @@ class AutoMaker extends MySQL
             "password"=>"koolreport sampledb",
             "charset"=>"utf8"
         ];
-
-
-        /**
-         * Local database connection sample
-         */
-        // return [
-        //     "connectionString"=>"mysql:host=localhost;dbname=automaker",
-        //     "username"=>"root",
-        //     "password"=>"",
-        //     "charset"=>"utf8"
-        // ];
     }
 }

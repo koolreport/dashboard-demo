@@ -16,7 +16,7 @@ class OrderStatus extends Category
     protected function fields()
     {
         return [
-            $this->group(Text::create("status"))->showTop(4),
+            $this->group(Text::create("status"))->showTop(3)->andShowOthers(),
             $this->count(Text::create("status"))
         ];
     }

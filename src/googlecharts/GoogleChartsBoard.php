@@ -8,7 +8,6 @@ use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\widgets\Text;
 
-
 class GoogleChartsBoard extends Dashboard
 {
     protected function widgets()

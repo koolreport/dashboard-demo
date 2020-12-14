@@ -3,15 +3,17 @@
 namespace demo;
 
 use \koolreport\dashboard\menu\Section;
+use \koolreport\dashboard\pages\Login;
+use \koolreport\dashboard\User;
 
-class App extends \koolreport\dashboard\Application 
+class App extends \koolreport\dashboard\Application
 {
     protected function onInit()
     {
         $this->debugMode(true)
         ->footerLeft("
             <a class='btn btn-primary btn-sm' target='_blank' href='https://github.com/koolreport/dashboard-demo'>
-                <i class='fa fa-code'></i> SourceCode
+                <i class='fab fa-github'></i> SourceCode
             </a>
             <a target='_blank' href='https://www.koolreport.com/docs/dashboard/overview/' style='margin-left:5px;' class='btn btn-warning btn-sm'>
                 <i class='fa fa-file-alt'></i> Docs
@@ -21,9 +23,27 @@ class App extends \koolreport\dashboard\Application
             </a>
         ");
     }
-    protected function dashboards() {
+
+    protected function login()
+    {
+        return  Login::create()
+                ->descriptionText("Sign in with username <i><b>demo</b></i> and password <i><b>demo</b></i>")
+                ->authenticate(function ($username, $password) {
+                    if ($username=="demo" && $password=="demo") {
+                        return User::create()
+                        ->id(1)
+                        ->name("Demo")
+                        ->avatar("images/8.jpg")
+                        ->roles(["user"]);
+                    }
+                    return null;
+                });
+    }
+
+    protected function dashboards()
+    {
         return [
-            "Home"=>home\HomeBoard::create(),
+            "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
             "AutoMaker"=>Section::create()->sub([
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
@@ -34,7 +54,8 @@ class App extends \koolreport\dashboard\Application
                 "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
                 "Inputs"=>inputs\InputsBoard::create()->icon("fa fa-keyboard"),
                 "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
-                "Containers"=>containers\ContainersBoard::create()->icon("fa fa-box")
+                "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
+                "Containers"=>containers\ContainersBoard::create()->icon("fa fa-box"),
             ])
         ];
     }
