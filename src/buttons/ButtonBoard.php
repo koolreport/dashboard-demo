@@ -116,7 +116,7 @@ class ButtonBoard extends Dashboard
                             ->width(1/3),
                     ])
                 ]),
-                Panel::create()->header("Ladda")->width(1/2)->sub([
+                Panel::create()->header("Ladda Loading On Server-side action")->width(1/2)->sub([
                     Inline::create([
                         LaddaButton::create()
                             ->laddaStyle("expand-left")->text("expand-left")
@@ -181,8 +181,13 @@ class ButtonBoard extends Dashboard
                             ->attributes(["style"=>"margin-left:5px;"]),
                     ])->cssStyle("margin-top:10px"),
                 ]),
+            ]),
+            Row::create([
+                Panel::create()->header("Custom onClick")->width(1/2)->sub([
+                    Button::create()->text("Show Alert")
+                        ->onClick("alert('Its working!')")
+                ])
             ])
-
         ];
     }
 }

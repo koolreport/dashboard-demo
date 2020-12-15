@@ -11,12 +11,11 @@ use  \demo\AutoMaker;
 
 class ColumnChartDemo extends ColumnChart
 {
-    protected function onInit()
+    protected function onCreated()
     {
         $this->title("Top 5 paid customers")
         ->colorScheme(ColorList::random())
         ->height("240px");
-        
     }
 
     protected function dataSource()

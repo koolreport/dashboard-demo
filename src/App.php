@@ -55,7 +55,8 @@ class App extends \koolreport\dashboard\Application
                 "Inputs"=>inputs\InputsBoard::create()->icon("fa fa-keyboard"),
                 "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
                 "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                "Containers"=>containers\ContainersBoard::create()->icon("fa fa-box"),
+                "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
+                "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
             ])
         ];
     }
