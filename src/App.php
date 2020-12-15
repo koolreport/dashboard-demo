@@ -27,9 +27,15 @@ class App extends \koolreport\dashboard\Application
     protected function login()
     {
         return  Login::create()
-                ->descriptionText("Sign in with username <i><b>demo</b></i> and password <i><b>demo</b></i>")
+                ->headerText("Dashboard Demo")
+                ->descriptionText("
+                    <i style='color:#333'>
+                    Please log in with <b class='text-danger'>demo</b>/<b class='text-danger'>demo</b>
+                    </i>
+                ")
+                ->failedText("Wrong! Please use <b>demo</b> for both username and password!")
                 ->authenticate(function ($username, $password) {
-                    if ($username=="demo" && $password=="demo") {
+                    if (strtolower($username)=="demo" && $password=="demo") {
                         return User::create()
                         ->id(1)
                         ->name("Demo")
