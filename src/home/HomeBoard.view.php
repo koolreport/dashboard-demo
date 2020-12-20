@@ -53,6 +53,9 @@
                 Please purchase <a target='_blank' href='https://koolreport.com/get-koolreport-pro'>KoolRepor Pro</a> with license of your choice 
                 and add respective license of Dashboard Framework as its add-on.
             </p>
+            <p>
+                Looking forward to serving you
+            </p>
         </div>
     </div>
 </div>
