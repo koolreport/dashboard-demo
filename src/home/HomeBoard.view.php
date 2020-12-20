@@ -54,7 +54,7 @@
                 and add respective license of Dashboard Framework as its add-on.
             </p>
             <p>
-                Looking forward to serving you
+                Looking forward to serving you!
             </p>
         </div>
     </div>
