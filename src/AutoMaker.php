@@ -11,12 +11,12 @@ class AutoMaker extends MySQL
         /**
          * Local database connection sample
          */
-        // return [
-        //     "connectionString"=>"mysql:host=localhost;dbname=automaker",
-        //     "username"=>"root",
-        //     "password"=>"",
-        //     "charset"=>"utf8"
-        // ];
+        return [
+            "connectionString"=>"mysql:host=localhost;dbname=automaker",
+            "username"=>"root",
+            "password"=>"",
+            "charset"=>"utf8"
+        ];
 
         /**
          * Note: We use public sample database of KoolReport so it will work but
