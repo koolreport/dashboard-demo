@@ -25,7 +25,7 @@ class DataTablesDemo extends KWidget
         ->use(\koolreport\datagrid\DataTables::class)
         ->settings([
             "options"=>array(
-                "paging"=>true
+                "paging"=>true,
             )
         ]);
     }

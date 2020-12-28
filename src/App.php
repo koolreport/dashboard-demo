@@ -63,7 +63,7 @@ class App extends \koolreport\dashboard\Application
                 "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
                 "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
                 "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
-                "KWidgets"=>kwidgets\KWidgetsBoard::create()->icon("fab fa-mendeley"),
+                "KWidgets"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
 
             ])
         ];
