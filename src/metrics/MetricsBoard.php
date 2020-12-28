@@ -14,9 +14,9 @@ class MetricsBoard extends Dashboard
             Panel::create()->header("Value Metrics")->sub([
                 Row::create([
                     ValueMetric::create("basicValueMetric")->width(1/3)
+                        ->title ("Value Metric")
                         ->type("primary")
                         ->defaultRange("This Month"),
-                    
                     
                     ValueMetric::create("customRangeForValue")->width(1/3)
                         ->type("warning")

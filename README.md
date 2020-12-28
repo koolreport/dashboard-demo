@@ -20,6 +20,12 @@ KoolReport's Dashboard is a PHP Dashboard Framework to facilitate dashboard cons
 10. Flexible three levels organized menus
 11. Work with other frameworks like Laravel, Codeigniter, Yii2, Symfony
 
+## Demonstration
+
+You may view the result in here
+
+[https://www.koolreport.com/dashboard/demo/](https://www.koolreport.com/dashboard/demo/)
+
 ## Installation
 
 #### Step1: Clone our dashboard demo
