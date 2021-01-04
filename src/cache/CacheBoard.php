@@ -18,7 +18,7 @@ class CacheBoard extends Dashboard
             Panel::create()->header("Control Panel")->sub([
                 Button::create()->text("Refresh Dashboard")
                     ->onClick(function(){
-                        return Client::dashboard("CacheBoard")->load();
+                        return Client::dashboard("CacheBoard")->load(["abc"=>"haha"]);
                     })
             ]),
             Row::create([
