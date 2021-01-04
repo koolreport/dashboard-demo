@@ -1,17 +1,16 @@
 <div class="homeboard">
+    <div class="mb-3">
+        <a  title="Get FREE Dashboard Framework when purchasing KoolReport Pro! Until Jan 31st!" 
+            target="_blank"
+            href="https://wwww.koolreport.com/blog/get-free-dashboard-framework" 
+            style="background-color:#1f1f1f;color:#c90000;padding:0px;text-decoration: none;">
+            <img class="img-fluid" 
+                style="border-radius:4px"
+                src="https://www.koolreport.com/assets/images/editor/c5/image5ff2f72a8cc48.png" />
+        </a>
+    </div>
     <div class="card">
         <div class="card-body">
-            <div class='alert alert-warning' style='font-size:16px;font-style:italic'>
-                <h4 class="alert-heading"><b>Good News!</b></h4>
-                <p>
-                From now to Feb 2021, we will give FREE license of Dashboard Framework to any customers who own KoolReport Pro. 
-                Meaning that you only need to <a class='alert-link' href='https://www.koolreport.com/get-koolreport-pro'>purchase/renew KoolReport Pro</a>,
-                you will have Dashboard available in your account. 
-                This policy is applied to both new customers and renewal customers.
-                </p>
-                <p>Do not miss the chance to get TWO awesome products with the price of ONE!!</p>
-            </div>
-
             <h1>Introduction</h1>
             <p>
                 This repository contains sample dashboard application built on top of 
