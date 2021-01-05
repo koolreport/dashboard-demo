@@ -9,6 +9,11 @@ use \koolreport\dashboard\fields\Text;
 class SampleWidget extends Value
 {
 
+    protected function onCreated()
+    {
+        $this->defaultRange("This Month");
+    }
+
     protected function dataSource()
     {
         return AutoMakerWithCache::table("orders")
