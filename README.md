@@ -1,12 +1,12 @@
-# Dashboard Framework Demonstration
+# PHP Dashboard Framework
 
 ## About
 
-This repository contains sample dashboard application built on top of KoolReport's Dashboard Framework. The application act as demonstration of framework's features and capabilities as well as examples for you to start with.
+This repository contains sample dashboard application built on top of KoolReport's Dashboard Framework. The application act as demonstration of framework's features as well as examples for you to start with.
 
 ## KoolReport's Dashboard
 
-KoolReport's Dashboard is a PHP Dashboard Framework to facilitate dashboard construction. The framework is built on top of KoolReport Pro which is general data reporting framework. Dashboard framework is added following features:
+[KoolReport's Dashboard](https://www.koolreport.com/packages/dashboard) is a __PHP Dashboard Framework__ to facilitate dashboard construction. The framework is built on top of [KoolReport Pro](https://www.koolreport.com/get-koolreport-pro) which is general data reporting framework. Dashboard framework is added with following features:
 
 1. Built-in authentication
 2. Allow authorization from application to data field
@@ -18,7 +18,7 @@ KoolReport's Dashboard is a PHP Dashboard Framework to facilitate dashboard cons
 8. Beautiful single page application
 9. Support lazy loading for widgets
 10. Flexible three levels organized menus
-11. Work with other frameworks like Laravel, Codeigniter, Yii2, Symfony
+11. Work with other frameworks like Laravel, CodeIgniter, Yii2, Symfony
 
 ## Demonstration
 
@@ -50,13 +50,17 @@ Near existed `composer.json`, please create `auth.json` and fill it with authent
 composer update
 ```
 
-#### Step 4: Install database
+#### Step 4: Install database (Optional)
 
 Please locate the `automaker.sql` inside `data` folder and then import it to your databases.
 
-#### Step 5: Provide connection inside `AutoMaker.php`
+*Note: We provided a public database connection so you may run example immediately, but if you want to use local database, you take this step and the step 5*
+
+#### Step 5: Provide connection inside `AutoMaker.php` (Optional)
 
 Please locate the `AutoMaker.php` and provide detail connection to your installed AutoMaker.
+
+*Note: If you take the step 4 then you should take this step, otherwise move to step 6*
 
 #### Step 6: Run
 
