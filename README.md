@@ -24,7 +24,9 @@ KoolReport's Dashboard is a PHP Dashboard Framework to facilitate dashboard cons
 
 You may view the result in here
 
-[https://www.koolreport.com/dashboard/demo/](https://www.koolreport.com/dashboard/demo/)
+[![](https://www.koolreport.com/assets/images/editor/c5/image5ff5e2c35199e.png)](https://www.koolreport.com/dashboard/demo/)
+
+Link: [https://www.koolreport.com/dashboard/demo/](https://www.koolreport.com/dashboard/demo/)
 
 ## Installation
 
