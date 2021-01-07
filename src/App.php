@@ -64,7 +64,7 @@ class App extends \koolreport\dashboard\Application
                 "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
                 "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
                 "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
-                "Cache"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
+                "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
             ])
         ];
     }
