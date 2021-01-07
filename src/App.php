@@ -65,6 +65,7 @@ class App extends \koolreport\dashboard\Application
                 "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
                 "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                 "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
+                "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),
             ])
         ];
     }
