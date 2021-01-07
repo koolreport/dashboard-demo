@@ -17,6 +17,7 @@ class PivotDemo extends KWidget
                 ->where('customerName','<','Am')
                 ->where('orderYear','>',2003)
                 ->run()
+                //After run(), we will get DataStore, we continu to process data with ColumnMeta and Pivot
                 ->process(
                     ColumnMeta::process([
                         'dollar_sales'=>[
