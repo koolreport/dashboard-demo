@@ -8,7 +8,7 @@ class RandomColumnChartDemo extends ColumnChart
 {
     protected function onCreated()
     {
-        $this->title("Chart is auto-updated in 5 seconds")
+        $this->title("Chart is updated in 5 seconds")
             ->autoUpdate("5secs");
     }
 
