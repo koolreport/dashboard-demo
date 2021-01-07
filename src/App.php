@@ -66,6 +66,7 @@ class App extends \koolreport\dashboard\Application
                 "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                 "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
                 "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),
+                "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
             ])
         ];
     }
