@@ -15,7 +15,7 @@
             <p>
                 This repository contains sample dashboard application built on top of 
                 KoolReport's Dashboard Framework. The application act as demonstration 
-                of framework's features as well as examples for you to start with..
+                of framework's features as well as examples for you to start with...
             </p>
             <p>
                 While KoolReport Pro is a general reporting framework, KoolReport's Dashboard is a <b>PHP Dashboard Framework</b>.
