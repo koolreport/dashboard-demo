@@ -12,7 +12,7 @@ class ExcelSourceBoard extends Dashboard
     {
         return [
             Row::create([
-                Panel::create()->header("<b>customer_product_dollarsales2.xlsx</b>")->sub([
+                Panel::create()->type("success")->header("<b>customer_product_dollarsales2.xlsx</b>")->sub([
                     ExcelCustomerTable::create()
                 ])
             ])
