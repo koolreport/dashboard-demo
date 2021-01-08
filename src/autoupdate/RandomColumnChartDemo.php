@@ -3,12 +3,14 @@
 namespace demo\autoupdate;
 
 use \koolreport\dashboard\widgets\google\ColumnChart;
+use \koolreport\dashboard\ColorList;
 
 class RandomColumnChartDemo extends ColumnChart
 {
     protected function onCreated()
     {
         $this->title("Chart is updated in 5 seconds")
+            ->colorScheme(ColorList::random())
             ->autoUpdate("5secs");
     }
 
