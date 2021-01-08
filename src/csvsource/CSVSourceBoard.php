@@ -13,7 +13,7 @@ class CSVSourceBoard extends Dashboard
         return [
             Row::create([
                 Panel::create()->header("<b>products.csv</b>")->sub([
-                    ProductTable::create()
+                    CSVProductTable::create()
                 ])
             ])
         ];

@@ -9,7 +9,7 @@ use \koolreport\dashboard\fields\Number;
 use \koolreport\dashboard\fields\Currency;
 
 
-class ProductTable extends Table
+class CSVProductTable extends Table
 {
     protected function onCreated()
     {
@@ -21,7 +21,7 @@ class ProductTable extends Table
         return CSV::file("data/products.csv")
                 ->fieldSeparator("|")
                 ->select("productCode","productName","productVendor","quantityInStock","buyPrice")
-                ->where("quantityInStock",">",8000);
+                ->where("quantityInStock",">",5000);
     }
 
     protected function fields()
@@ -30,8 +30,9 @@ class ProductTable extends Table
             Text::create("productCode"),
             Text::create("productName"),
             Text::create("productVendor"),
-            Number::create("quantityInStock"),
-            Currency::create("buyPrice")->USD(),
+            Number::create("quantityInStock")
+                ->suffix(" units"),
+            Currency::create("buyPrice")->USD()->symbol()->decimals(2),
         ];
     }
 }
