@@ -27,7 +27,6 @@ class App extends \koolreport\dashboard\Application
     protected function login()
     {
         return  Login::create()
-                ->headerText("Dashboard Demo")
                 ->descriptionText("
                     <i style='color:#333'>
                     Please log in with <b class='text-danger'>demo</b>/<b class='text-danger'>demo</b>
