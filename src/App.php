@@ -53,6 +53,8 @@ class App extends \koolreport\dashboard\Application
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
                 "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
+                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users"),
+                "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
             ]),
             "Components"=>Section::create()->sub([
                 "Table"=>table\TableBoard::create()->icon("fa fa-table"),
