@@ -3,6 +3,7 @@
 namespace demo;
 
 use \koolreport\dashboard\menu\Section;
+use \koolreport\dashboard\menu\Group;
 use \koolreport\dashboard\pages\Login;
 use \koolreport\dashboard\User;
 
@@ -53,7 +54,7 @@ class App extends \koolreport\dashboard\Application
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
                 "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
-                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users"),
+                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users")->badge("NEW"),
                 "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
             ]),
             "Components"=>Section::create()->sub([
@@ -64,11 +65,11 @@ class App extends \koolreport\dashboard\Application
                 "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
                 "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
                 "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
-                "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
-                "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
-                "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),
-                "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
-                "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),
+                "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift")->badge("NEW"),
+                "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt")->badge("NEW"),
+                "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync")->badge("NEW"),
+                "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv")->badge("NEW"),
+                "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel")->badge("NEW"),
             ])
         ];
     }
