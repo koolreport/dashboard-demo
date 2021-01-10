@@ -28,6 +28,12 @@ You may view the result in here
 
 Link: [https://www.koolreport.com/dashboard/demo/](https://www.koolreport.com/dashboard/demo/)
 
+## Documentation
+
+Full documentation can be found at
+
+[https://www.koolreport.com/docs/dashboard/overview/](https://www.koolreport.com/docs/dashboard/overview/)
+
 ## Installation
 
 #### Step1: Clone our dashboard demo
