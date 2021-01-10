@@ -46,7 +46,7 @@ git clone git@github.com:koolreport/dashboard-demo.git
 
 #### Step 2: Add authentication
 
-Please login into our website, navigating the [My Licenses](https://www.koolreport.com/my-licensed-packages) and click to [Get Token For Composer] button.
+Please login into our website, navigating the [My Licenses](https://www.koolreport.com/my-licensed-packages) and click to __[Get Token For Composer]__ button.
 
 Near existed `composer.json`, please create `auth.json` and fill it with authentication information from Token For Composer pop up.
 
@@ -76,6 +76,6 @@ You may run the demo now
 http://localhost/dashboard-demo/
 ```
 
-## Thank you!
+### Thank you!
 
-__<3 koolreport team__
+__*<3 koolreport team*__
