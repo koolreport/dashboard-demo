@@ -15,7 +15,7 @@ class CustomerListTable extends Table
 {
     protected function onCreated()
     {
-        $this->pageSize(5)
+        $this->pageSize(10)
         ->tableHover(true)
         ->tableStriped(true);
     }
