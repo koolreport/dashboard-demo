@@ -22,6 +22,9 @@ class App extends \koolreport\dashboard\Application
             <a target='_blank' href='https://www.koolreport.com/get-koolreport-pro' style='margin-left:5px;' class='btn btn-danger btn-sm'>
                 <i class='fa fa-shopping-cart'></i> Purchase
             </a>
+        ")
+        ->footerRight("
+            <div class='d-none d-md-block d-lg-block'>Powered by <a target='_blank' href='https://www.koolreport.com'>KoolReport</a></div>
         ");
     }
 
