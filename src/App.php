@@ -50,6 +50,7 @@ class App extends \koolreport\dashboard\Application
     {
         return [
             "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
+            
             "AutoMaker"=>Section::create()->sub([
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
@@ -57,19 +58,32 @@ class App extends \koolreport\dashboard\Application
                 "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users")->badge("NEW"),
                 "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
             ]),
+            
             "Components"=>Section::create()->sub([
-                "Table"=>table\TableBoard::create()->icon("fa fa-table"),
-                "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
-                "Inputs"=>inputs\InputsBoard::create()->icon("fa fa-keyboard"),
                 "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
-                "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
-                "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
-                "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift")->badge("NEW"),
-                "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt")->badge("NEW"),
-                "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync")->badge("NEW"),
-                "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv")->badge("NEW"),
-                "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel")->badge("NEW"),
+
+                "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
+                    "Table"=>table\TableBoard::create()->icon("fa fa-table"),
+                    "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
+                    "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift")->badge("NEW"),
+                    "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync")->badge("NEW"),    
+                ]),
+                
+                "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
+                    "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
+                    "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),    
+                ]),
+                
+                "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
+                    "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
+                    "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),    
+                ]),
+                
+                "DataSources"=>Group::create()->icon("fas fa-database")->sub([
+                    "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt")->badge("NEW"),
+                    "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv")->badge("NEW"),
+                    "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel")->badge("NEW"),    
+                ])->badge("NEW"),
             ])
         ];
     }
