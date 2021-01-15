@@ -47,6 +47,7 @@
                 <li>Team License <b>$199</b></li>
                 <li>Enterprise License <b>$299</b></li>
             </ul>
+            <p>The renewal price is <b>50%</b> of license price.</p>
             <h3>How to purchase?</h3>
             <p>
                 Please purchase <a target='_blank' href='https://www.koolreport.com/get-koolreport-pro'>KoolReport Pro</a> with license of your choice 
