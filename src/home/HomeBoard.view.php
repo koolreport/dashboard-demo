@@ -2,11 +2,11 @@
     <div class="mb-3">
         <a  title="Get FREE Dashboard Framework when purchasing KoolReport Pro! Until Jan 31st!" 
             target="_blank"
-            href="https://www.koolreport.com/blog/get-free-dashboard-framework#content" 
+            href="https://www.koolreport.com/get-koolreport-pro#purchase" 
             style="background-color:#1f1f1f;color:#c90000;padding:0px;text-decoration: none;">
             <img class="img-fluid" 
                 style="border-radius:4px"
-                src="https://www.koolreport.com/assets/images/editor/c5/image5ff2f72a8cc48.png" />
+                src="https://cdn.koolreport.com/assets/images/editor/c5/image60080fa097956.png" />
         </a>
     </div>
     <div class="card">
