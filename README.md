@@ -56,7 +56,7 @@ Near existed `composer.json`, please create `auth.json` and fill it with authent
 composer update
 ```
 
-*Note:* Please make sure that you have subscription of KoolReport Pro and Dashboard Framework otherwise this command will not work.
+*Note: Please make sure that you have subscription of KoolReport Pro and Dashboard Framework otherwise this command will not work.*
 
 #### Step 4: Install database (Optional)
 
