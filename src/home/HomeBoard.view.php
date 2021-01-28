@@ -6,7 +6,7 @@
             style="background-color:#1f1f1f;color:#c90000;padding:0px;text-decoration: none;">
             <img class="img-fluid" 
                 style="border-radius:4px"
-                src="https://cdn.koolreport.com/assets/images/editor/c5/image60080fa097956.png" />
+                src="https://www.koolreport.com/assets/images/editor/c5/image60128107083c8.png" />
         </a>
     </div>
     <div class="card">
