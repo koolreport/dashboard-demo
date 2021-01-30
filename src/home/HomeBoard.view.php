@@ -2,7 +2,7 @@
     <div class="mb-3">
         <a  title="Get FREE Dashboard Framework when purchasing KoolReport Pro! Until Jan 31st!" 
             target="_blank"
-            href="https://www.koolreport.com/get-koolreport-pro#purchase" 
+            href="https://www.koolreport.com/blog/last-chance-to-get-dashboard-for-free#content" 
             style="background-color:#1f1f1f;color:#c90000;padding:0px;text-decoration: none;">
             <img class="img-fluid" 
                 style="border-radius:4px"
