@@ -22,20 +22,14 @@ class LineChartDemo extends LineChart
     {
         return AutoMaker::rawSQL("
             SELECT 
-                monthNumeric, 
-                month,
+                DATE_FORMAT(paymentDate,'%b') as month,
                 sum(amount) as total
-            FROM 
-                (SELECT
-                    DATE_FORMAT(paymentDate,'%m') as monthNumeric, 
-                    DATE_FORMAT(paymentDate,'%b') as month,
-                    amount
-                FROM
-                    payments
-                WHERE
-                YEAR(paymentDate)=2019) t
-            GROUP BY month, monthNumeric
-            ORDER BY monthNumeric
+            FROM
+                payments
+            WHERE
+                YEAR(paymentDate)=2019
+            GROUP BY month, DATE_FORMAT(paymentDate,'%m')
+            ORDER BY DATE_FORMAT(paymentDate,'%m') asc
         ");
     }
 
