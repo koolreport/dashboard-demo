@@ -27,7 +27,7 @@ class LineChartDemo extends LineChart
                 sum(amount) as total
             FROM 
                 (SELECT
-                    DATE_FORMAT(paymentDate,'%m') monthNumeric, 
+                    DATE_FORMAT(paymentDate,'%m') as monthNumeric, 
                     DATE_FORMAT(paymentDate,'%b') as month,
                     amount
                 FROM
