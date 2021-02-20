@@ -34,7 +34,7 @@ class LineChartDemo extends LineChart
                     payments
                 WHERE
                 YEAR(paymentDate)=2019) t
-            GROUP BY month
+            GROUP BY month, monthNumeric
             ORDER BY monthNumeric
         ");
     }
