@@ -73,7 +73,7 @@ class ModalBoard extends Dashboard
 
                 Panel::create()->header("Open Modal from Server-side")->sub([
                     SubmitButton::create()->text("Open From Server")
-                ])->width(1/2)    
+                ])->width(1/2),
             ])
         ];
     }    
