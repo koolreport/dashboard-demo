@@ -9,7 +9,7 @@ use \koolreport\dashboard\User;
 
 class App extends \koolreport\dashboard\Application
 {
-    protected function onInit()
+    protected function onCreated()
     {
         $this->debugMode(true)
         ->footerLeft("
