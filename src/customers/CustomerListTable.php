@@ -34,7 +34,7 @@ class CustomerListTable extends Table
                 ->type("warning")
                 ->textAlign("right")
                 ->text("View Details")
-                ->onClick(function($row){
+                ->onClick(function($value, $row){
                     return Client::dashboard("CustomerDetailsBoard")->load([
                         "customerNumber"=>$row["customerNumber"],
                         "customerName"=>$row["customerName"]
