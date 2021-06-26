@@ -80,13 +80,13 @@ class App extends \koolreport\dashboard\Application
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
                     "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off"),    
+                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("NEW"),    
                 ]),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
                     "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
-                    "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv")->badge("NEW"),
-                    "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel")->badge("NEW"),    
+                    "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
+                    "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
                 ])->badge("NEW"),
             ])
         ];
