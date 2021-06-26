@@ -13,7 +13,7 @@ class LineChartDemo extends LineChart
 {
     protected function onInit()
     {
-        $this->title("AutoMaker's Revenue in 2019")
+        $this->title("AutoMaker's Revenue in 2020")
         ->colorScheme(ColorList::random())
         ->height("360px");
     }
@@ -27,7 +27,7 @@ class LineChartDemo extends LineChart
             FROM
                 payments
             WHERE
-                YEAR(paymentDate)=2019
+                YEAR(paymentDate)=2020
             GROUP BY month, DATE_FORMAT(paymentDate,'%m')
             ORDER BY DATE_FORMAT(paymentDate,'%m') asc
         ");

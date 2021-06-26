@@ -58,7 +58,7 @@ class App extends \koolreport\dashboard\Application
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
                 "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
-                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users")->badge("NEW"),
+                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users"),
                 "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
             ]),
             
@@ -68,8 +68,8 @@ class App extends \koolreport\dashboard\Application
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
-                    "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift")->badge("NEW"),
-                    "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync")->badge("NEW"),    
+                    "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
+                    "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
                 ]),
                 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
@@ -79,11 +79,12 @@ class App extends \koolreport\dashboard\Application
                 
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
-                    "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),    
+                    "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
+                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off"),    
                 ]),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
-                    "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt")->badge("NEW"),
+                    "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
                     "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv")->badge("NEW"),
                     "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel")->badge("NEW"),    
                 ])->badge("NEW"),

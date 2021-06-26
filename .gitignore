@@ -1,6 +1,7 @@
 # Build and Release Folders
 vendor
-
+logs
+storage
 # Other files and folders
 auth.json
 
