@@ -68,6 +68,7 @@ class App extends \koolreport\dashboard\Application
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
+                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-pie"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
                 ]),
@@ -81,13 +82,13 @@ class App extends \koolreport\dashboard\Application
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
                     "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
                     "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("NEW"),    
-                ]),
+                ])->badge("NEW"),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
                     "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
                     "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
                     "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
-                ])->badge("NEW"),
+                ]),
             ])
         ];
     }
