@@ -68,10 +68,11 @@ class App extends \koolreport\dashboard\Application
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
-                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-pie"),
+                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-pie")->badge("New"),
+                    "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-pie")->badge("New"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
-                ]),
+                ])->badge("New"),
                 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
                     "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
@@ -81,8 +82,8 @@ class App extends \koolreport\dashboard\Application
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
                     "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("NEW"),    
-                ])->badge("NEW"),
+                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("New"),    
+                ])->badge("New"),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
                     "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),

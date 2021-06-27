@@ -1,6 +1,6 @@
 <?php
 
-namespace demo\d3;
+namespace demo\chartjs;
 
 use \koolreport\dashboard\Dashboard;
 
@@ -8,7 +8,7 @@ use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\widgets\Text;
 
-class D3ChartsBoard extends Dashboard
+class ChartJsBoard extends Dashboard
 {
     protected function widgets()
     {
@@ -33,9 +33,14 @@ class D3ChartsBoard extends Dashboard
             Panel::create()->header("<b>LineChart</b>")->sub([
                 LineChartDemo::create()
             ]),
-            Panel::create()->header("<b>Waterfall</b>")->sub([
-                WaterfallDemo::create()
-            ]),
+            Row::create([
+                Panel::create()->header("<b>PolarChart</b>")->sub([
+                    PolarChartDemo::create()
+                ]),
+                Panel::create()->header("<b>Radar</b>")->sub([
+                    RadarChartDemo::create()
+                ]),
+            ])
     ];
     }
 }
