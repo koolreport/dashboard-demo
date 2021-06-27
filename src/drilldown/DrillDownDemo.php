@@ -5,6 +5,7 @@ namespace demo\drilldown;
 use \koolreport\dashboard\widgets\drilldown\DrillDown;
 use \koolreport\dashboard\widgets\drilldown\Level;
 use \koolreport\dashboard\widgets\KWidget;
+use \koolreport\dashboard\ColorList;
 
 use \demo\AutoMaker;
 
@@ -20,7 +21,8 @@ class DrillDownDemo extends DrillDown
         return [
             Level::create()
                 ->title("All Years")
-                ->widget(KWidget::create()
+                ->widget(
+                    KWidget::create()
                     ->use(\koolreport\widgets\google\ColumnChart::class)
                     ->dataSource(function($params, $scope){
                         return AutoMaker::table("payments")
@@ -33,6 +35,9 @@ class DrillDownDemo extends DrillDown
                             "type"=>"number",
                             "prefix"=>'$'
                         ]
+                    ])
+                    ->settings([
+                        "colorScheme"=>ColorList::random()
                     ])
                 ),
 
@@ -54,8 +59,7 @@ class DrillDownDemo extends DrillDown
                     ->columns([
                         "month"=>[
                             "type"=>"string",
-                            "formatValue"=>function($value)
-                            {
+                            "formatValue"=>function($value) {
                                 return date('M', mktime(0, 0, 0, $value, 10));
                             }
                         ],
@@ -63,6 +67,41 @@ class DrillDownDemo extends DrillDown
                             "type"=>"number",
                             "prefix"=>'$'
                         ]
+                    ])
+                    ->settings([
+                        "colorScheme"=>ColorList::random()
+                    ])
+                ),
+            Level::create()
+                ->title(function($params) {
+                    return date('F', mktime(0, 0, 0, $params["month"], 10));
+                })
+                ->widget(
+                    KWidget::create()
+                    ->use(\koolreport\widgets\google\ColumnChart::class)
+                    ->dataSource(function($params,$scope){
+                        return AutoMaker::table("payments")
+                                ->select("paymentDate")
+                                ->selectRaw("DAY(paymentDate) as day")
+                                ->sum("amount")->alias("saleAmount")
+                                ->whereRaw("YEAR(paymentDate)=".$params["year"])
+                                ->whereRaw("MONTH(paymentDate)=".$params["month"])
+                                ->groupBy("day")
+                                ->run();
+                    })
+                    ->columns([
+                        "day"=>[
+                            "formatValue"=>function($value,$row) {
+                                return date("F jS, Y",strtotime($row["paymentDate"]));
+                            }
+                        ],
+                        "saleAmount"=>[
+                            "type"=>"number",
+                            "prefix"=>'$'
+                        ]
+                    ])
+                    ->settings([
+                        "colorScheme"=>ColorList::random()
                     ])
                 )
         ];
