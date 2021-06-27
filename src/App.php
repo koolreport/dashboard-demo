@@ -70,6 +70,7 @@ class App extends \koolreport\dashboard\Application
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
                     "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-pie")->badge("New"),
                     "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-pie")->badge("New"),
+                    "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie")->badge("New"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
                 ])->badge("New"),
