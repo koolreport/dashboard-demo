@@ -11,11 +11,6 @@ use \demo\AutoMaker;
 
 class DrillDownDemo extends DrillDown
 {
-    protected function onCreated() 
-    {
-        $this->title("The drilldown title");
-    }
-
     protected function levels()
     {
         return [
