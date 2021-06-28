@@ -26,10 +26,15 @@ class ProductBoard extends Dashboard
                     Text::create()
                         ->text("<p style='font-style:italic'>Click to chart to view the detail list of that product</p>")
                         ->asHtml(true),
-                    ProductByLine::create()->showDetail(true),
+                    ProductByLine::create()
+                        ->detailShowable(true)
+                        ->pdfExportable(true),
                 ])
                 ->menu([
-                    "See details"=>MenuItem::create()->onClick(Client::widget("ProductByLine")->showDetail()),
+                    "See details"=>MenuItem::create()
+                        ->onClick(Client::widget("ProductByLine")->showDetail()),
+                    "Export to PDF"=>MenuItem::create()
+                    ->onClick(Client::widget("ProductByLine")->exportToPDF())
                 ])
                 ->width(1/3),
                 
