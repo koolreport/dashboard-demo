@@ -7,6 +7,11 @@ use \koolreport\dashboard\menu\Group;
 use \koolreport\dashboard\pages\Login;
 use \koolreport\dashboard\User;
 
+use \koolreport\dashboard\menu\MenuItem;
+use \koolreport\dashboard\Client;
+use \koolreport\dashboard\ExportHandler;
+use \koolreport\dashboard\export\ChromeHeadlessio;
+
 class App extends \koolreport\dashboard\Application
 {
     protected function onCreated()
@@ -95,6 +100,32 @@ class App extends \koolreport\dashboard\Application
         ];
     }
 
-    
+    protected function topMenu()
+    {
+        return [
+            "Products"=>MenuItem::create()->onClick(Client::dashboard("ProductBoard")->load()),
+        ];
+    }
 
+    protected function accountMenu()
+    {
+        return [
+            "Examples"=>MenuItem::create()->onClick(Client::dashboard("ProductBoard")->load()),
+            "Docs"=>MenuItem::create(),
+            "Logout"=>MenuItem::create()
+                ->icon("fa fa-lock")       
+                ->badge(["10","info"]) 
+                ->onClick(Client::logout())
+        ];
+    }
+
+    protected function export()
+    {
+        return ExportHandler::create()
+                ->storage(dirname(__DIR__)."/storage")
+                ->pdfEngine(
+                    ChromeHeadlessio::create()
+                    ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
+                );
+    }
 }

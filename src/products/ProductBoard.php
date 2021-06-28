@@ -28,13 +28,10 @@ class ProductBoard extends Dashboard
                         ->asHtml(true),
                     ProductByLine::create()
                         ->detailShowable(true)
-                        ->pdfExportable(true),
                 ])
                 ->menu([
-                    "See details"=>MenuItem::create()
+                    "See details"=>MenuItem::create()->icon("fa fa-table")
                         ->onClick(Client::widget("ProductByLine")->showDetail()),
-                    "Export to PDF"=>MenuItem::create()
-                    ->onClick(Client::widget("ProductByLine")->exportToPDF())
                 ])
                 ->width(1/3),
                 
