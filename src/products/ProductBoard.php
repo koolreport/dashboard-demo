@@ -9,6 +9,9 @@ use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\widgets\Text;
 use \koolreport\dashboard\widgets\StateHolder;
 
+use \koolreport\dashboard\menu\MenuItem;
+use \koolreport\dashboard\Client;
+
 class ProductBoard extends Dashboard
 {
 
@@ -20,12 +23,15 @@ class ProductBoard extends Dashboard
                 ->header("<b>Product By Line</b>")
                 ->type("primary")
                 ->sub([
-                    
                     Text::create()
                         ->text("<p style='font-style:italic'>Click to chart to view the detail list of that product</p>")
                         ->asHtml(true),
-                    ProductByLine::create(),
-                ])->width(1/3),
+                    ProductByLine::create()->showDetail(true),
+                ])
+                ->menu([
+                    "See details"=>MenuItem::create()->onClick(Client::widget("ProductByLine")->showDetail()),
+                ])
+                ->width(1/3),
                 
                 Panel::create()
                 ->header("<b>Product List</b>")
