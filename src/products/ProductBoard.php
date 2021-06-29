@@ -31,7 +31,10 @@ class ProductBoard extends Dashboard
                 ])
                 ->menu([
                     "See details"=>MenuItem::create()->icon("fa fa-table")
-                        ->onClick(Client::widget("ProductByLine")->showDetail()),
+                        ->onClick(
+                            Client::showLoader().
+                            Client::widget("ProductByLine")->showDetail()
+                        ),
                 ])
                 ->width(1/3),
                 
@@ -46,7 +49,15 @@ class ProductBoard extends Dashboard
                         }
                         return null;
                     })->asHtml(true),
-                    ProductTable::create(),
+                    ProductTable::create()
+                        ->pdfExportable(true),
+                ])
+                ->menu([
+                    "Pdf Export"=>MenuItem::create()->icon("far fa-file-pdf")
+                        ->onClick(
+                            Client::showLoader().
+                            Client::widget("ProductTable")->exportToPDF()
+                        ),
                 ])
             ]),
         ];

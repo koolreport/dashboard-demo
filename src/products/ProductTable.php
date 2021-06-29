@@ -17,6 +17,14 @@ class ProductTable extends Table
         $this->pageSize(10);
     }
 
+    protected function onExporting($params)
+    {
+        if($params["type"]==="pdf") {
+            $this->pageSize(null);
+        }
+        return true;
+    }
+
     protected function dataSource()
     {
         return AutoMaker::table("products")
