@@ -98,7 +98,7 @@ class App extends \koolreport\dashboard\Application
                     "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
                 ]),
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
-                    "PDF"=>pdf\PDFBoard::create()->icon("far fa-file-pdf")->badge("New"),
+                    "PDF"=>pdf\PDFBoard::create()->title("PDF Export")->icon("far fa-file-pdf")->badge("New"),
                 ])->badge("New"),            
             ])
         ];
@@ -107,18 +107,20 @@ class App extends \koolreport\dashboard\Application
     protected function topMenu()
     {
         return [
-            "Products"=>MenuItem::create()->onClick(Client::dashboard("ProductBoard")->load()),
+            "About"=>MenuItem::create()
+                ->href("https://www.koolreport.com/packages/dashboard")
+                ->target("_blank"),
+            "Forums"=>MenuItem::create()
+                ->href("https://www.koolreport.com/forum/topics")
+                ->target("_blank"),
         ];
     }
 
     protected function accountMenu()
     {
         return [
-            "Examples"=>MenuItem::create()->onClick(Client::dashboard("ProductBoard")->load()),
-            "Docs"=>MenuItem::create(),
             "Logout"=>MenuItem::create()
                 ->icon("fa fa-lock")       
-                ->badge(["10","info"]) 
                 ->onClick(Client::logout())
         ];
     }
