@@ -60,10 +60,10 @@ class App extends \koolreport\dashboard\Application
             "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
             
             "AutoMaker"=>Section::create()->sub([
-                "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
+                "Products"=>products\ProductBoard::create()->icon("fa fa-car")->badge("New"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
                 "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
-                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users"),
+                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users")->badge("New"),
                 "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
             ]),
             
