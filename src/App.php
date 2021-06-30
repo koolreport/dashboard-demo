@@ -97,6 +97,9 @@ class App extends \koolreport\dashboard\Application
                     "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
                     "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
                 ]),
+                "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
+                    "PDF"=>pdf\PDFBoard::create()->icon("far fa-file-pdf")->badge("New"),
+                ])->badge("New"),            
             ])
         ];
     }
