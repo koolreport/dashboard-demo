@@ -42,7 +42,7 @@ class ExtraColumnsTable extends Table
     {
         return [
             Image::create("customerAvatar")->label("Image")
-                ->prefix($_SERVER['REQUEST_URI']."images/")
+                ->prefix(substr($_SERVER['REQUEST_URI'],0,strrpos($_SERVER['REQUEST_URI'],"/"))."/images/")
                 ->squared("32px")
                 ->rounded(true),
             Icon::create("paymentMethod")->label("Icon")
@@ -76,7 +76,7 @@ class ExtraColumnsTable extends Table
                 ->type("primary")
                 ->text("Details")
                 ->size("sm")
-                ->onClick(function ($row){
+                ->onClick(function ($value, $row){
                     return "alert(\"Will show detail order of ".$row["customerName"]."\");";
                 }),
         ];

@@ -82,8 +82,9 @@ class App extends \koolreport\dashboard\Application
                 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
                     "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
-                    "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),    
-                ]),
+                    "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
+                    "Panel"=>panel\PanelBoard::create()->icon("far fa-window-maximize")->badge("New"),    
+                ])->badge("New"),
                 
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
