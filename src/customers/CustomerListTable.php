@@ -17,7 +17,10 @@ class CustomerListTable extends Table
     {
         $this->pageSize(10)
         ->tableHover(true)
-        ->tableStriped(true);
+        ->tableStriped(true)
+        ->searchable(true)
+        ->searchAlign("right")
+        ->searchWidth("300px");
     }
 
     protected function dataSource()
@@ -28,8 +31,10 @@ class CustomerListTable extends Table
     protected function fields()
     {
         return [
-            Text::create("customerName"),
-            Text::create("country"),
+            Text::create("customerName")
+                ->searchable(true),
+            Text::create("country")
+                ->searchable(true),
             Button::create("viewDetails")
                 ->type("warning")
                 ->textAlign("right")
@@ -37,7 +42,7 @@ class CustomerListTable extends Table
                 ->onClick(function($value, $row){
                     return Client::dashboard("CustomerDetailsBoard")->load([
                         "customerNumber"=>$row["customerNumber"],
-                        "customerName"=>$row["customerName"]
+                        "customerName"=>$row["customerName"],
                     ]);
                 }),
         ];

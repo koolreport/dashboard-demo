@@ -43,7 +43,7 @@ class ProductByLine extends DonutChart
          */
         $params = $request->params();
         $this->state("selectedProductLine",$params["selectedRow"][0]);
-        $this->sibling("ProductTable")->update();
+        $this->sibling("ProductTable")->pageIndex(0)->update();
         $this->sibling("guide")->update();
     }
 

@@ -9,6 +9,8 @@ use \koolreport\dashboard\widgets\Text;
 
 class CustomerListBoard extends Dashboard
 {
+    use \koolreport\dashboard\TStatePersisted;
+
     protected function widgets()
     {
         return [
