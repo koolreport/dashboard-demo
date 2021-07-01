@@ -5,7 +5,7 @@ namespace demo\customers;
 use \koolreport\dashboard\Dashboard;
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
-use \koolreport\dashboard\widgets\Text;
+use \koolreport\dashboard\containers\Html;
 
 class CustomerListBoard extends Dashboard
 {
@@ -14,7 +14,7 @@ class CustomerListBoard extends Dashboard
     protected function widgets()
     {
         return [
-            Text::create()->text("<h2>Customers</h2>")->asHtml(true),
+            Html::h2("Customers"),
             CustomerListTable::create()
         ];
     }
