@@ -8,7 +8,7 @@ use \demo\AutoMaker;
 use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Number;
 use \koolreport\dashboard\fields\Currency;
-
+use \koolreport\dashboard\containers\Html;
 
 class ProductTable extends Table
 {
@@ -23,6 +23,13 @@ class ProductTable extends Table
             $this->pageSize(null);
         }
         return true;
+    }
+
+    public function exportedView($params)
+    {
+        return  Html::div()->class("text-center")->sub([
+                    Html::h1($this->sibling("ProductByLine")->selectedProductLine())
+                ]).$this->view();
     }
 
     protected function dataSource()
