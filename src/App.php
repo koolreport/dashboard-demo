@@ -72,18 +72,19 @@ class App extends \koolreport\dashboard\Application
 
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
-                    "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
-                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-pie")->badge("New"),
-                    "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-pie")->badge("New"),
+                    "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-line"),
+                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area")->badge("New"),
+                    "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar")->badge("New"),
                     "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie")->badge("New"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
+                    "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore")->badge("New"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
                 ])->badge("New"),
                 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
                     "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
                     "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
-                    "Panel"=>panel\PanelBoard::create()->icon("far fa-window-maximize")->badge("New"),    
+                    "Panel"=>panel\PanelBoard::create()->icon("fas fa-columns")->badge("New"),    
                 ])->badge("New"),
                 
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([

@@ -10,6 +10,7 @@ use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\inputs\DropDown;
 use \koolreport\dashboard\menu\MenuItem;
 use \koolreport\dashboard\Client;
+use \koolreport\dashboard\containers\Html;
 
 class PDFBoard extends Dashboard
 {
@@ -31,7 +32,9 @@ class PDFBoard extends Dashboard
                             Client::widget("ProductTable")->exportToPDF("All Products",["all"=>true])
                         ),
                 ])
-                ->cssStyle("margin-bottom:5px;"),
+                ->align("right")
+                ->cssStyle("margin-bottom:5px;")
+                ->cssClass("text-right"),
                 ProductTable::create()
             ])
         ];
