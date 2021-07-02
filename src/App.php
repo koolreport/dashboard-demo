@@ -69,6 +69,7 @@ class App extends \koolreport\dashboard\Application
             
             "Components"=>Section::create()->sub([
                 "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
+                "Custom Board"=>customboard\DemoCustomBoard::create()->icon("far fa-edit")->badge("New"),
 
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
