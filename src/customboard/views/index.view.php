@@ -1,7 +1,7 @@
 <?php
 use \koolreport\inputs\Select;
 ?>
-<div class="card">
+<div class="card card-accent-primary">
     <div class="card-header">
         <h5>Select customer to view their orders</h5>
     </div>

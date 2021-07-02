@@ -1,7 +1,7 @@
 <?php
 use \koolreport\widgets\koolphp\Table;
 ?>
-<div class="card">
+<div class="card card-accent-success">
     <div class="card-header">
         <h5><?php echo $this->params()["customerName"]; ?></h5>
     </div>
