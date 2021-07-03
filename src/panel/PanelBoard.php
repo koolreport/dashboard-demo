@@ -111,7 +111,7 @@ class PanelBoard extends Dashboard
                 ->header("Panel title")
                 ->cssClass("bg-primary text-white")
                 ->sub([
-                    Html::p("")
+                    Html::p($longLorem)
                 ]),
                 Panel::create()
                 ->width(1/3)
