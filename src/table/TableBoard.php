@@ -6,7 +6,7 @@ use \koolreport\dashboard\Dashboard;
 
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
-use \koolreport\dashboard\widgets\Text;
+use \koolreport\dashboard\containers\Html;
 
 class TableBoard extends Dashboard
 {
@@ -22,9 +22,10 @@ class TableBoard extends Dashboard
                 ]),
                 Panel::create()->type("warning")->header("Styled Table")->width(1/2)->sub([
                     StyledTable::create()->lazyLoading(true),
-                    Text::create()
-                        ->text("<p><b>Note:</b> Show small table with light header, stripped rows, bordered, outlined and row hovering</p>")
-                        ->asHtml(true),
+                    Html::p([
+                        Html::b("Note: "),
+                        "Show small table with light header, stripped rows, bordered, outlined and row hovering"
+                    ])
                 ]),
             ]),
             Row::create()->sub([

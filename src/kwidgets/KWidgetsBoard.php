@@ -5,7 +5,7 @@ namespace demo\kwidgets;
 use \koolreport\dashboard\Dashboard;
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
-use \koolreport\dashboard\widgets\Text;
+use \koolreport\dashboard\containers\Html;
 
 class KWidgetsBoard extends Dashboard
 {
@@ -13,8 +13,7 @@ class KWidgetsBoard extends Dashboard
     {
         return [
             Panel::create()->type("secondary")->header("<b>What is KWidget?</b>")->sub([
-                Text::create()
-                ->text("
+                Html::p("
                     KWidget is an special wrapper for all non-native KoolReport widget.
                     KoolReport's widget after wrapped with KWidget can be use like
                     normal Dashboard's widget. In below, we demonstrate how to

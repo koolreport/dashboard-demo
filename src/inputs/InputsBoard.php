@@ -6,10 +6,8 @@ use \koolreport\dashboard\Dashboard;
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\Container;
-
-use \koolreport\dashboard\widgets\Text;
 use \koolreport\dashboard\inputs\Button;
-
+use \koolreport\dashboard\containers\Html;
 
 class InputsBoard extends Dashboard
 {
@@ -20,41 +18,41 @@ class InputsBoard extends Dashboard
                 Panel::create()->type("primary")->header("<b>Input Sample</b>")->width(2/3)->sub([
                     Row::create([
                         [
-                            Text::create()->text("<label><strong>TextBox</strong></label>")->asHtml(true),
+                            Html::label("TextBox")->style("font-weight:bold"),
                             TextBoxDemo::create()
                         ],
                         [
-                            Text::create()->text("<label><strong>Select</strong></label>")->asHtml(true),
+                            Html::label("Select")->style("font-weight:bold"),
                             SelectDemo::create()
                         ]
                     ]),
                     Row::create([
                         [
-                            Text::create()->text("<label><strong>DateTimePicker</strong></label>")->asHtml(true),
+                            Html::label("DateTimePicker")->style("font-weight:bold"),
                             DateTimePickerDemo::create()
                         ],
                         [
-                            Text::create()->text("<label><strong>DateRangePicker</strong></label>")->asHtml(true),
+                            Html::label("DateRangePicker")->style("font-weight:bold"),
                             DateRangePickerDemo::create()
                         ]
                     ]),
                     Row::create([
                         [
-                            Text::create()->text("<label><strong>Select2</strong></label>")->asHtml(true),
+                            Html::label("Select2")->style("font-weight:bold"),
                             Select2Demo::create()
                         ],
                         [
-                            Text::create()->text("<label><strong>Multiple Select2</strong></label>")->asHtml(true),
+                            Html::label("Multiple Select2")->style("font-weight:bold"),
                             MultipleSelect2Demo::create(),
                         ]
                     ]),
                     Row::create([
                         [
-                            Text::create()->text("<label><strong>CheckBoxList</strong></label>")->asHtml(true),
+                            Html::label("CheckBoxList")->style("font-weight:bold"),
                             CheckBoxListDemo::create()
                         ],
                         [
-                            Text::create()->text("<label><strong>RadioList</strong></label>")->asHtml(true),
+                            Html::label("RadioList")->style("font-weight:bold"),
                             RadioListDemo::create(),
                         ]
                     ]),

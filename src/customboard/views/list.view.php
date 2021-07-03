@@ -6,24 +6,21 @@ use \koolreport\widgets\koolphp\Table;
         <h5><?php echo $this->params()["customerName"]; ?></h5>
     </div>
     <div class="card-body">
-        <div class="mb-3">
-            <form method="ajax" action="index">
+        <form method="ajax" action="index">
+            <div class="mb-3">
                 <button class="btn btn-default">Back</button>
-            </form>
-        </div>
-        <?php
-            Table::create([
-                "dataSource"=>$this->params()["orders"],
-                "cssClass"=>array(
-                    "table"=>"table table-striped table-bordered"
-                )
-            ])
-        ?>
-        <div class="text-right">
-            <form method="ajax" action="index">
+            </div>
+            <?php
+                Table::create([
+                    "dataSource"=>$this->params()["orders"],
+                    "cssClass"=>array(
+                        "table"=>"table table-striped table-bordered"
+                    )
+                ])
+            ?>
+            <div class="text-right">
                 <button class="btn btn-default">Back</button>
-            </form>        
-        </div>
-
+            </div>
+        </form>
     </div>
 </div>
