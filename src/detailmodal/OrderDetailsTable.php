@@ -7,13 +7,17 @@ use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Date;
 use \koolreport\dashboard\fields\Badge;
 
+use\koolreport\dashboard\container\Html;
+
 use \demo\AutoMaker;
 
 class OrderDetailsTable extends Table
 {
     protected function onCreated()
     {
-        $this->tableSmall(true);
+        $this
+        ->tableSmall(true)
+        ->pdfExportable(true);
     }
     protected function dataSource()
     {
@@ -51,5 +55,11 @@ class OrderDetailsTable extends Table
                     return ($value!==null)?$this->formatValue($value):"No date";
                 }),        
         ];
+    }
+
+    public function exportedView($params)
+    {
+        return Html::div(Html::h1("Title"))->style("text-center").
+                $this->view();
     }
 }

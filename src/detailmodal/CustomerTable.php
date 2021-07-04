@@ -71,6 +71,14 @@ class CustomerTable extends Table
         ])
         ->footer([
             Button::create()
+                ->text("Export to PDF")
+                ->type("primary")
+                ->icon("far fa-file-pdf")
+                ->onClick(
+                    Client::showLoader().
+                    Client::widget("OrderDetailsTable")->exportToPDF()
+                ),
+            Button::create()
                 ->text("Done")
                 ->type("default")
                 ->onClick(Modal::hide($modal))
