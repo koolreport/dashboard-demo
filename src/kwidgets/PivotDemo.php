@@ -33,7 +33,8 @@ class PivotDemo extends KWidget
                             'aggregates'=>array(
                                 'sum'=>'dollar_sales',
                                 'count'=>'dollar_sales'
-                            )
+                            ),
+                            // "partialProcessing" => true
                         ])
                     )
                 );
@@ -42,7 +43,7 @@ class PivotDemo extends KWidget
     protected function onCreated()
     {
         $this
-        ->use(\koolreport\pivot\widgets\PivotTable::class)
+        ->use(\koolreport\pivot\widgets\PivotMatrix::class)
         ->settings([
             'rowDimension'=>'row',
             'measures'=>array(
@@ -57,7 +58,6 @@ class PivotDemo extends KWidget
             'width' => '100%',
             'map' => array(
                 'dataField' => [
-
                     'dollar_sales - sum' => 'Sales (in USD)',
                     'dollar_sales - count' => 'Number of Sales',
                 ]

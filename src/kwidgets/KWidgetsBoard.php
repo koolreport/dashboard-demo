@@ -21,6 +21,7 @@ class KWidgetsBoard extends Dashboard
                     wrap ChartJs, D3, Pivot and Datatable with KWidget.
                 ")
             ]),
+
             Panel::create()->type("primary")->header("<b>ChartJs</b>")->sub([
                 Row::create([
                     ChartJsColumnChart::create()->width(1/2),
@@ -29,6 +30,7 @@ class KWidgetsBoard extends Dashboard
                     ChartJsPolarChart::create()->width(1/2),
                 ])
             ]),
+
             Panel::create()->type("warning")->header("<b>D3</b>")->sub([
                 Row::create([
                     D3BarChart::create()->width(1/2),
@@ -37,9 +39,10 @@ class KWidgetsBoard extends Dashboard
                 ])
             ]),
 
-            Panel::create()->type("danger")->header("<b>PivotTable</b>")->sub([
-                PivotDemo::create()
+            Panel::create()->type("danger")->header("<b>Pivot</b>")->sub([
+                PivotDemo::create(),
             ]),
+
             Panel::create()->type("info")->header("<b>Datatable</b>")->sub([
                 DataTablesDemo::create()
             ])->width(1/2),

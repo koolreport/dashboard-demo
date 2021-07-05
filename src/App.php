@@ -77,10 +77,10 @@ class App extends \koolreport\dashboard\Application
                     "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar")->badge("New"),
                     "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie")->badge("New"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
+                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube")->badge("NEW"),
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore")->badge("New"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
                 ])->badge("New"),
-                
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
                     "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
                     "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
