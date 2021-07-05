@@ -9,6 +9,10 @@ use \koolreport\dashboard\containers\Html;
 use \koolreport\dashboard\Client;
 use \koolreport\dashboard\inputs\Button;
 
+use \demo\AutoMaker;
+use \koolreport\dashboard\containers\Modal;
+
+
 
 class DetailModalBoard extends Dashboard
 {
@@ -41,7 +45,7 @@ class DetailModalBoard extends Dashboard
             Row::create([
                 Panel::create()->header(Html::b("Master Details"))->sub([
                     CustomerTable::create()
-                ])
+               ])
             ])
         ];
     }
