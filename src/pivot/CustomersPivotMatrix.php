@@ -15,8 +15,7 @@ class CustomersPivotMatrix extends PivotMatrix
                 ->select('customerName', 'productLine', 'productName','dollar_sales')
                 ->where('customerName','<','Am')
                 ->where('orderYear','>',2003)
-                ->run()
-                //After run(), we will get DataStore, we continue to process data with ColumnMeta 
+                ->run() //After run(), we will get DataStore, we continue to process data with ColumnMeta 
                 ->process(
                     ColumnMeta::process([
                         'dollar_sales'=>[
@@ -25,23 +24,11 @@ class CustomersPivotMatrix extends PivotMatrix
                             'decimals'=>2,
                         ],
                     ])
-                    // ->pipe(
-                    //     Pivot::process([
-                    //         'dimensions'=>array(
-                    //             'column'=>'productLine',
-                    //             'row'=>'customerName, productName'
-                    //         ),
-                    //         'aggregates'=>array(
-                    //             'sum'=>'dollar_sales',
-                    //             'count'=>'dollar_sales'
-                    //         ),
-                    //     ])
-                    // )
                 )
                 ;
     }
 
-    protected function pivot()
+    protected function process()
     {
         return [
             'dimensions'=>array(
@@ -55,7 +42,7 @@ class CustomersPivotMatrix extends PivotMatrix
         ];
     }
 
-    protected function displaySettings()
+    protected function display()
     {
         return [
             // 'rowDimension'=>'row',
