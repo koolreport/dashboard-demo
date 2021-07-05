@@ -69,6 +69,7 @@ class App extends \koolreport\dashboard\Application
             
             "Components"=>Section::create()->sub([
                 "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
+                "Custom Board"=>customboard\DemoCustomBoard::create()->icon("far fa-edit")->badge("New"),
 
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
@@ -76,6 +77,7 @@ class App extends \koolreport\dashboard\Application
                     "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area")->badge("New"),
                     "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar")->badge("New"),
                     "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie")->badge("New"),
+                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-border-all")->badge("New"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                     "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube")->badge("NEW"),
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore")->badge("New"),

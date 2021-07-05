@@ -41,8 +41,7 @@ class CustomerListTable extends Table
                 ->text("View Details")
                 ->onClick(function($value, $row){
                     return Client::dashboard("CustomerDetailsBoard")->load([
-                        "customerNumber"=>$row["customerNumber"],
-                        "customerName"=>$row["customerName"],
+                        "customerNumber"=>$row["customerNumber"]
                     ]);
                 }),
         ];

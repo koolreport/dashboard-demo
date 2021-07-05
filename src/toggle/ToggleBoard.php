@@ -8,7 +8,7 @@ use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\containers\Inline;
 
 use \koolreport\dashboard\inputs\Toggle;
-use \koolreport\dashboard\widgets\Text;
+use \koolreport\dashboard\containers\Html;
 
 class ToggleBoard extends Dashboard
 {
@@ -201,7 +201,7 @@ class ToggleBoard extends Dashboard
                 Panel::create()->header("Toggle with action")->sub([
                     Inline::create([
                         InProcessToggle::create(),
-                        Text::create()->text("Only In-Process Orders")
+                        Html::span("Only In-Process Orders")
                     ]),
                     OrderTable::create()
                 ])

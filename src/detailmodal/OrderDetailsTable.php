@@ -7,22 +7,26 @@ use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Date;
 use \koolreport\dashboard\fields\Badge;
 
+use\koolreport\dashboard\containers\Html;
+
 use \demo\AutoMaker;
 
 class OrderDetailsTable extends Table
 {
     protected function onCreated()
     {
-        $this->tableSmall(true);
+        $this
+        ->tableSmall(true)
+        ->pdfExportable(true);
     }
     protected function dataSource()
     {
-        if(isset($this->params["customerNumber"])===false) {
+        if($this->params("customerNumber")===null) {
             throw new \Exception("OrderDetailsTable requires params['customerNumber']");
         }
         
         return AutoMaker::table("orders")
-                ->where("customerNumber",$this->params["customerNumber"]);
+                ->where("customerNumber",$this->params("customerNumber"));
     }
 
     protected function fields()
@@ -51,5 +55,16 @@ class OrderDetailsTable extends Table
                     return ($value!==null)?$this->formatValue($value):"No date";
                 }),        
         ];
+    }
+
+    public function exportedView($exportedParams)
+    {
+        $customerName = AutoMaker::table("customers")
+                        ->select("customerName")
+                        ->where("customerNumber",$this->params("customerNumber"))
+                        ->run()
+                        ->getScalar();
+        return Html::div(Html::h1($customerName))->class("text-center").
+                $this->view();
     }
 }

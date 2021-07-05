@@ -16,6 +16,10 @@ class InProcessToggle extends Toggle
 
     protected function actionChange()
     {
-        $this->sibling("OrderTable")->updateEffect("none")->update();
+        $this
+        ->sibling("OrderTable")
+        ->pageIndex(0)
+        ->updateEffect("none")
+        ->update();
     }
 }

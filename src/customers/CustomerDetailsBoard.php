@@ -6,38 +6,33 @@ use \koolreport\dashboard\Dashboard;
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\widgets\Text;
+use \koolreport\dashboard\containers\Html;
 use \koolreport\dashboard\inputs\Button;
 use \koolreport\dashboard\Client;
 
+use \demo\AutoMaker;
+
 class CustomerDetailsBoard extends Dashboard
 {
+    protected $customerName;
 
     public function getCustomerNumber()
     {
         return $this->params()["customerNumber"];
     }
-    public function getCustomerName()
-    {
-        return $this->params()["customerName"];
-    }
-
-    protected function onRendering()
-    {
-        $this->title($this->getCustomerName());
-        return true;
-    }
 
     protected function widgets()
     {
+        $this->customerName = AutoMaker::table("customers")
+                        ->where("customerNumber",$this->getCustomerNumber())
+                        ->select("customerName")
+                        ->run()
+                        ->getScalar();
         return [
             Button::create()->text("Back")->onClick(function(){
                 return Client::dashboard("CustomerListBoard")->load();
             }),
-
-            Text::create()->asHtml(true)->text(function(){
-                return "<h2>".$this->dashboard()->getCustomerName()."</h2>";
-            }),
-            
+            Html::h2($this->customerName),
             Row::create([
                 Panel::create()->header("Orders")->type("primary")->sub([
                     OrderDetailsTable::create(),
@@ -47,5 +42,11 @@ class CustomerDetailsBoard extends Dashboard
                 ])->width(1/2),
             ]),
         ];
+    }
+
+    protected function onRendering()
+    {
+        $this->title($this->customerName);
+        return true;
     }
 }

@@ -48,8 +48,7 @@ class CustomerTable extends Table
                 ->text("View Orders")
                 ->onClick(function($value, $row){
                     return Client::widget($this->widget())->showDetail([
-                        "customerNumber"=>$row["customerNumber"],
-                        "customerName"=>$row["customerName"],
+                        "customerNumber"=>$row["customerNumber"]
                     ]);
                 }),
         ];
@@ -57,15 +56,28 @@ class CustomerTable extends Table
 
     protected function detailModal($params=[])
     {
+        $customerName = AutoMaker::table("customers")
+                        ->select("customerName")
+                        ->where("customerNumber",$params["customerNumber"])
+                        ->run()
+                        ->getScalar();
         $modal = Modal::create();
         return $modal
-        ->title($params["customerName"])
+        ->title($customerName)
         ->type("info")
         ->size("lg")
         ->sub([
             OrderDetailsTable::create()->params($params)
         ])
         ->footer([
+            Button::create()
+                ->text("Export to PDF")
+                ->type("primary")
+                ->icon("far fa-file-pdf")
+                ->onClick(
+                    Client::showLoader().
+                    Client::widget("OrderDetailsTable")->exportToPDF()
+                ),
             Button::create()
                 ->text("Done")
                 ->type("default")

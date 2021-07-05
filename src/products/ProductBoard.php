@@ -11,6 +11,7 @@ use \koolreport\dashboard\widgets\StateHolder;
 
 use \koolreport\dashboard\menu\MenuItem;
 use \koolreport\dashboard\Client;
+use \koolreport\dashboard\containers\Html;
 
 class ProductBoard extends Dashboard
 {
@@ -23,9 +24,7 @@ class ProductBoard extends Dashboard
                 ->header("<b>Product By Line</b>")
                 ->type("primary")
                 ->sub([
-                    Text::create()
-                        ->text("<p style='font-style:italic'>Click to chart to view the detail list of that product</p>")
-                        ->asHtml(true),
+                    Html::p("Click to chart to view the detail list of that product")->style("font-style:italic"),
                     ProductByLine::create()
                         ->detailShowable(true)
                 ])
@@ -45,7 +44,7 @@ class ProductBoard extends Dashboard
                     Text::create("guide")->text(function(){
                         $selectedProductLine = $this->dashboard()->widget("ProductByLine")->selectedProductLine();
                         if($selectedProductLine!==null) {
-                            return "<p>List of <b>$selectedProductLine</b> products</p>";
+                            return Html::p(["List of ",Html::b($selectedProductLine)," products"]);
                         }
                         return null;
                     })->asHtml(true),
