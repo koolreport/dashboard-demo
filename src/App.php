@@ -77,6 +77,7 @@ class App extends \koolreport\dashboard\Application
                     "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area")->badge("New"),
                     "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar")->badge("New"),
                     "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie")->badge("New"),
+                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-border-all")->badge("New"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore")->badge("New"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
