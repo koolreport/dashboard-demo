@@ -68,6 +68,7 @@ class App extends \koolreport\dashboard\Application
                 "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-pie"),
+                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube")->badge("NEW"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift")->badge("NEW"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync")->badge("NEW"),    
                 ]),
