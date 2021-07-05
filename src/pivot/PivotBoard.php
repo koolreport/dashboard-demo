@@ -3,7 +3,6 @@
 namespace demo\pivot;
 
 use \koolreport\dashboard\Dashboard;
-use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
 use \koolreport\dashboard\widgets\Text;
 
@@ -24,7 +23,6 @@ class PivotBoard extends Dashboard
             ]),
 
             Panel::create()->type("danger")->header("<b>PivotMatrix</b>")->sub([
-                // PivotDemo::create(),
                 CustomersPivotMatrix::create(),
             ]),
 

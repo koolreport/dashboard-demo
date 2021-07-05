@@ -5,7 +5,6 @@ namespace demo\pivot;
 use \koolreport\dashboard\widgets\pivot\PivotMatrix;
 use \koolreport\dashboard\sources\CSV;
 use \koolreport\processes\ColumnMeta;
-use \koolreport\pivot\processes\Pivot;
 
 class CustomersPivotMatrix extends PivotMatrix
 {
