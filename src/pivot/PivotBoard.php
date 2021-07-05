@@ -4,7 +4,7 @@ namespace demo\pivot;
 
 use \koolreport\dashboard\Dashboard;
 use \koolreport\dashboard\containers\Panel;
-use \koolreport\dashboard\widgets\Text;
+use \koolreport\dashboard\containers\Html;
 
 class PivotBoard extends Dashboard
 {
@@ -12,8 +12,7 @@ class PivotBoard extends Dashboard
     {
         return [
             Panel::create()->type("secondary")->header("<b>What is Pivot widgets?</b>")->sub([
-                Text::create()
-                ->text("
+                Html::p("
                     Pivot widgets include PivotTable and PivotMatrix. PivotTable is a fixed displaying widget for pivot data while PivotMatrix is a dynamic widget which allows users to drag and drop pivot fields, do sorting, etc.
                 ")
             ]),
