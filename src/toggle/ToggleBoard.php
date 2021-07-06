@@ -205,7 +205,12 @@ class ToggleBoard extends Dashboard
                     ]),
                     OrderTable::create()
                 ])
-            ])
+            ]),
+            \demo\CodeDemo::create("
+                Toggle is a simple selection with 2 states: ON and OFF. Although very small but it is very convenient
+                to turn on or turn off a condition in dashboard. Above example show you how to customize Toggle button
+                and also how to use it in real life example.
+            ")->raw(true)
         ];
     }
 }

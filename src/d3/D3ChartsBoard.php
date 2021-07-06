@@ -36,6 +36,15 @@ class D3ChartsBoard extends Dashboard
             Panel::create()->header("<b>Waterfall</b>")->sub([
                 WaterfallDemo::create()
             ]),
+
+            \demo\CodeDemo::create("
+                Alternatively to Google Chart library, D3 library is your great option for data visualization.
+                D3 contains all common used charts like BarChart, PieCharts etc. Beside we have added some
+                special charts like above Waterfall chart and not-showing-here FunnelChart.
+                <br/><br/>
+                The great advantages of D3 over GoogleChart is that it does not requires library to load from outside.
+                That improve the data security and privacy.
+            ")->raw(true)
     ];
     }
 }

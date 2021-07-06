@@ -187,7 +187,15 @@ class ButtonBoard extends Dashboard
                     Button::create()->text("Show Alert")
                         ->onClick("alert('Its working!')")
                 ])
-            ])
+            ]),
+
+
+            \demo\CodeDemo::create("
+                This example shows you how to use Button inside your dashboard. There are alot of customizations to
+                a button that you can do such as changing size, colors, activeness and action will take when user
+                clicks to a button. One of great features in the button is called laddaOnAction which allows button
+                to show loading on action.
+            ")->raw(true)
         ];
     }
 }

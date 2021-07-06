@@ -46,7 +46,14 @@ class DetailModalBoard extends Dashboard
                 Panel::create()->header(Html::b("Master Details"))->sub([
                     CustomerTable::create()
                ])
-            ])
+            ]),
+
+            \demo\CodeDemo::create("
+                DetailModal is a special feature of most of widgets. By default, detail modal allows us to see behind data
+                of widget in a table form. However, the detail modal can be customized to show anything. In above example,
+                we use detail modal to show revenue comparizon in DonutChart. Also, we customize detail modal to show
+                customer detail information.
+            ")->raw(true)
         ];
     }
 }

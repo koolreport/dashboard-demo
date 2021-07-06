@@ -36,7 +36,14 @@ class PDFBoard extends Dashboard
                 ->cssStyle("margin-bottom:5px;")
                 ->cssClass("text-right"),
                 ProductTable::create()
-            ])
+            ]),
+
+            \demo\CodeDemo::create("
+                This example shows you how to export your widget to PDF. Above is a table listing hundred of products.
+                By clicking to [Export to PDF] button, you will have choices to export the current page of table or
+                the whole table to PDF format.
+            ")->raw(true)
+
         ];
     }
 }

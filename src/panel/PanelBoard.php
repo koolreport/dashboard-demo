@@ -148,7 +148,12 @@ class PanelBoard extends Dashboard
                 ->sub([
                     Html::p($longLorem)
                 ]),
-            ])
+            ]),
+            \demo\CodeDemo::create("
+                This example shows you the full options of Panel container. You can freely to customize the look and feel,
+                choose the one that power the effectiveness of your dashboard. Panel has a special features which is the menu
+                options which you can organize the actions on Panel nicely.
+            ")->raw(true)
         ];
     }
 }

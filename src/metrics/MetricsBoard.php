@@ -81,7 +81,13 @@ class MetricsBoard extends Dashboard
                         ->pieSize(110)
                         ->type("success"),
                 ])
-            ]),    
+            ]),
+            \demo\CodeDemo::create("
+                The example shows 3 types of metrics: <b>Value</b>, <b>Trend</b> and <b>Category</b>.
+                The Value metrics shows the summary number over a period with comparision to the previous.
+                The Trend metrics shows the moving trend of value within a period.
+                While the Category metrics shows the comparison among category.
+            ")->raw(true)
         ];
     }    
 }

@@ -40,7 +40,15 @@ class ChartJsBoard extends Dashboard
                 Panel::create()->header("<b>Radar</b>")->sub([
                     RadarChartDemo::create()
                 ]),
-            ])
+            ]),
+            \demo\CodeDemo::create("
+            Alternatively to Google Chart library, CHartJs library is also your great choice for data visualization.
+            ChartJs contains all common used charts like BarChart, PieCharts etc. Furthermore, the library contains
+            some special chart like PolarChart, RadarChart.
+            <br/><br/>
+            The great advantages of ChartJs over GoogleChart is that it does not requires library to load from outside.
+            That improve the data security and privacy.
+            ")->raw(true)
     ];
     }
 }

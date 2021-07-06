@@ -12,14 +12,6 @@ class KWidgetsBoard extends Dashboard
     protected function widgets()
     {
         return [
-            Panel::create()->type("secondary")->header("<b>What is KWidget?</b>")->sub([
-                Html::p("
-                    KWidget is an special wrapper for all non-native KoolReport widget.
-                    KoolReport's widget after wrapped with KWidget can be use like
-                    normal Dashboard's widget. In below, we demonstrate how to
-                    wrap ChartJs, D3, Pivot and Datatable with KWidget.
-                ")
-            ]),
 
             Panel::create()->type("primary")->header("<b>ChartJs</b>")->sub([
                 Row::create([
@@ -44,7 +36,16 @@ class KWidgetsBoard extends Dashboard
 
             Panel::create()->type("info")->header("<b>Datatable</b>")->sub([
                 DataTablesDemo::create()
-            ])->width(1/2),
+            ]),
+
+            \demo\CodeDemo::create("
+                <b>What is KWidget?</b>
+                <br/><br/>
+                KWidget is an special wrapper for all non-native KoolReport widget.
+                KoolReport's widget after wrapped with KWidget can be use like
+                normal Dashboard's widget. In above, we demonstrate how to
+                wrap ChartJs, D3, Pivot and Datatable with KWidget.
+            ")->raw(true)
         ];
     }
 }

@@ -19,9 +19,8 @@ class ProductTable extends Table
 
     protected function onExporting($params)
     {
-        if($params["type"]==="pdf") {
-            $this->pageSize(null);
-        }
+        //Remove table paging when exporting to PDF
+        $this->pageSize(null);
         return true;
     }
 

@@ -74,7 +74,11 @@ class ModalBoard extends Dashboard
                 Panel::create()->header("Open Modal from Server-side")->sub([
                     SubmitButton::create()->text("Open From Server")
                 ])->width(1/2),
-            ])
+            ]),
+
+            \demo\CodeDemo::create("
+                This example show you how to use modal, a pop up section to show detail data.
+            ")->raw(true)
         ];
     }    
 }

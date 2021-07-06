@@ -17,6 +17,7 @@ class CodeDemo extends Widget
     {
         $this->props([
             "description"=>null,
+            "raw"=>false,
         ]);
     }
 
@@ -60,11 +61,10 @@ class CodeDemo extends Widget
             }),
             Html::div()->class("tab-content")->sub(function() use($files,$fileNames){
                 $divs = [
-                    Html::div([
-                        Html::pre([
-                            Html::code($this->description())->class("php")
-                        ])
-                    ])->id("t".md5("Description"))->class("tab-pane fade active show")->role("tabpanel")
+                    Html::div(Html::p($this->description())->raw($this->raw()))
+                    ->id("t".md5("Description"))
+                    ->class("tab-pane fade active show")
+                    ->role("tabpanel")
                 ];
                 foreach($files as $k=>$file) {
                     array_push(
@@ -73,7 +73,10 @@ class CodeDemo extends Widget
                             Html::pre([
                                 Html::code(file_get_contents($file))->class("php")
                             ])
-                        ])->id("t".md5($fileNames[$k]))->class("tab-pane fade")->role("tabpanel")
+                        ])
+                        ->id("t".md5($fileNames[$k]))
+                        ->class("tab-pane fade")
+                        ->role("tabpanel")
                     );
                 }
                 return $divs;

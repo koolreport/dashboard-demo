@@ -39,6 +39,12 @@ class TableBoard extends Dashboard
             Panel::create()->type("success")->header("Extra Columns")->sub([
                 ExtraColumnsTable::create()->lazyLoading(true)
             ]),
+
+            \demo\CodeDemo::create("
+                Table is the most used visualization in a dashboard. Understanding the importance of it,
+                our Table widget support various features such as: table style customization, auto fields generation,
+                special columns types, paging, sorting, footer aggregation and more.
+            ")->raw(true)
         ];
     }
 }
