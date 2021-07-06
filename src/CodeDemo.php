@@ -91,7 +91,9 @@ class CodeDemo extends Widget
                 color:#1e8fc6;
             }
             "),
-            Html::script("hljs.initHighlightingOnLoad();")
+            Html::script("document.querySelectorAll('pre>code').forEach(el => {
+                hljs.highlightElement(el);
+              });")->raw(true)
         ]);
     }
 }
