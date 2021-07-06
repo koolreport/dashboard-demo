@@ -77,7 +77,7 @@ class ModalBoard extends Dashboard
             ]),
 
             \demo\CodeDemo::create("
-                This example show you how to use modal, a pop up section to show detail data.
+                This example shows you how to use modal, a pop up section to show detail data.
             ")->raw(true)
         ];
     }    

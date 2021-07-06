@@ -42,7 +42,7 @@ class GoogleChartsBoard extends Dashboard
             \demo\CodeDemo::create("
                 Google Charts is an amazing visualization library that is integrated with KoolReport in general
                 and Dashboard specifically. Google Charts contains over 30 types of charts which are more than
-                enough for us to present our data in a impressive way. In this example, we demonstrates 6 
+                enough for us to present our data in an impressive way. In this example, we demonstrates 6 
                 most used types of charts: ColumnChart, BarChart, PieChart, DonutChart, LineChart and special
                 GeoChart map.
                 <br/><br/>

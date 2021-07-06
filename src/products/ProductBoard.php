@@ -60,9 +60,9 @@ class ProductBoard extends Dashboard
                 ])
             ]),
             \demo\CodeDemo::create("
-                This example shows the comparison among product line by the number of product. The comparison
-                show by PieChart. On clicking to each pie, the dashboard will show list of products on that line.
-                This is a type of master-detail models. Furthermore, there is a option of right-panel tab that allow
+                This example shows the comparison among product lines by its number of product. The comparison
+                is shown by PieChart. When user clicks to each pie, the dashboard will show list of products for that line.
+                This is a type of master-detail model. Not forget to mention, there is a option of right-panel tab that allows
                 us to export list of product by line to PDF.
             ")
         ];

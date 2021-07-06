@@ -21,15 +21,15 @@ class CustomerListBoard extends Dashboard
             Html::h2("Customers"),
             CustomerListTable::create(),
             \demo\CodeDemo::create("
-                This examples demonstrates another type of master-detail model. In this example, we use two dashboards.
+                This example demonstrates another type of master-detail model. In this example, we use two dashboards.
                 CustomerListBoard will acts as master and CustomerDetailsBoard acts as detail.
                 As you can see, on clicking to View Details button on the master, the detail board will load
-                to show information of the selected customer.
+                and show information of the selected customer.
                 <br/><br/>
                 The CustomerListBoard uses a Table with searchable feature, allowing us to search for any customers. 
                 <br/><br/>
                 Furthermore, the CustomerListBoard use a special trait called <b>TStatePersisted</b> which will make CustomerListBoard
-                maintains its state including paging and searching text when we come back from detail board.
+                maintain its state including paging and searching text.
             ")->raw(true)
         ];
     }

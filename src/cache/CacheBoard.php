@@ -33,9 +33,9 @@ class CacheBoard extends Dashboard
                 ]),    
             ]),
             \demo\CodeDemo::create("
-                Caching can help your dashboard faster. When activated, result returned to a widget will be stored
-                for later accessing. The next data query will be omitted and previous data qurey result will be used
-                if it widget is loaded within a predefined period of time. 
+                Caching can make your dashboard load faster. When activated, result returned to a widget will be stored
+                for later accessing. The next data query will be omitted and previous data query result will be used
+                if the widget is loaded again within a predefined period of time. 
             ")->raw(true)
         ];
     }

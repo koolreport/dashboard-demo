@@ -46,8 +46,8 @@ class ChartJsBoard extends Dashboard
             ChartJs contains all common used charts like BarChart, PieCharts etc. Furthermore, the library contains
             some special chart like PolarChart, RadarChart.
             <br/><br/>
-            The great advantages of ChartJs over GoogleChart is that it does not requires library to load from outside.
-            That improve the data security and privacy.
+            The great advantage of ChartJs over GoogleChart is that it does not requires library to load from internet.
+            If you plan to build intranet dashboard for your company, propably hartJs will be best option.
             ")->raw(true)
     ];
     }

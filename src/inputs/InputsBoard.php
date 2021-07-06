@@ -64,8 +64,8 @@ class InputsBoard extends Dashboard
             ]),
 
             \demo\CodeDemo::create("
-                This example show you how to use input widget to create dynamic dashboard.
-                Inputs are special type of widget which receive inputs from user like text, click or menu selection
+                This example shows you how to use input widgets to create dynamic dashboard.
+                Inputs are special type of widget which receives inputs from user like text, click or menu selection
                 and then transmits them to server to process.
                 In above example, we show you the most used controls such as Text, Select, DateTimePicker etc.
             ")->raw(true)
