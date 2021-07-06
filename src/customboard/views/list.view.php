@@ -7,7 +7,7 @@ use \koolreport\widgets\koolphp\Table;
     </div>
     <div class="card-body">
         <div class="mb-3">
-            <button onclick="action('index')" class="btn btn-default">Back</button>
+            <button onclick="backToIndex()" class="btn btn-default">Back</button>
         </div>
         <?php
             Table::create([
@@ -18,11 +18,16 @@ use \koolreport\widgets\koolphp\Table;
             ])
         ?>
         <div class="text-right">
-            <button onclick="action('index')" class="btn btn-default">Back</button>
+            <button onclick="backToIndex()" class="btn btn-default">Back</button>
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+function backToIndex() {
+    showLoader();
+    action("index");
+}
+</script>
 <?php 
     echo \demo\CodeDemo::create("
         This example demonstrates how to make dynamic dashboard with CustomBoard.
