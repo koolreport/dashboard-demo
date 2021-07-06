@@ -24,10 +24,13 @@ class CodeDemo extends Widget
     protected function render()
     {
         $path = str_replace("\\","/",dirname(Utility::getClassPath($this->dashboard())));
-        $files = glob($path."/*");
+        $files = glob($path."/*.php");
+        foreach(glob($path."/*", GLOB_ONLYDIR) as $folder) {
+            $files = array_merge($files,glob($folder."/*.php"));
+        }
         $fileNames = array_map(
-            function($file) use ($path){
-                return str_replace($path."/","",$file);
+            function($file) {
+                return substr($file,strrpos($file,"/")+1);
             },
             $files
         );
