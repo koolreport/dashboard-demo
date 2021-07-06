@@ -25,9 +25,12 @@ class CodeDemo extends Widget
     {
         $path = str_replace("\\","/",dirname(Utility::getClassPath($this->dashboard())));
         $files = glob($path."/*");
-        $fileNames = array_map(function($file) use ($path){
-            return str_replace($path."/","",$file);
-        },$files);
+        $fileNames = array_map(
+            function($file) use ($path){
+                return str_replace($path."/","",$file);
+            },
+            $files
+        );
 
         return 
         Html::div()->class("code-demo")->sub([
@@ -83,22 +86,15 @@ class CodeDemo extends Widget
                 return $divs;
             }),
             Html::style("
-            div.code-demo div.tab-pane
-            {
-                min-height:300px;
-            }
-            div.code-demo div.tab-content
-            {
-                margin-top:-2px;
-            }
-            div.code-demo a.nav-link.active
-            {
-                color:#1e8fc6;
-            }
+                div.code-demo div.tab-pane { min-height:300px; }
+                div.code-demo div.tab-content { margin-top:-2px; }
+                div.code-demo a.nav-link.active { color:#1e8fc6; }
             ")->raw(true),
-            Html::script("document.querySelectorAll('pre>code').forEach(el => {
-                hljs.highlightElement(el);
-              });")->raw(true)
+            Html::script("
+                document.querySelectorAll('pre>code').forEach(function(el){
+                    hljs.highlightElement(el);
+                });
+            ")->raw(true)
         ]);
     }
 }
