@@ -31,6 +31,7 @@ class CodeDemo extends Widget
 
         return 
         Html::div()->class("code-demo")->sub([
+            Html::hr(),
             Html::ul()->class("nav nav-tabs")->role("tablist")->sub(function() use($files,$fileNames){
                 $lis = [
                     Html::li([
@@ -86,11 +87,15 @@ class CodeDemo extends Widget
             {
                 min-height:300px;
             }
+            div.code-demo div.tab-content
+            {
+                margin-top:-2px;
+            }
             div.code-demo a.nav-link.active
             {
                 color:#1e8fc6;
             }
-            "),
+            ")->raw(true),
             Html::script("document.querySelectorAll('pre>code').forEach(el => {
                 hljs.highlightElement(el);
               });")->raw(true)
