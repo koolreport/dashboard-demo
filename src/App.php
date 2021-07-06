@@ -30,7 +30,9 @@ class App extends \koolreport\dashboard\Application
         ")
         ->footerRight("
             <div class='d-none d-md-block d-lg-block'>Powered by <a target='_blank' href='https://www.koolreport.com'>KoolReport</a></div>
-        ");
+        ")
+        ->js("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js")
+        ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css");
     }
 
     protected function login()
