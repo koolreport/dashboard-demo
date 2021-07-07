@@ -31,7 +31,7 @@ function backToIndex() {
 <?php 
     echo \demo\CodeDemo::create("
         This example demonstrates how to make dynamic dashboard with CustomBoard.
-        When user selects a customer and hit [View Demo], the selected customer number
+        When user selects a customer and hit [View Orders], the selected customer number
         will be transmitted to actionList, here data will be queried and the list.view.php
         will be rendered to client.
     ")
