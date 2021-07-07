@@ -25,7 +25,11 @@
                 <li>Beautiful single page application</li>
                 <li>Support lazy loading for widgets</li>
                 <li>Flexible three levels organized menus</li>
+                <li>Able to export to PDF, Excel, CSV and other formats</li>
+                <li>Support master-detail data model</li>
+                <li>Integrated with beautiful data visualization libraries: Google Chart, ChartJs, D3</li>
                 <li>Work with other frameworks like Laravel, Codeigniter, Yii2, Symfony</li>
+                
             </ol>
             <h1>Licenses & Pricing</h1>
             <p>
