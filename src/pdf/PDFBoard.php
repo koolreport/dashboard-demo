@@ -7,7 +7,7 @@ use \koolreport\dashboard\Dashboard;
 use \koolreport\dashboard\containers\Row;
 use \koolreport\dashboard\containers\Panel;
 
-use \koolreport\dashboard\inputs\DropDown;
+use \koolreport\dashboard\inputs\Dropdown;
 use \koolreport\dashboard\menu\MenuItem;
 use \koolreport\dashboard\Client;
 use \koolreport\dashboard\containers\Html;
@@ -18,7 +18,7 @@ class PDFBoard extends Dashboard
     {
         return [
             Panel::create()->sub([
-                DropDown::create("exportOptions")
+                Dropdown::create("exportOptions")
                 ->title("<i class='far fa-file-pdf'></i> Export To PDF")
                 ->items([
                     "Export Current Page"=>MenuItem::create()
