@@ -18,7 +18,11 @@ This repository contains sample dashboard application built on top of KoolReport
 8. Beautiful single page application
 9. Support lazy loading for widgets
 10. Flexible three levels organized menus
-11. Work with other frameworks like Laravel, CodeIgniter, Yii2, Symfony
+11. Able to export to PDF, Excel, CSV and other formats
+12. Support master-detail data model
+13. Integrated with beautiful data visualization libraries: Google Chart, ChartJs, D3
+14. Work with other frameworks like Laravel, CodeIgniter, Yii2, Symfony
+
 
 ## Demonstration
 
