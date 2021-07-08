@@ -29,8 +29,9 @@ class CodeDemo extends Widget
             $files = array_merge($files,glob($folder."/*.php"));
         }
         $fileNames = array_map(
-            function($file) {
-                return substr($file,strrpos($file,"/")+1);
+            function($file) use ($path) {
+                return str_replace($path."/","",$file);
+                //return substr($file,strrpos($file,"/")+1);
             },
             $files
         );
