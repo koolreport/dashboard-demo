@@ -84,27 +84,29 @@ class App extends \koolreport\dashboard\Application
                     "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube")->badge("NEW"),
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore")->badge("New"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
-                ])->badge("New"),
+                ]),
+
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
                     "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
                     "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
                     "Panel"=>panel\PanelBoard::create()->icon("fas fa-columns")->badge("New"),    
-                ])->badge("New"),
+                ]),
                 
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
                     "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
                     "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("New"),    
-                ])->badge("New"),
+                ]),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
                     "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
                     "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
                     "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
                 ]),
+                
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
                     "PDF"=>pdf\PDFBoard::create()->title("PDF Export")->icon("far fa-file-pdf")->badge("New"),
-                ])->badge("New"),            
+                ])->badge("New"),      
             ])
         ];
     }
