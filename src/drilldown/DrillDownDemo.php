@@ -76,7 +76,7 @@ class DrillDownDemo extends DrillDown
                     ->use(\koolreport\widgets\google\ColumnChart::class)
                     ->dataSource(function($params,$scope){
                         return AutoMaker::table("payments")
-                                ->select("paymentDate")->alias("thePaymentDate")
+                                ->max("paymentDate")->alias("thePaymentDate")
                                 ->selectRaw("DAY(paymentDate) as day")
                                 ->sum("amount")->alias("saleAmount")
                                 ->whereRaw("YEAR(paymentDate)=".$params["year"])
