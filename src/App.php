@@ -95,7 +95,8 @@ class App extends \koolreport\dashboard\Application
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
                     "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
                     "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("New"),    
+                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off")->badge("New"),
+                    "Dropdown"=>dropdown\DropdownBoard::create()->icon("far fa-list-alt")->badge("New"),    
                 ]),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
