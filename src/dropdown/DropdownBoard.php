@@ -207,7 +207,15 @@ class DropdownBoard extends Dashboard
                     ->cssStyle("margin-bottom:5px;")
                     ->cssClass("text-right"),
                 OrderTable::create(),
-            ])
+            ]),
+
+            \demo\CodeDemo::create("
+                Dropdown provide you with a small button which brings a list of actions (menu items) when clicked.
+                Dropdown can act as a small menu of actions for your another widget. Dropdown is very flexible in term of
+                apperance such as sizes, shapes etc. In above examples, we bring you the features of dropdown as well as
+                a real-life use case of it. On selection of Order Status, the table will bring out the orders with chosen status.
+                The color of dropdown and text will be changed according to status selected.
+            ")->raw(true)
         ];
     }
 }
