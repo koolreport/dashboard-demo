@@ -4076,6 +4076,31 @@ INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productSca
 ('S72_1253', 'Boeing X-32A JSF', 'Planes', '1:72', 'Motor City Art Classics', '10" Wingspan with retractable landing gears.Comes with pilot', 4857, '32.77', '49.66'),
 ('S72_3212', 'Pont Yacht', 'Ships', '1:72', 'Unimax Art Galleries', 'Measures 38 inches Long x 33 3/4 inches High. Includes a stand.\r\nMany extras including rigging, long boats, pilot house, anchors, etc. Comes with 2 masts, all square-rigged', 414, '33.30', '54.60');
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `displayname` varchar(50) NOT NULL,
+  `role` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `displayname`, `role`) VALUES
+(1, 'admin', 'admin', 'Admin', 'admin'),
+(2, 'demo', 'demo', 'Demo', 'user');
+
+
+
 --
 -- Indexes for dumped tables
 --
@@ -4135,6 +4160,13 @@ ALTER TABLE `products`
   ADD KEY `productLine` (`productLine`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+
+--
 -- Constraints for dumped tables
 --
 
@@ -4175,6 +4207,13 @@ ALTER TABLE `payments`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`productLine`) REFERENCES `productlines` (`productLine`);
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -45,13 +45,25 @@ class App extends \koolreport\dashboard\Application
                 ")
                 ->failedText("Wrong! Please use <b>demo</b> for both username and password!")
                 ->authenticate(function ($username, $password) {
-                    if (strtolower($username)=="demo" && $password=="demo") {
+
+                    //Look for user that have username and password 
+                    $users = AutoMaker::table("users")
+                                ->where("username",$username)
+                                ->where("password",$password)
+                                ->run();
+                                
+                    $user = $users->get(0);//Try to get first user, get associate array contain user information
+
+                    if($user!==null) {
+                        //Found a user, return User object
                         return User::create()
-                        ->id(1)
-                        ->name("Demo")
+                        ->id($user["id"])
+                        ->name($user["displayname"])
                         ->avatar("images/8.jpg")
-                        ->roles(["user"]);
+                        ->roles([$user["role"]]);                        
                     }
+
+                    //Other: fail to login, return null
                     return null;
                 });
     }
