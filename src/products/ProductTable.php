@@ -24,7 +24,7 @@ class ProductTable extends Table
         return true;
     }
 
-    public function exportedView($params)
+    public function exportedView()
     {
         return  Html::div()->class("text-center")->sub([
                     Html::h1($this->sibling("ProductByLine")->selectedProductLine())

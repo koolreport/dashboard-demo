@@ -28,7 +28,7 @@ class ProductTable extends Table
         return true;
     }
 
-    public function exportedView($params)
+    public function exportedView()
     {
         return  Html::div([
                     Html::h1("Product List")

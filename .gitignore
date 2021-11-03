@@ -2,6 +2,7 @@
 vendor
 logs
 storage
+images/products
 # Other files and folders
 auth.json
 
