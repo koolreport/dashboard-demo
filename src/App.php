@@ -73,6 +73,12 @@ class App extends \koolreport\dashboard\Application
         return [
             "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
             
+            "Admin Panel"=>Section::create()->sub([
+                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users"),
+                "Orders"=>admin\order\Order::create()->icon("far fa-copy"),
+                "Products"=>admin\product\Product::create()->icon("fas fa-car"),
+            ]),
+
             "KPI Dashboard"=>Section::create()->sub([
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car")->badge("New"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
@@ -122,11 +128,6 @@ class App extends \koolreport\dashboard\Application
                 ])->badge("New"),      
             ]),
             
-            "Admin Panel"=>Section::create()->sub([
-                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users"),
-                "Orders"=>admin\order\Order::create()->icon("far fa-copy"),
-                "Products"=>admin\product\Product::create()->icon("fas fa-car"),
-            ]),
         ];
     }
 

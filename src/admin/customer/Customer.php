@@ -9,6 +9,8 @@ use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Currency;
 use koolreport\dashboard\fields\ID;
 use koolreport\dashboard\fields\Text;
+use koolreport\dashboard\validators\NumericValidator;
+use koolreport\dashboard\validators\RequiredFieldValidator;
 
 class Customer extends Resource
 {
@@ -51,7 +53,11 @@ class Customer extends Resource
         return [
             ID::create("customerNumber")
                 ->searchable(true)
-                ->sortable(true),
+                ->sortable(true)
+                ->validators([
+                    RequiredFieldValidator::create(),
+                    NumericValidator::create(),
+                ]),
 
             Text::create("customerName")
                 ->searchable(true)
