@@ -67,6 +67,7 @@ class Order extends Resource
                 ->displayFormat("F j, Y"),
             
             Date::create("shippedDate")
+                ->allowNullValue(true)
                 ->displayFormat("F j, Y"),
 
             Badge::create("status")

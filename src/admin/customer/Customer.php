@@ -27,7 +27,7 @@ class Customer extends Resource
     protected function relations()
     {
         return [
-            HasMany::resource(Order::class)->link(["customerNumber"=>"customerNumber"])
+            HasMany::resource(Order::class)->link(["customerNumber"=>"customerNumber"])->title("Orders")
         ];
     }
 
