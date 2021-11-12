@@ -2,7 +2,9 @@
 
 namespace demo\admin\customer;
 
+use demo\admin\order\Order;
 use demo\AutoMaker;
+use koolreport\dashboard\admin\relations\HasMany;
 use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Currency;
 use koolreport\dashboard\fields\ID;
@@ -20,6 +22,13 @@ class Customer extends Resource
 
         $this->listScreen()->adminTable()
             ->tableStriped(true);
+    }
+
+    protected function relations()
+    {
+        return [
+            HasMany::resource(Order::class)->link(["customerNumber"=>"customerNumber"])
+        ];
     }
 
     protected function filters()

@@ -7,7 +7,10 @@ use demo\AutoMaker;
 use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Date;
 use koolreport\dashboard\fields\ID;
+use koolreport\dashboard\fields\Number;
 use koolreport\dashboard\fields\RelationLink;
+use koolreport\dashboard\fields\Text;
+use koolreport\dashboard\inputs\Select;
 
 class Order extends Resource
 {
@@ -16,23 +19,44 @@ class Order extends Resource
         $this->manageTable("orders")->inSource(AutoMaker::class);
     }
 
+    protected function query($query)
+    {
+        $query->leftJoin("customers","orders.customerNumber","=","customers.customerNumber")
+            ->select("orderNumber","orderDate","shippedDate","orders.customerNumber","customerName");
+        return $query;
+    }
+
     protected function fields()
     {
         return [
             ID::create("orderNumber"),
-            
-            Date::create("orderDate"),
-            
-            Date::create("shippedDate"),
-            
-            RelationLink::create()
-                ->resolveUsing(function($row){
-                    return $row["orderNumber"];
-                })
-                ->formatUsing(function($value, $row){
-                    
+
+            RelationLink::create("customerNumber")
+                ->label("Customer")
+                ->formatUsing(function($value,$row){
+                    return $row["customerName"];
                 })
                 ->linkTo(Customer::class)
+                ->inputWidget(
+                    Select::create()
+                    ->dataSource(function(){
+                        return AutoMaker::table("customers")
+                                ->select("customerNumber","customerName");
+                    })
+                    ->fields(function(){
+                        return [
+                            Number::create("customerNumber"),
+                            Text::create("customerName"),
+                        ];
+                    })
+                ),
+            
+            Date::create("orderDate")
+                ->displayFormat("F j, Y"),
+            
+            Date::create("shippedDate")
+                ->displayFormat("F j, Y"),
+            
         ];
     }
 }
