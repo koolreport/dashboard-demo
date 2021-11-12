@@ -73,7 +73,7 @@ class App extends \koolreport\dashboard\Application
         return [
             "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
             
-            "AutoMaker"=>Section::create()->sub([
+            "KPI Dashboard"=>Section::create()->sub([
                 "Products"=>products\ProductBoard::create()->icon("fa fa-car")->badge("New"),
                 "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
                 "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
@@ -120,7 +120,12 @@ class App extends \koolreport\dashboard\Application
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
                     "PDF"=>pdf\PDFBoard::create()->title("PDF Export")->icon("far fa-file-pdf")->badge("New"),
                 ])->badge("New"),      
-            ])
+            ]),
+            
+            "Admin Panel"=>Section::create()->sub([
+                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users"),
+                "Orders"=>admin\order\Order::create()->icon("fa fa-car"),
+            ]),
         ];
     }
 
