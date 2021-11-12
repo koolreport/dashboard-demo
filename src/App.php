@@ -125,6 +125,7 @@ class App extends \koolreport\dashboard\Application
             "Admin Panel"=>Section::create()->sub([
                 "Customers"=>admin\customer\Customer::create()->icon("fas fa-users"),
                 "Orders"=>admin\order\Order::create()->icon("fa fa-car"),
+                "Products"=>admin\product\Product::create()->icon("fa fa-car"),
             ]),
         ];
     }

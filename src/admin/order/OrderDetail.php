@@ -1,0 +1,42 @@
+<?php
+
+namespace demo\admin\order;
+
+use demo\admin\product\Product;
+use demo\AutoMaker;
+use koolreport\dashboard\admin\Resource;
+use koolreport\dashboard\fields\Currency;
+use koolreport\dashboard\fields\ID;
+use koolreport\dashboard\fields\Number;
+use koolreport\dashboard\fields\RelationLink;
+
+class OrderDetail extends Resource
+{
+    protected function onCreated()
+    {
+        $this->manageTable("orderdetails")->inSource(AutoMaker::class);
+    }
+
+    protected function query($query)
+    {
+        $query->join("products","orderdetails.productCode","=","products.productCode")
+            ->select("productName")
+            ->select("orderdetails.orderNumber","orderdetails.productCode")
+            ->select("quantityOrdered","priceEach");
+        return $query;
+    }
+
+    protected function fields()
+    {
+        return [
+            ID::create("orderNumber"),
+            RelationLink::create("productCode")->label("Product")
+                ->formatUsing(function($value, $row){
+                    return $row["productName"];
+                })
+                ->linkTo(Product::class),
+            Number::create("quantityOrdered"),
+            Currency::create("priceEach")->USD()->symbol(),
+        ];
+    }
+}
