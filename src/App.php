@@ -128,7 +128,8 @@ class App extends \koolreport\dashboard\Application
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
                     "PDF"=>pdf\PDFBoard::create()->title("PDF Export"),
                     "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("New")
-                ])->badge("New"),      
+                ])->badge("New"),
+                "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore"),
             ]),
             
         ];
