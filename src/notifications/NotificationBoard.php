@@ -18,7 +18,11 @@ class NotificationBoard extends Dashboard
                     RandomNoteButton::success("Show notes"),
                 ])
             ])
-            ->header("Notifications")
+            ->header("Notifications"),
+
+            \demo\CodeDemo::create("
+                This example shows you how to show type of notifications: Alert, Confirm and Note 
+            ")->raw(true)
         ];
     }
 }

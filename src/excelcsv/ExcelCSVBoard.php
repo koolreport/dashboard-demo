@@ -43,6 +43,10 @@ class ExcelCSVBoard extends Dashboard
                     ->csvExportable(true)
             ])
             ->header("Excel & CSV"),
+
+            \demo\CodeDemo::create("
+                    The example shows you how to export data of chart to Excel and CSV.
+            ")->raw(true)
         ];
     }
 }
