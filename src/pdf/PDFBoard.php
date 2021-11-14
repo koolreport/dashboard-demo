@@ -17,7 +17,7 @@ class PDFBoard extends Dashboard
     protected function widgets()
     {
         return [
-            Panel::create()->sub([
+            Panel::create()->header("PDF Export")->type("danger")->sub([
                 Dropdown::create("exportOptions")
                 ->title("<i class='far fa-file-pdf'></i> Export To PDF")
                 ->items([
