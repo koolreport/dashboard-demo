@@ -19,12 +19,13 @@ class Result extends Text
                 "Select2Demo",
                 "MultipleSelect2Demo",
                 "CheckBoxListDemo",
-                "RadioListDemo"
+                "RadioListDemo",
+                "TextAreaDemo"
             ];
             foreach($list as $name)
             {
                 $value = json_encode($this->sibling($name)->value());
-
+                $value = htmlentities($value);
                 $html .= "<div><b>$name</b> = $value</div>";
             }
             return $html;

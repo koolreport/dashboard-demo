@@ -56,6 +56,12 @@ class InputsBoard extends Dashboard
                             RadioListDemo::create(),
                         ]
                     ]),
+                    Row::create([
+                        [
+                            Html::label("TextArea")->style("font-weight:bold"),
+                            TextAreaDemo::create(),
+                        ]
+                    ]),
                     ButtonDemo::create()
                 ]),
                 Panel::create()->type("success")->header("<b>Result</b>")->width(1/3)->sub([
