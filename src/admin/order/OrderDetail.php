@@ -3,7 +3,7 @@
 namespace demo\admin\order;
 
 use demo\admin\product\Product;
-use demo\AutoMaker;
+use demo\AdminAutoMaker;
 use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Currency;
 use koolreport\dashboard\fields\ID;
@@ -14,7 +14,7 @@ class OrderDetail extends Resource
 {
     protected function onCreated()
     {
-        $this->manageTable("orderdetails")->inSource(AutoMaker::class);
+        $this->manageTable("orderdetails")->inSource(AdminAutoMaker::class);
         $this->listScreen()->relationTable()
             ->showRowActions(false);
     }

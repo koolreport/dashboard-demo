@@ -3,7 +3,7 @@
 namespace demo\admin\order;
 
 use demo\admin\customer\Customer;
-use demo\AutoMaker;
+use demo\AdminAutoMaker;
 use koolreport\dashboard\admin\relations\HasMany;
 use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Badge;
@@ -18,7 +18,7 @@ class Order extends Resource
 {
     protected function onCreated()
     {
-        $this->manageTable("orders")->inSource(AutoMaker::class);
+        $this->manageTable("orders")->inSource(AdminAutoMaker::class);
     }
 
     protected function query($query)
@@ -52,7 +52,7 @@ class Order extends Resource
                 ->inputWidget(
                     Select::create()
                     ->dataSource(function(){
-                        return AutoMaker::table("customers")
+                        return AdminAutoMaker::table("customers")
                                 ->select("customerNumber","customerName");
                     })
                     ->fields(function(){
@@ -91,7 +91,7 @@ class Order extends Resource
                 ->inputWidget(
                     Select::create()
                     ->dataSource(function(){
-                        return AutoMaker::table("orders")->select("status")->distinct();
+                        return AdminAutoMaker::table("orders")->select("status")->distinct();
                     })
                     ->fields(function(){
                         return [

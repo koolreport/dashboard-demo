@@ -2,7 +2,7 @@
 
 namespace demo\admin\customer;
 
-use demo\AutoMaker;
+use demo\AdminAutoMaker;
 use koolreport\dashboard\admin\filters\MultiSelect2Filter;
 
 class CountryFilter extends MultiSelect2Filter
@@ -15,7 +15,7 @@ class CountryFilter extends MultiSelect2Filter
 
     protected function options()
     {
-        return AutoMaker::table("customers")
+        return AdminAutoMaker::table("customers")
                 ->select("country")
                 ->distinct();
     }

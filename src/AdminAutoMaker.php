@@ -4,7 +4,7 @@ namespace demo;
 
 use \koolreport\dashboard\sources\MySQL;
 
-class AutoMakerEditable extends MySQL
+class AdminAutoMaker extends MySQL
 {
     protected function connection()
     {

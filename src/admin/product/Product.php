@@ -2,7 +2,7 @@
 
 namespace demo\admin\product;
 
-use demo\AutoMaker;
+use demo\AdminAutoMaker;
 use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\ID;
 use koolreport\dashboard\fields\Number;
@@ -13,7 +13,7 @@ class Product extends Resource
 {
     protected function onCreated()
     {
-        $this->manageTable("products")->inSource(AutoMaker::class);
+        $this->manageTable("products")->inSource(AutoMakerEditable::class);
     }
 
     protected function fields()
@@ -26,7 +26,7 @@ class Product extends Resource
                 ->inputWidget(
                     Select::create()
                     ->dataSource(function(){
-                        return AutoMaker::table("productlines")
+                        return AdminAutoMaker::table("productlines")
                                 ->select("productLine");
                     })
                     ->fields(function(){

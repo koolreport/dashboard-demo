@@ -3,7 +3,7 @@
 namespace demo\admin\customer;
 
 use demo\admin\order\Order;
-use demo\AutoMaker;
+use demo\AdminAutoMaker;
 use koolreport\dashboard\admin\relations\HasMany;
 use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Currency;
@@ -16,7 +16,7 @@ class Customer extends Resource
 {
     protected function onCreated()
     {
-        $this->manageTable("customers")->inSource(AutoMaker::class);
+        $this->manageTable("customers")->inSource(AdminAutoMaker::class);
 
         //Allow searchBox
         $this->listScreen()->searchBox()
