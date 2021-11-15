@@ -13,7 +13,7 @@ class Product extends Resource
 {
     protected function onCreated()
     {
-        $this->manageTable("products")->inSource(AutoMakerEditable::class);
+        $this->manageTable("products")->inSource(AdminAutoMaker::class);
     }
 
     protected function fields()
