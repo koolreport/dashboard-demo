@@ -47,7 +47,6 @@ class ValidatorBoard extends Dashboard
                     Button::create("submit")
                         ->cssClass("mt-2")
                         ->action("submit",function(){
-
                             //Keep form validator updated in all cases
                             $this->sibling("vaGroup")->update();
                             

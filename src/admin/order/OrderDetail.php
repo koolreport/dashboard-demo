@@ -15,6 +15,8 @@ class OrderDetail extends Resource
     protected function onCreated()
     {
         $this->manageTable("orderdetails")->inSource(AutoMaker::class);
+        $this->listScreen()->relationTable()
+            ->showRowActions(false);
     }
 
     protected function query($query)

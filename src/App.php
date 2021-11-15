@@ -76,9 +76,9 @@ class App extends \koolreport\dashboard\Application
             "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
             
             "Admin Panel"=>Section::create()->sub([
-                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users"),
-                "Orders"=>admin\order\Order::create()->icon("far fa-copy"),
-                "Products"=>admin\product\Product::create()->icon("fas fa-car"),
+                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users")->badge("NEW"),
+                "Orders"=>admin\order\Order::create()->icon("far fa-copy")->badge("NEW"),
+                "Products"=>admin\product\Product::create()->icon("fas fa-car")->badge("NEW"),
             ]),
 
             "KPI Dashboard"=>Section::create()->sub([
