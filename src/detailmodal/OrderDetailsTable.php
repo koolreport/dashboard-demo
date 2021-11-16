@@ -7,7 +7,7 @@ use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Date;
 use \koolreport\dashboard\fields\Badge;
 
-use\koolreport\dashboard\containers\Html;
+use \koolreport\dashboard\containers\Html;
 
 use \demo\AutoMaker;
 
@@ -57,7 +57,7 @@ class OrderDetailsTable extends Table
         ];
     }
 
-    public function exportedView($exportedParams)
+    public function exportedView()
     {
         $customerName = AutoMaker::table("customers")
                         ->select("customerName")
