@@ -72,4 +72,24 @@ class Customer extends Resource
                 ->sortable(true),
         ];
     }
+
+    /**
+     * The bottom is where you can put extra widgets,
+     * Here we just put the CodeDemo to show our demo code
+     * which is not important in your real application.
+     * @return array 
+     */
+    protected function bottom()
+    {
+        return [
+            \demo\CodeDemo::create("
+                Admin Panel is a new feature of Dashboard Framework which can help to contruct beautiful dashboard
+                admin panel. Setting up different views of your data, applying data search & filter, adding custom
+                actions on your data are all possible.
+                <p>
+                    This example demonstrates creating <code>Customer</code> resource to manage your customers table.
+                </p>
+            ")->raw(true)
+        ];
+    }
 }

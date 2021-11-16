@@ -15,7 +15,9 @@
             </p>
             <h1>Features</h1>
             <ol>
+                <li>Low-code orientation</li>
                 <li>Built-in authentication</li>
+                <li>Construct a beautiful admin panel</li>
                 <li>Allow authorization from application to data field</li>
                 <li>Work with MySQL, Postgres, SQL Server, SQLite</li>
                 <li>Support data from CSV, Excel files</li>
@@ -29,6 +31,7 @@
                 <li>Support master-detail data model</li>
                 <li>Integrated with beautiful data visualization libraries: Google Chart, ChartJs, D3</li>
                 <li>Work with other frameworks like Laravel, Codeigniter, Yii2, Symfony</li>
+                
                 
             </ol>
             <h1>Licenses & Pricing</h1>

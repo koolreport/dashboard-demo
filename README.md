@@ -8,20 +8,22 @@ This repository contains sample dashboard application built on top of KoolReport
 
 [KoolReport's Dashboard](https://www.koolreport.com/packages/dashboard) is a __PHP Dashboard Framework__ to facilitate dashboard construction. The framework is built on top of [KoolReport Pro](https://www.koolreport.com/get-koolreport-pro) which is general data reporting framework. Dashboard framework is added with following features:
 
-1. Built-in authentication
-2. Allow authorization from application to data field
-3. Work with MySQL, Postgres, SQL Server, SQLite
-4. Support data from CSV, Excel files
-5. Support Data Caching at widget level
-6. Support multi-languages
-7. Support Multi-themes
-8. Beautiful single page application
-9. Support lazy loading for widgets
-10. Flexible three levels organized menus
-11. Able to export to PDF, Excel, CSV and other formats
-12. Support master-detail data model
-13. Integrated with beautiful data visualization libraries: Google Chart, ChartJs, D3
-14. Work with other frameworks like Laravel, CodeIgniter, Yii2, Symfony
+1. Low-code orientation
+2. Built-in authentication
+3. Construct a beautiful admin panel
+4. Allow authorization from application to data field
+5. Work with MySQL, Postgres, SQL Server, SQLite
+6. Support data from CSV, Excel files
+7. Support Data Caching at widget level
+8. Support multi-languages
+9. Support Multi-themes
+10. Beautiful single page application
+11. Support lazy loading for widgets
+12. Flexible three levels organized menus
+13. Able to export to PDF, Excel, CSV and other formats
+14. Support master-detail data model
+15. Integrated with beautiful data visualization libraries: Google Chart, ChartJs, D3
+16. Work with other frameworks like Laravel, Codeigniter, Yii2, Symfony
 
 
 ## Demonstration
