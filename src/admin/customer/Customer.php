@@ -9,6 +9,7 @@ use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\Currency;
 use koolreport\dashboard\fields\ID;
 use koolreport\dashboard\fields\Text;
+use koolreport\dashboard\inputs\Select;
 use koolreport\dashboard\validators\NumericValidator;
 use koolreport\dashboard\validators\RequiredFieldValidator;
 
@@ -20,7 +21,8 @@ class Customer extends Resource
 
         //Allow searchBox
         $this->listScreen()->searchBox()
-        ->enabled(true);
+        ->enabled(true)
+        ->placeHolder("Search customers");
 
         $this->listScreen()->adminTable()
             ->tableStriped(true);
@@ -65,11 +67,40 @@ class Customer extends Resource
 
             Text::create("country")
                 ->searchable(true)
-                ->sortable(true),
+                ->sortable(true)
+                ->inputWidget(
+                    Select::create()
+                    ->dataSource(function(){
+                        return AdminAutoMaker::table("customers")->select("country")->distinct()->orderBy("country");
+                    })
+                    ->fields(function(){
+                        return [
+                            Text::create("country")
+                        ];
+                    })
+                ),
+
+            Text::create("city")
+                ->showOnIndex(false),
+            
+            Text::create("addressLine1")->label("Address")
+                ->showOnIndex(false),
+            
+            Text::create("phone")
+                ->showOnIndex(false),
 
             Currency::create("creditLimit")
                 ->USD()->symbol()
                 ->sortable(true),
+        ];
+    }
+
+    protected function highlights()
+    {
+        return [
+            TotalCustomers::create()->width(1/3),
+            TotalShippedOrders::create()->width(1/3),
+            TotalPayments::create()->width(1/3),
         ];
     }
 

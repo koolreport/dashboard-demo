@@ -102,6 +102,15 @@ class Order extends Resource
         ];
     }
 
+    protected function highlights()
+    {
+        return [
+            OrderQuantity::create(),
+            OrderAmount::create(),
+            OrderStatus::create(),
+        ];
+    }
+
     /**
      * The bottom is where you can put extra widgets,
      * Here we just put the CodeDemo to show our demo code
