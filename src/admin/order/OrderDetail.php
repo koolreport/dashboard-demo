@@ -16,7 +16,9 @@ class OrderDetail extends Resource
     {
         $this->manageTable("orderdetails")->inSource(AdminAutoMaker::class);
         $this->listScreen()->relationTable()
-            ->showRowActions(false);
+            ->showRowActions(false)
+            ->showFooter(true);
+        
     }
 
     protected function query($query)
@@ -24,7 +26,8 @@ class OrderDetail extends Resource
         $query->join("products","orderdetails.productCode","=","products.productCode")
             ->select("productName")
             ->select("orderdetails.orderNumber","orderdetails.productCode")
-            ->select("quantityOrdered","priceEach");
+            ->select("quantityOrdered","priceEach")
+            ->select("quantityOrdered * priceEach")->alias("total");
         return $query;
     }
 
@@ -38,7 +41,8 @@ class OrderDetail extends Resource
                 })
                 ->linkTo(Product::class),
             Number::create("quantityOrdered"),
-            Currency::create("priceEach")->USD()->symbol(),
+            Currency::create("priceEach")->USD()->symbol()->footerText("<b>Total:</b>"),
+            Currency::create("total")->USD()->symbol()->footer("sum"),
         ];
     }
 }

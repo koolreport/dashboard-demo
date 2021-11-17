@@ -38,6 +38,13 @@ class Order extends Resource
         ];
     }
 
+    protected function glasses()
+    {
+        return [
+            MostValuedOrders::create(),
+        ];
+    }
+
     protected function fields()
     {
         return [

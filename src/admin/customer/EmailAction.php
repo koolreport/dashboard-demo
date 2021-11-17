@@ -20,9 +20,13 @@ class EmailAction extends Action
     {
         $subject = $form->input("subject")->value();
         $content = $form->input("content")->value();
-         if($subject=="" && $content=="") {
-             return Note::danger("You have an empty email!","Not sent");
-         }
+        
+        if($subject=="" && $content=="") {
+            return Note::danger("You have an empty email!","Not sent");
+        }
+
+        // In real applications, we will send email here
+
         $numberOfPersons = $models->count();
         if($numberOfPersons==1) {
             return Note::success("The email has been sent to <b>".$models->get(0,"customerName")."</b>","Email sent!");
