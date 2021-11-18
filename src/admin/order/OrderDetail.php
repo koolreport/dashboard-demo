@@ -41,7 +41,7 @@ class OrderDetail extends Resource
                 })
                 ->linkTo(Product::class),
             Number::create("quantityOrdered"),
-            Currency::create("priceEach")->USD()->symbol()->footerText("<b>Total:</b>"),
+            Currency::create("priceEach")->USD()->symbol(),
             Currency::create("total")->USD()->symbol()->footer("sum"),
         ];
     }
