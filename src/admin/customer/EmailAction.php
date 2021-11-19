@@ -6,6 +6,8 @@ use koolreport\dashboard\admin\actions\Action;
 use koolreport\dashboard\inputs\TextArea;
 use koolreport\dashboard\inputs\TextBox;
 use koolreport\dashboard\notifications\Note;
+use koolreport\dashboard\validators\NumericValidator;
+use koolreport\dashboard\validators\RequiredFieldValidator;
 
 class EmailAction extends Action
 {
@@ -37,8 +39,12 @@ class EmailAction extends Action
     protected function form()
     {
         return Action::modalForm([
-            "Subject"=>TextBox::create("subject")->placeHolder("Subject"),
+            "Subject"=>TextBox::create("subject")
+                    ->placeHolder("Subject"),
             "Content"=>TextArea::create("content")->placeHolder("Content"),
+        ])
+        ->validators([
+            NumericValidator::create()->inputToValidate("subject")
         ])
         ->confirmButtonText("Send");
     }

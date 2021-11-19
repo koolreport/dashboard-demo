@@ -79,6 +79,7 @@ class App extends \koolreport\dashboard\Application
                 "Customers"=>admin\customer\Customer::create()->icon("fas fa-users")->badge("NEW"),
                 "Orders"=>admin\order\Order::create()->icon("far fa-copy")->badge("NEW"),
                 "Products"=>admin\product\Product::create()->icon("fas fa-car")->badge("NEW"),
+                "Users"=>admin\users\User::create(),
             ]),
 
             "KPI Dashboard"=>Section::create()->sub([
