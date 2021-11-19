@@ -6,6 +6,7 @@ use koolreport\dashboard\admin\actions\Action;
 use koolreport\dashboard\inputs\TextArea;
 use koolreport\dashboard\inputs\TextBox;
 use koolreport\dashboard\notifications\Note;
+use koolreport\dashboard\validators\RequiredFieldValidator;
 
 class EmailAction extends Action
 {
@@ -20,12 +21,9 @@ class EmailAction extends Action
     {
         $subject = $form->input("subject")->value();
         $content = $form->input("content")->value();
-        
-        if($subject=="" && $content=="") {
-            return Note::danger("You have an empty email!","Not sent");
-        }
 
         // In real applications, we will send email here
+        // We fake sending email and show notification
 
         $numberOfPersons = $models->count();
         if($numberOfPersons==1) {
@@ -39,6 +37,17 @@ class EmailAction extends Action
         return Action::modalForm([
             "Subject"=>TextBox::create("subject")->placeHolder("Subject"),
             "Content"=>TextArea::create("content")->placeHolder("Content"),
+        ])
+        ->validators([
+            //Subject required validation
+            RequiredFieldValidator::create()
+                ->inputToValidate("subject")
+                ->errorMessage("* Subject is required"),
+                
+            //Content required validation
+            RequiredFieldValidator::create()
+                ->inputToValidate("content")
+                ->errorMessage("* Content can not be empty"),
         ])
         ->confirmButtonText("Send");
     }
