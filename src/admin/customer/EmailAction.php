@@ -39,8 +39,7 @@ class EmailAction extends Action
     protected function form()
     {
         return Action::modalForm([
-            "Subject"=>TextBox::create("subject")
-                    ->placeHolder("Subject"),
+            "Subject"=>TextBox::create("subject")->placeHolder("Subject"),
             "Content"=>TextArea::create("content")->placeHolder("Content"),
         ])
         ->validators([
