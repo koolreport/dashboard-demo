@@ -16,6 +16,7 @@ use koolreport\dashboard\export\XLSXEngine;
 
 class App extends \koolreport\dashboard\Application
 {
+    use \koolreport\dashboard\languages\VN;
     protected function onCreated()
     {
         $this->debugMode(true)
