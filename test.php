@@ -1,3 +1,5 @@
 <?php
 
-echo ([]==null)?"yes":"no";
+
+$a=null;
+echo isset($a)?"yes":"no";
