@@ -5,7 +5,7 @@
             style="padding:0px;text-decoration: none;">
             <img class="img-fluid" 
                 style="border-radius:4px;width:100%;"
-                src="https://www.koolreport.com/assets/images/editor/c5/image61938a064d83d.svg" />
+                src="https://www.koolreport.com/assets/images/editor/c5/image619f517ec353d.png" />
         </a>
     </div>
     <div class="card">
