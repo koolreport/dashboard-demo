@@ -24,6 +24,8 @@ class Customer extends Resource
         ->enabled(true)
         ->placeHolder("Search customers");
 
+        $this->createScreen()->enabled(false);
+
         $this->listScreen()->adminTable()
             ->tableStriped(true);
     }
