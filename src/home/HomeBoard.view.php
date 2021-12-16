@@ -3,7 +3,7 @@
         <a  title="The best gift you could give yourself this festive season - Save your time & effort in any reporting tasks!" 
             href="https://www.koolreport.com/get-koolreport-pro#now" 
             style="padding:0px;text-decoration: none;">
-            <img src="https://www.koolreport.com/assets/images/editor/c5/image61bb26956c4da.svg" style="width:100%" />
+            <img src="https://www.koolreport.com/assets/images/editor/c5/image61bb55b9e931e.png" style="width:100%" />
         </a>
     </div>
     <div class="card">
