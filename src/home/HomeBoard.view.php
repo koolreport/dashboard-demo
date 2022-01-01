@@ -1,11 +1,4 @@
 <div class="homeboard">
-    <div class="mb-3">
-        <a  title="The best gift you could give yourself this festive season - Save your time & effort in any reporting tasks!" 
-            href="https://www.koolreport.com/get-koolreport-pro#now" 
-            style="padding:0px;text-decoration: none;">
-            <img src="https://www.koolreport.com/assets/images/editor/c5/image61cd786fb314b.png" style="width:100%" />
-        </a>
-    </div>
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
