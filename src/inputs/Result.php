@@ -20,6 +20,7 @@ class Result extends Text
                 "MultipleSelect2Demo",
                 "CheckBoxListDemo",
                 "RadioListDemo",
+                "BSelectDemo",
                 "TextAreaDemo"
             ];
             foreach($list as $name)

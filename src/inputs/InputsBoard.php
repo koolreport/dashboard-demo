@@ -58,6 +58,12 @@ class InputsBoard extends Dashboard
                     ]),
                     Row::create([
                         [
+                            Html::label("BSelect")->style("font-weight:bold"),
+                            BSelectDemo::create()
+                        ],
+                    ]),
+                    Row::create([
+                        [
                             Html::label("TextArea")->style("font-weight:bold"),
                             TextAreaDemo::create(),
                         ]
