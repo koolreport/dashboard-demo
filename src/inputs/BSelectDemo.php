@@ -11,6 +11,8 @@ class BSelectDemo extends BSelect
     protected function onCreated()
     {
         $this->multiple(true);
+        $listStore = $this->dataSource()->run();
+        $this->defaultValue($listStore->pluck("customerName"));
     }
 
     protected function dataSource()

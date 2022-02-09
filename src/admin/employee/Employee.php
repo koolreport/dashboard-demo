@@ -8,6 +8,7 @@ use koolreport\dashboard\admin\Resource;
 use koolreport\dashboard\fields\ID;
 use koolreport\dashboard\fields\RelationLink;
 use koolreport\dashboard\fields\Text;
+use koolreport\dashboard\fields\Link;
 
 class Employee extends Resource
 {
@@ -16,28 +17,20 @@ class Employee extends Resource
         $this->manageTable("employees")->inSource(AdminAutoMaker::class);
     }
 
-    protected function relations()
-    {
-        return [
-            HasMany::resource(Employee::class)
-            ->link(["employeeNumber"=>"reportsTo"])
-        ];
-    }
+    // protected function relations()
+    // {
+    //     return [
+    //         HasMany::resource(Employee::class)
+    //             ->link(["reportTo"=>"employeeNumber"])
+    //             ->title("Subs"),
+    //     ];
+    // }
 
     protected function query($query)
     {
-        // return AdminAutoMaker::table([
-        //     "employees",
-        //     "e2"=>"employees",
-        // ])
-        // ->whereColumn([
-        //     ["employees.reportsTo","=","e2.employeeNumber"]
-        // ])
-        // ->select("e2.firstName")->alias("reportsToFirstName")
-        // ->select("employees.reportsTo","employees.employeeNumber","employees.firstName","employees.lastName","employees.email");
         return $query->leftJoin("employees as et","et.employeeNumber","=","employees.reportsTo")
-                ->select("et.firstName")->alias("reportsToFirstName")
-                ->select("employees.reportsTo","employees.employeeNumber","employees.firstName","employees.lastName","employees.email");
+            ->select("et.firstName")->alias("reportsToFirstName")
+            ->select("employees.reportsTo","employees.employeeNumber","employees.firstName","employees.lastName","employees.email");
     }
 
     protected function fields()
@@ -46,7 +39,10 @@ class Employee extends Resource
             ID::create("employeeNumber"),
             Text::create("firstName"),
             Text::create("lastName"),
-            Text::create("email"),
+            Link::create("email")
+            ->formatUsing(function($value,$row){
+                return $row["firstName"];
+            }),
             RelationLink::create("reportsTo")
             ->formatUsing(function($value,$row){
                 return $row["reportsToFirstName"];
