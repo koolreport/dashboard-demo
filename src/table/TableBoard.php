@@ -39,6 +39,11 @@ class TableBoard extends Dashboard
             Panel::create()->type("success")->header("Extra Columns")->sub([
                 ExtraColumnsTable::create()->lazyLoading(true)
             ]),
+            Panel::create()->type("danger")->header("Row Select Table")->sub([
+                ViewSelectedRowButton::create()
+                    ->cssClass("mb-2"),
+                RowSelectTable::create(),
+            ]),
 
             \demo\CodeDemo::create("
                 Table is the most used visualization in a dashboard. Understanding the importance of it,
