@@ -10,9 +10,12 @@ use \demo\AutoMaker;
 
 class PaginatedTable extends Table
 {
-    protected function onInit()
+    protected function onCreated()
     {
-        $this->pageSize(5);
+        //Make default page size with 5 rows and allow users to change pagesize
+        $this
+            ->pageSize(5)
+            ->pageSizeOptions([5,10,20]);
     }
 
     protected function dataSource()
