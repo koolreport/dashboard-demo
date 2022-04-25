@@ -1,5 +1,5 @@
 <div class="homeboard">
-    <div class="mb-3">
+    <div class="mb-3" style="display:none;">
         <a  title="Get KoolReport Pro with 40% OFF." 
             href="https://www.koolreport.com/koolreport-pro-pricing#choose-your-license" 
             style="padding:0px;text-decoration: none;">
