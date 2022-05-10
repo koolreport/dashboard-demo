@@ -1,4 +1,13 @@
 <div class="homeboard">
+    <div class="mb-3">
+        <a  title="Click to get 30% OFF for KoolReport Pro!" 
+            href="https://www.koolreport.com/get-koolreport-pro?pcode=big#now" 
+            style="background-color:#1f1f1f;color:#c90000;padding:0px;text-decoration: none;">
+            <img class="img-fluid" 
+                style="border-radius:4px"
+                src="https://www.koolreport.com/assets/images/editor/c5/image627a177298d8d.png" />
+        </a>
+    </div>
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
