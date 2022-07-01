@@ -41,6 +41,9 @@ class ChartJsBoard extends Dashboard
                     RadarChartDemo::create()
                 ]),
             ]),
+            Panel::create()->header("<b>Timeline</b>")->sub([
+                TimelineDemo::create()
+            ]),
             \demo\CodeDemo::create("
             Alternatively to Google Chart library, CHartJs library is also your great choice for data visualization.
             ChartJs contains all common used charts like BarChart, PieCharts etc. Furthermore, the library contains
