@@ -13,6 +13,7 @@ use \koolreport\dashboard\ExportHandler;
 use \koolreport\dashboard\export\ChromeHeadlessio;
 use koolreport\dashboard\export\CSVEngine;
 use koolreport\dashboard\export\XLSXEngine;
+use koolreport\dashboard\menu\MegaMenu;
 
 class App extends \koolreport\dashboard\Application
 {
@@ -70,75 +71,28 @@ class App extends \koolreport\dashboard\Application
                 });
     }
 
-    protected function dashboards()
+
+    protected function pages()
     {
         return [
-            "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
-            
-            "Admin Panel"=>Section::create()->sub([
-                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users")->badge("NEW"),
-                "Orders"=>admin\order\Order::create()->icon("far fa-copy")->badge("NEW"),
-                "Products"=>admin\product\Product::create()->icon("fas fa-car")->badge("NEW"),
-            ]),
-
-            "KPI Dashboard"=>Section::create()->sub([
-                "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
-                "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
-                "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
-                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users"),
-                "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
-            ]),
-            
-            "Components"=>Section::create()->sub([
-                "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
-                "Custom Board"=>customboard\DemoCustomBoard::create()->icon("far fa-edit"),
-
-                "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
-                    "Table"=>table\TableBoard::create()->icon("fa fa-table"),
-                    "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-line"),
-                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area"),
-                    "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar"),
-                    "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie"),
-                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-border-all"),
-                    "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
-                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube"),
-                    "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore"),
-                    "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
-                ]),
-
-                "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
-                    "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
-                    "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
-                    "Panel"=>panel\PanelBoard::create()->icon("fas fa-columns"),    
-                ]),
-                
-                "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
-                    "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard")->badge("NEW"),
-                    "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off"),
-                    "Dropdown"=>dropdown\DropdownBoard::create()->icon("far fa-list-alt"),
-                    "Validators"=>validators\ValidatorBoard::create()->icon("far fa-keyboard")->badge("NEW"),    
-                ]),
-                
-                "DataSources"=>Group::create()->icon("fas fa-database")->sub([
-                    "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
-                    "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
-                    "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
-                ]),
-                
-                "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
-                    "PDF"=>pdf\PDFBoard::create()->title("PDF Export"),
-                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("New")
-                ])->badge("New"),
-                "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore")->badge("New"),
-            ]),
-            
+            PublicPage::create()->loginRequired(false),
+            MemberPage::create(),
         ];
     }
 
     protected function topMenu()
     {
         return [
+            "Mega Menu"=>MegaMenu::create()->sub([
+                "Page List"=>Group::create()->sub([
+                    "Public Page"=>MenuItem::create()->onClick(Client::navigate("App/PublicPage")),
+                    "Member Page"=>MenuItem::create()->onClick(Client::navigate("App/MemberPage")),
+                ]),
+                "Themes"=>Group::create()->sub([
+                    "Amazing Theme"=>MenuItem::create()->onClick(Client::navigate("App/PublicPage")),
+                    "AppStack Theme"=>MenuItem::create()->onClick(Client::navigate("App/PublicPage")),
+                ])
+            ]),
             "About"=>MenuItem::create()
                 ->href("https://www.koolreport.com/packages/dashboard")
                 ->target("_blank"),
