@@ -42,6 +42,7 @@ use koolreport\dashboard\pages\Main;
                     "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube"),
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
+                    "FlexView"=>flexview\FlexViewBoard::create()->icon("fas fa-sync"),    
                 ]),
 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
