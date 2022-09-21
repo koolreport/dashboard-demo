@@ -8,6 +8,10 @@ use koolreport\dashboard\pages\Main;
 
  class PublicPage extends Main
  {
+    protected function onCreated()
+    {
+        $this->loginRequired(false); // Do not need login to access
+    }
     protected function sidebar()
     {
         return [

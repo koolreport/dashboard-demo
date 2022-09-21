@@ -6,6 +6,10 @@ use koolreport\dashboard\pages\Main;
 
 class MemberPage extends Main
 {
+    protected function onCreated()
+    {
+        $this->loginRequired(true); //Require login to view content of page
+    }
     protected function sidebar()
     {
         return [

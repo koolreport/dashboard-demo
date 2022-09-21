@@ -24,6 +24,8 @@ use koolreport\dashboard\languages\EN;
 use koolreport\dashboard\languages\FR;
 use koolreport\dashboard\languages\TH;
 use koolreport\dashboard\languages\VN;
+use koolreport\dashboard\notifications\Alert;
+use koolreport\dashboard\notifications\Note;
 
 class App extends \koolreport\dashboard\Application
 {
@@ -109,8 +111,8 @@ class App extends \koolreport\dashboard\Application
     protected function pages()
     {
         return [
-            PublicPage::create()->loginRequired(false),
-            MemberPage::create()->loginRequired(true),
+            PublicPage::create(),
+            MemberPage::create(),
         ];
     }
 
