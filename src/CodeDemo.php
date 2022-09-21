@@ -90,8 +90,9 @@ class CodeDemo extends Widget
                 return $divs;
             }),
             Html::style("
-                div.code-demo div.tab-pane { min-height:300px; }
+                div.code-demo div.tab-pane { min-height:300px;padding: 1rem; }
                 div.code-demo div.tab-content { margin-top:-2px; }
+                div.code-demo a.nav-link { color:#9da0a8; }
                 div.code-demo a.nav-link.active { color:#1e8fc6; }
             ")->raw(true),
             Html::script("
