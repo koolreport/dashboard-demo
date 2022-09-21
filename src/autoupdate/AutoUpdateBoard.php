@@ -7,7 +7,7 @@ use \koolreport\dashboard\containers\Panel;
 
 class AutoUpdateBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->type("primary")->header("<b>AutoUpdate</b>")->sub([

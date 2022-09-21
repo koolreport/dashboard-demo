@@ -15,7 +15,7 @@ class CustomerListBoard extends Dashboard
     // be remained the same.
     use \koolreport\dashboard\TStatePersisted;
 
-    protected function widgets()
+    protected function content()
     {
         return [
             Html::h2("Customers"),

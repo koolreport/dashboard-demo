@@ -21,7 +21,7 @@ class CustomerDetailsBoard extends Dashboard
         return $this->params()["customerNumber"];
     }
 
-    protected function widgets()
+    protected function content()
     {
         $this->customerName = AutoMaker::table("customers")
                         ->where("customerNumber",$this->getCustomerNumber())

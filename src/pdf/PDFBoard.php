@@ -14,7 +14,7 @@ use \koolreport\dashboard\containers\Html;
 
 class PDFBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->header("PDF Export")->type("danger")->sub([

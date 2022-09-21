@@ -8,7 +8,7 @@ use koolreport\dashboard\Dashboard;
 
 class NotificationBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::primary([

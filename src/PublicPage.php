@@ -18,9 +18,9 @@ use koolreport\dashboard\pages\Main;
             "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
             
             "Admin Panel"=>Section::create()->sub([
-                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users")->badge("NEW"),
-                "Orders"=>admin\order\Order::create()->icon("far fa-copy")->badge("NEW"),
-                "Products"=>admin\product\Product::create()->icon("fas fa-car")->badge("NEW"),
+                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users"),
+                "Orders"=>admin\order\Order::create()->icon("far fa-copy"),
+                "Products"=>admin\product\Product::create()->icon("fas fa-car"),
             ]),
 
             "KPI Dashboard"=>Section::create()->sub([
@@ -35,7 +35,7 @@ use koolreport\dashboard\pages\Main;
                 "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
                 "Custom Board"=>customboard\DemoCustomBoard::create()->icon("far fa-edit"),
 
-                "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
+                "Widgets"=>Group::create()->icon("far fa-chart-bar")->badge("NEW")->sub([
                     "Table"=>table\TableBoard::create()->icon("fa fa-table"),
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-line"),
                     "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area"),
@@ -46,7 +46,7 @@ use koolreport\dashboard\pages\Main;
                     "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube"),
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
-                    "FlexView"=>flexview\FlexViewBoard::create()->icon("fas fa-sync"),    
+                    "FlexView"=>flexview\FlexViewBoard::create()->icon("fas fa-sync")->badge("NEW"),    
                 ]),
 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
@@ -56,11 +56,11 @@ use koolreport\dashboard\pages\Main;
                 ]),
                 
                 "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
-                    "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard")->badge("NEW"),
+                    "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard"),
                     "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
                     "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off"),
                     "Dropdown"=>dropdown\DropdownBoard::create()->icon("far fa-list-alt"),
-                    "Validators"=>validators\ValidatorBoard::create()->icon("far fa-keyboard")->badge("NEW"),    
+                    "Validators"=>validators\ValidatorBoard::create()->icon("far fa-keyboard"),    
                 ]),
                 
                 "DataSources"=>Group::create()->icon("fas fa-database")->sub([
@@ -71,9 +71,9 @@ use koolreport\dashboard\pages\Main;
                 
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
                     "PDF"=>pdf\PDFBoard::create()->title("PDF Export"),
-                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("New")
-                ])->badge("New"),
-                "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore")->badge("New"),
+                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("NEW"),
+                ]),
+                "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore"),
             ]),
             
         ];
