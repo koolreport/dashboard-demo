@@ -18,7 +18,7 @@ class CustomerDetailsBoard extends Dashboard
 
     public function getCustomerNumber()
     {
-        return $this->params()["customerNumber"];
+        return $this->params("customerNumber");
     }
 
     protected function content()

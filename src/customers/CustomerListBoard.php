@@ -13,7 +13,7 @@ class CustomerListBoard extends Dashboard
     // so when we come back to Dashboard again, it will resume to
     // exact state when we left, all selection, table paging will
     // be remained the same.
-    use \koolreport\dashboard\TStatePersisted;
+    // use \koolreport\dashboard\TStatePersisted;
 
     protected function content()
     {
