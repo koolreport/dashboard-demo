@@ -4,6 +4,9 @@ namespace demo\flexview;
 
 use demo\AutoMaker;
 use koolreport\dashboard\Client;
+use koolreport\dashboard\fields\Currency;
+use koolreport\dashboard\fields\Number;
+use koolreport\dashboard\fields\Text;
 use koolreport\dashboard\widgets\Table;
 
 class CustomerTable extends Table
@@ -13,6 +16,18 @@ class CustomerTable extends Table
     {
         return AutoMaker::table("customers");
     }
+
+    protected function fields()
+    {
+        return [
+            Number::create("customerNumber"),
+            Text::create("customerName"),
+            Text::create("phone"),
+            Text::create("country"),
+            Currency::create("creditLimit")->USD()->symbol(),
+        ];
+    }
+
     protected function onCreated()
     {
         $this
