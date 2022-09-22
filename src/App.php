@@ -23,9 +23,6 @@ use koolreport\dashboard\languages\DE;
 use koolreport\dashboard\languages\EN;
 use koolreport\dashboard\languages\FR;
 use koolreport\dashboard\languages\TH;
-use koolreport\dashboard\languages\VN;
-use koolreport\dashboard\notifications\Alert;
-use koolreport\dashboard\notifications\Note;
 
 class App extends \koolreport\dashboard\Application
 {
