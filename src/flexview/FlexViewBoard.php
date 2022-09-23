@@ -39,7 +39,7 @@ class FlexViewBoard extends Dashboard
                                 Button::create("backButton")
                                 ->text(Lang::t("Back"))
                                 ->action("submit",function($request, $response){
-                                    $this->sibling("myFlexView")->showView("customers");
+                                    $this->sibling("myFlexView")->updateEffect("none")->showView("customers");
                                 }),
                             ]) 
                         ]),
@@ -59,7 +59,7 @@ class FlexViewBoard extends Dashboard
                                 Button::create("backButtonOrderDetail")
                                 ->text(Lang::t("Back"))
                                 ->action("submit",function($request, $response) use ($params){
-                                    $this->sibling("myFlexView")->showView("orders",$params);
+                                    $this->sibling("myFlexView")->updateEffect("none")->showView("orders",$params);
                                 }),
                             ]) 
                         ]),

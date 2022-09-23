@@ -25,7 +25,7 @@ class OrderTable extends Table
 
     protected function actionRowSelect($request, $response)
     {
-        $this->sibling("myFlexView")->showView("orderdetails",$request->params());
+        $this->sibling("myFlexView")->updateEffect("none")->showView("orderdetails",$request->params());
     }
 
     protected function dataSource()

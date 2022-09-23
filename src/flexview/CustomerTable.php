@@ -44,6 +44,6 @@ class CustomerTable extends Table
     }
 
     protected function actionRowSelect($request, $response) {
-        $this->sibling("myFlexView")->showView("orders",$request->params());
+        $this->sibling("myFlexView")->updateEffect("none")->showView("orders",$request->params());
     }
 }
