@@ -8,7 +8,7 @@ use \koolreport\dashboard\containers\Panel;
 
 class MetricsBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->header("Value Metrics")->sub([

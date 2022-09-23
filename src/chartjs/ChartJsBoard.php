@@ -10,7 +10,7 @@ use \koolreport\dashboard\widgets\Text;
 
 class ChartJsBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create([
@@ -40,6 +40,9 @@ class ChartJsBoard extends Dashboard
                 Panel::create()->header("<b>Radar</b>")->sub([
                     RadarChartDemo::create()
                 ]),
+            ]),
+            Panel::create()->header("<b>Timeline</b>")->sub([
+                TimelineDemo::create()
             ]),
             \demo\CodeDemo::create("
             Alternatively to Google Chart library, CHartJs library is also your great choice for data visualization.

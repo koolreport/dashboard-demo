@@ -6,6 +6,7 @@ use demo\admin\order\Order;
 use demo\AdminAutoMaker;
 use koolreport\dashboard\admin\actions\DeleteAction;
 use koolreport\dashboard\admin\actions\DetailAction;
+use koolreport\dashboard\admin\actions\InlineEditAction;
 use koolreport\dashboard\admin\actions\UpdateAction;
 use koolreport\dashboard\admin\relations\HasMany;
 use koolreport\dashboard\admin\Resource;
@@ -58,7 +59,8 @@ class Customer extends Resource
         return [
             EmailAction::create()->showOnDetail(true),
             DetailAction::create(),
-            UpdateAction::create(),
+            UpdateAction::create()->showOnTable(false),
+            InlineEditAction::create(),
             DeleteAction::create(),
         ];
     }

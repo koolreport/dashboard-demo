@@ -15,7 +15,7 @@ use koolreport\dashboard\validators\ValidationGroup;
 
 class ValidatorBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create([

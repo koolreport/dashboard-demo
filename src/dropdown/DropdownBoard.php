@@ -14,7 +14,7 @@ use \koolreport\dashboard\inputs\Dropdown;
 
 class DropdownBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create([

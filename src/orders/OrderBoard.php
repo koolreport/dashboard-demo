@@ -9,7 +9,7 @@ use \koolreport\dashboard\containers\Html;
 
 class OrderBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create()->sub([

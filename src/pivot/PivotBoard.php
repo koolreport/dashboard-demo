@@ -8,7 +8,7 @@ use \koolreport\dashboard\containers\Html;
 
 class PivotBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->type("danger")->header("<b>PivotTable</b>")->sub([

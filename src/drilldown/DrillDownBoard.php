@@ -12,7 +12,7 @@ use \koolreport\dashboard\widgets\Text;
 class DrillDownBoard extends Dashboard
 {
 
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->header("<b>DrillDown</b>")->sub([

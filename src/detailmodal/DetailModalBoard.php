@@ -16,7 +16,7 @@ use \koolreport\dashboard\containers\Modal;
 
 class DetailModalBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create([

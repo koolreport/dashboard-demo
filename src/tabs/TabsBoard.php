@@ -11,7 +11,7 @@ use \koolreport\dashboard\containers\Tabs;
 
 class TabsBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Tabs::create()

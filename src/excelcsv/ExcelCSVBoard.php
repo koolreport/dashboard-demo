@@ -12,7 +12,7 @@ use koolreport\dashboard\inputs\Dropdown;
 
 class ExcelCSVBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::success([
