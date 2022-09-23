@@ -26,7 +26,7 @@ class LineChartDemo extends LineChart
             FROM
                 payments
             WHERE
-                YEAR(paymentDate)=2020
+                YEAR(paymentDate)=2022
             GROUP BY month, DATE_FORMAT(paymentDate,'%m')
             ORDER BY DATE_FORMAT(paymentDate,'%m') asc
         ");

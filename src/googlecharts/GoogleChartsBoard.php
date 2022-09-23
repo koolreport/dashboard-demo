@@ -10,7 +10,7 @@ use \koolreport\dashboard\widgets\Text;
 
 class GoogleChartsBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create([

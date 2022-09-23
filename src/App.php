@@ -2,17 +2,27 @@
 
 namespace demo;
 
-use \koolreport\dashboard\menu\Section;
+
 use \koolreport\dashboard\menu\Group;
 use \koolreport\dashboard\pages\Login;
 use \koolreport\dashboard\User;
 
-use \koolreport\dashboard\menu\MenuItem;
 use \koolreport\dashboard\Client;
 use \koolreport\dashboard\ExportHandler;
 use \koolreport\dashboard\export\ChromeHeadlessio;
 use koolreport\dashboard\export\CSVEngine;
 use koolreport\dashboard\export\XLSXEngine;
+
+use koolreport\dashboard\menu\MegaMenu;
+use \koolreport\dashboard\menu\MenuItem;
+
+use koolreport\amazing\dashboard\Amazing;
+use koolreport\appstack\dashboard\AppStack;
+use koolreport\dashboard\Cookie;
+use koolreport\dashboard\languages\DE;
+use koolreport\dashboard\languages\EN;
+use koolreport\dashboard\languages\FR;
+use koolreport\dashboard\languages\TH;
 
 class App extends \koolreport\dashboard\Application
 {
@@ -35,6 +45,10 @@ class App extends \koolreport\dashboard\Application
         ")
         ->js("//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js")
         ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css");
+
+        $themeName = Cookie::themeName();
+        $themeName = ($themeName!==null)?$themeName:"Amazing";
+        $this->setTheme($themeName);
     }
 
     protected function login()
@@ -70,75 +84,57 @@ class App extends \koolreport\dashboard\Application
                 });
     }
 
-    protected function dashboards()
+    /**
+     * Provide list of languages for user to choose
+     * @return array 
+     */
+    protected function languages()
     {
         return [
-            "Home"=>home\HomeBoard::create()->icon("fa fa-home"),
-            
-            "Admin Panel"=>Section::create()->sub([
-                "Customers"=>admin\customer\Customer::create()->icon("fas fa-users")->badge("NEW"),
-                "Orders"=>admin\order\Order::create()->icon("far fa-copy")->badge("NEW"),
-                "Products"=>admin\product\Product::create()->icon("fas fa-car")->badge("NEW"),
-            ]),
-
-            "KPI Dashboard"=>Section::create()->sub([
-                "Products"=>products\ProductBoard::create()->icon("fa fa-car"),
-                "Orders"=>orders\OrderBoard::create()->icon("fa fa-chart-line"),
-                "Payments"=>payments\PaymentBoard::create()->icon("fa fa-hand-holding-usd"),
-                "Customers"=>customers\CustomerListBoard::create()->icon("fa fa-users"),
-                "CustomerDetails"=>customers\CustomerDetailsBoard::create()->hidden(true),
-            ]),
-            
-            "Components"=>Section::create()->sub([
-                "Metrics"=>metrics\MetricsBoard::create()->icon("fa fa-battery-full"),
-                "Custom Board"=>customboard\DemoCustomBoard::create()->icon("far fa-edit"),
-
-                "Widgets"=>Group::create()->icon("far fa-chart-bar")->sub([
-                    "Table"=>table\TableBoard::create()->icon("fa fa-table"),
-                    "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-line"),
-                    "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area"),
-                    "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar"),
-                    "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie"),
-                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-border-all"),
-                    "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
-                    "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-cube"),
-                    "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore"),
-                    "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
-                ]),
-
-                "Containers"=>Group::create()->icon("fas fa-boxes")->sub([
-                    "Modal"=>modal\ModalBoard::create()->icon("far fa-window-maximize"),
-                    "Tabs"=>tabs\TabsBoard::create()->icon("fab fa-mendeley"),
-                    "Panel"=>panel\PanelBoard::create()->icon("fas fa-columns"),    
-                ]),
-                
-                "Inputs"=>Group::create()->icon("far fa-keyboard")->sub([
-                    "Inputs"=>inputs\InputsBoard::create()->icon("far fa-keyboard")->badge("NEW"),
-                    "Buttons"=>buttons\ButtonBoard::create()->icon("fas fa-square"),
-                    "Toggle"=>toggle\ToggleBoard::create()->icon("fas fa-toggle-off"),
-                    "Dropdown"=>dropdown\DropdownBoard::create()->icon("far fa-list-alt"),
-                    "Validators"=>validators\ValidatorBoard::create()->icon("far fa-keyboard")->badge("NEW"),    
-                ]),
-                
-                "DataSources"=>Group::create()->icon("fas fa-database")->sub([
-                    "Caching"=>cache\CacheBoard::create()->icon("fas fa-bolt"),
-                    "CSV Source"=>csvsource\CSVSourceBoard::create()->icon("fas fa-file-csv"),
-                    "Excel Source"=>excelsource\ExcelSourceBoard::create()->icon("far fa-file-excel"),    
-                ]),
-                
-                "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
-                    "PDF"=>pdf\PDFBoard::create()->title("PDF Export"),
-                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("New")
-                ])->badge("New"),
-                "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore")->badge("New"),
-            ]),
-            
+            EN::create(),
+            DE::create(),
+            FR::create(),
+            TH::create(),
         ];
     }
 
+
+    /**
+     * Return list of all pages.
+     * Here will have two pages: PublicPage which user can access freely
+     * and MemberPage which will required user to login access
+     * @return array 
+     */
+    protected function pages()
+    {
+        return [
+            PublicPage::create(),
+            MemberPage::create(),
+        ];
+    }
+
+    /**
+     * Return the top menu. By providing the method on app,
+     * we will use the same top menu on every pages
+     * @return array 
+     */
     protected function topMenu()
     {
         return [
+            "Mega Menu"=>MegaMenu::create()->sub([
+                "Pages"=>Group::create()->sub([
+                    "Public"=>MenuItem::create()
+                        ->icon("fa fa-globe")
+                        ->onClick(Client::navigate("App/PublicPage")),
+                    "Member"=>MenuItem::create()
+                        ->icon("fa fa-lock")
+                        ->onClick(Client::navigate("App/MemberPage")),
+                ]),
+                "Themes"=>Group::create()->sub([
+                    "Amazing"=>MenuItem::create()->onClick(Client::app()->action("changeTheme",["name"=>"Amazing"])),
+                    "AppStack"=>MenuItem::create()->onClick(Client::app()->action("changeTheme",["name"=>"AppStack"])),
+                ])
+            ]),
             "About"=>MenuItem::create()
                 ->href("https://www.koolreport.com/packages/dashboard")
                 ->target("_blank"),
@@ -148,6 +144,45 @@ class App extends \koolreport\dashboard\Application
         ];
     }
 
+    /**
+     * This action will get the user request of changing theme from client
+     * it will set the theme as well as save the current theme selection
+     * to cookie. Last, it will reload page to get theme changed.
+     * @param mixed $request 
+     * @param mixed $response 
+     * @return void 
+     */
+    protected function actionChangeTheme($request, $response)
+    {
+        $themeName = $request->params("name");
+        $this->setTheme($themeName);
+        Cookie::themeName($themeName);
+        $response->runScript("location.reload()");
+    }
+
+    /**
+     * Just a function to set correct theme for App
+     * from the name of theme
+     * @param mixed $name 
+     * @return void 
+     */
+    protected function setTheme($name)
+    {
+        switch($name) {
+            case "Amazing":
+                $this->theme(Amazing::create());
+                break;
+            case "AppStack":
+                $this->theme(AppStack::create());
+                break;
+        }
+    }
+
+    /**
+     * Account menu that will appear when user login
+     * We will use the same account menu on all pages
+     * @return array 
+     */
     protected function accountMenu()
     {
         return [

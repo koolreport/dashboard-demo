@@ -12,7 +12,7 @@ use \koolreport\dashboard\containers\Html;
 
 class PanelBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         $shortLorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <br/><br/> Someone famous in <i>Source Title</i>";
         $longLorem = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.";

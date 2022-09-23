@@ -9,7 +9,7 @@ use \koolreport\dashboard\containers\Html;
 
 class KWidgetsBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
 

@@ -12,7 +12,7 @@ use \koolreport\dashboard\inputs\Button;
 
 class ModalBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Row::create([

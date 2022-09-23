@@ -10,7 +10,7 @@ use \koolreport\dashboard\containers\Html;
 
 class TableBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->type("primary")->header("Basic Columns")->sub([

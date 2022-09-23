@@ -12,7 +12,7 @@ use \koolreport\dashboard\Client;
 
 class CacheBoard extends Dashboard
 {
-    protected function widgets()
+    protected function content()
     {
         return [
             Panel::create()->header("<b>Control Panel</b>")->sub([
