@@ -52,7 +52,7 @@ class OrderDetailsTable extends Table
             }),
             Date::create("shippedDate")
                 ->formatUsing(function($value) {
-                    return ($value!==null)?$this->formatValue($value):"No date";
+                    return ($value!==null)?$this->defaultFormatValue($value):"No date";
                 }),        
         ];
     }
