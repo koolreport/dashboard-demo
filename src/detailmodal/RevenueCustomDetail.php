@@ -17,7 +17,7 @@ class RevenueCustomDetail extends Revenue
         $modal = Modal::create();
         $dataView = $this->dataView();
         return $modal
-        ->title("AutoMaker's Revenue in 2020")
+        ->title("AutoMaker's Revenue in 2022")
         ->type("warning")
         ->size("lg")
         ->sub([
