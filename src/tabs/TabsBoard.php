@@ -15,7 +15,7 @@ class TabsBoard extends Dashboard
     {
         return [
             Tabs::create()
-                ->addTab("<i class='fa fa-chart-line'></i> Revenue 2020",[
+                ->addTab("<i class='fa fa-chart-line'></i> Revenue 2022",[
                     \demo\googlecharts\LineChartDemo::create()
                 ])
                 ->addTab("<i class='fa fa-chart-bar'></i> Top paid customers",[
