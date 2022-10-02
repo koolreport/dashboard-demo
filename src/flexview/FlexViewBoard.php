@@ -36,10 +36,10 @@ class FlexViewBoard extends Dashboard
                         Row::create([
                             Html::h3("Orders of $customerName(#$customerNumber)"),
                             Html::div()->class("text-right")->sub([
-                                Button::create("backButton")
+                                Button::create("ordersBackButton")
                                 ->text(Lang::t("Back"))
                                 ->action("submit",function($request, $response){
-                                    $this->sibling("myFlexView")->updateEffect("none")->showView("customers");
+                                    $this->sibling("myFlexView")->historyBack();
                                 }),
                             ]) 
                         ]),
@@ -56,10 +56,10 @@ class FlexViewBoard extends Dashboard
                         Row::create([
                             Html::h3("Detail of order #$orderNumber of $customerName"),
                             Html::div()->class("text-right")->sub([
-                                Button::create("backButtonOrderDetail")
+                                Button::create("orderDetailsBackButton")
                                 ->text(Lang::t("Back"))
-                                ->action("submit",function($request, $response) use ($params){
-                                    $this->sibling("myFlexView")->updateEffect("none")->showView("orders",$params);
+                                ->action("submit",function($request, $response){
+                                    $this->sibling("myFlexView")->historyBack();
                                 }),
                             ]) 
                         ]),
@@ -70,7 +70,8 @@ class FlexViewBoard extends Dashboard
                     ];
                 }
             ])
-            ->initialView("customers"),
+            ->initialView("customers")
+            ->updateEffect("none"),
 
             \demo\CodeDemo::create("
                     The example show you how to use FlexView to create a simple drilldown. By clicking to row of table, you will go to details
