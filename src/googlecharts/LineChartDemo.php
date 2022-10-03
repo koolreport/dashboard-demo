@@ -13,7 +13,7 @@ class LineChartDemo extends LineChart
 {
     protected function onInit()
     {
-        $this->title("AutoMaker's Revenue in 2020")
+        $this->title("AutoMaker's Revenue in 2022")
         ->colorScheme(ColorList::random())
         ->height("360px");
     }
