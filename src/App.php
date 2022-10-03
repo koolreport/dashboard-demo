@@ -46,6 +46,15 @@ class App extends \koolreport\dashboard\Application
         ->js("//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js")
         ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css");
 
+    }
+
+    /**
+     * This event is called when application is initiated
+     * We will look for the theme from cookie to set
+     * @return void 
+     */
+    protected function onInit()
+    {
         $themeName = Cookie::themeName();
         $themeName = ($themeName!==null)?$themeName:"Amazing";
         $this->setTheme($themeName);
