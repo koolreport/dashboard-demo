@@ -1,13 +1,11 @@
 <div class="homeboard">
-    <div class="mb-3" style="display:none;">
-        <a  title="Get KoolReport Pro with 40% OFF." 
-            href="https://www.koolreport.com/koolreport-pro-pricing#choose-your-license" 
+    <div class="mb-3">
+        <a  title="Get 30 % OFF for KoolReport Pro and Dashboard Framework" 
+            href="https://www.koolreport.com/koolreport-pro-pricing?pcode=halloween#choose-your-license" 
             style="padding:0px;text-decoration: none;">
-            <img class="img-fluid" 
-                style="border-radius:4px;width:100%;"
-                src="https://www.koolreport.com/assets/images/editor/c5/image619f517ec353d.png" />
+            <img class="img-fluid rounded" src="https://www.koolreport.com/assets/images/editor/c5/image63578c7f0f999.png"/>
         </a>
-    </div>
+    </div>    
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
