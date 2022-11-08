@@ -1,4 +1,5 @@
 <div class="homeboard">
+<<<<<<< HEAD
     <div class="mb-3">
         <a  title="Get 30 % OFF for KoolReport Pro and Dashboard Framework" 
             href="https://www.koolreport.com/koolreport-pro-pricing?pcode=halloween#choose-your-license" 
@@ -6,6 +7,8 @@
             <img class="img-fluid rounded" src="https://www.koolreport.com/assets/images/editor/c5/image63578c7f0f999.png"/>
         </a>
     </div>    
+=======
+>>>>>>> main
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
