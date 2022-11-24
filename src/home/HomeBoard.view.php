@@ -1,4 +1,11 @@
 <div class="homeboard">
+    <div class="mb-3">
+        <a  title="Special Sale 40% OFF for KoolReport Pro and Dashboard Framework" 
+            href="https://www.koolreport.com/get-koolreport-pro?pcode=blackfriday2022#now" 
+            style="padding:0px;text-decoration: none;">
+            <img class="img-fluid rounded" src="https://www.koolreport.com/assets/images/editor/c5/image637f00469093a.png"/>
+        </a>
+    </div>
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
