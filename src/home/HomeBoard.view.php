@@ -1,4 +1,12 @@
 <div class="homeboard">
+    <div class="mb-3">
+        <a  title="Merry Christmas with 40% OFF for KoolReport Pro!" 
+            href="https://www.koolreport.com/koolreport-pro-pricing?pcode=merrychristmas#choose-your-license" 
+            style="padding:0px;text-decoration: none;">
+            <img class="img-fluid rounded d-none d-sm-block" src="https://www.koolreport.com/assets/images/editor/c5/image639974206222c.png"/>
+            <img class="img-fluid rounded d-block d-sm-none" src="https://www.koolreport.com/assets/images/editor/c5/image6399743ccbcd9.png"/>
+        </a>
+    </div>
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
