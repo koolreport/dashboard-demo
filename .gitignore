@@ -5,6 +5,7 @@ storage
 images/products
 # Other files and folders
 auth.json
+tmp
 
 # Executables
 *.exe
