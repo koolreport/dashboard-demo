@@ -18,6 +18,39 @@ class LineChartDemo extends LineChart
         ->height("360px");
     }
 
+    protected function excelSetting()
+    {
+        // return [];
+
+        $styleArray = [
+            'font' => [
+                'name' => 'Calibri', //'Verdana', 'Arial'
+                'size' => 30,
+                'bold' => true,
+                'italic' => true,
+                'underline' => 'none', //'double', 'doubleAccounting', 'single', 'singleAccounting'
+                'strikethrough' => FALSE,
+                'superscript' => false,
+                'subscript' => false,
+                'color' => [
+                    'rgb' => '808080',
+                    'argb' => 'FF000000',
+                ]
+            ],
+        ];
+
+        return [
+            "excelStyle" => [
+                "header" => function($colName) use ($styleArray) { 
+                    return $styleArray; 
+                },
+                "cell" => function($colName, $value, $row) use ($styleArray)  { 
+                    return $styleArray; 
+                },
+            ]
+        ];
+    }
+
     protected function dataSource()
     {
         return AutoMaker::rawSQL("

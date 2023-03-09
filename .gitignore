@@ -6,6 +6,7 @@ images/products
 # Other files and folders
 auth.json
 .DS_Store
+tmp
 
 # Executables
 *.exe
