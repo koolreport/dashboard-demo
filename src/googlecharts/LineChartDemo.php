@@ -47,9 +47,16 @@ class LineChartDemo extends LineChart
                 "cell" => function($colName, $value, $row) use ($styleArray)  { 
                     return $styleArray; 
                 },
-            ]
+            ],
         ];
     }
+
+    // protected function onExporting($params)
+    // {
+    //     if($params["dataOnly"]===true) {
+    //     }
+    //     return true;
+    // }
 
     protected function dataSource()
     {
