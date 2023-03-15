@@ -16,7 +16,7 @@ class OrderDetail extends Resource
     {
         $this->manageTable("orderdetails")->inSource(AdminAutoMaker::class);
         $this->listScreen()->relationTable()
-            ->showRowActions(false)
+            ->rowActionsField(null)
             ->showFooter(true);
         
     }
