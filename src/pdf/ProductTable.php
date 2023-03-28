@@ -18,7 +18,8 @@ class ProductTable extends Table
         $this
         ->showFooter(true)
         ->pageSize(10)
-        ->pdfExportable(true); //Turn on pdf exportable for table
+        // ->pdfExportable(true) //Turn on pdf exportable for table
+        ; 
     }
 
     protected function onExporting($params)

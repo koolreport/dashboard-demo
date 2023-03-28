@@ -9,6 +9,7 @@ use \koolreport\dashboard\User;
 
 use \koolreport\dashboard\Client;
 use \koolreport\dashboard\ExportHandler;
+use \koolreport\dashboard\export\LocalExport;
 use \koolreport\dashboard\export\ChromeHeadlessio;
 use koolreport\dashboard\export\CSVEngine;
 use koolreport\dashboard\export\XLSXEngine;
@@ -29,7 +30,7 @@ class App extends \koolreport\dashboard\Application
     protected function onCreated()
     {
         $this->debugMode(true)
-        ->footerLeft("
+            ->footerLeft("
             <a class='btn btn-primary btn-sm' target='_blank' href='https://github.com/koolreport/dashboard-demo'>
                 <i class='fab fa-github'></i> SourceCode
             </a>
@@ -40,12 +41,11 @@ class App extends \koolreport\dashboard\Application
                 <i class='fa fa-shopping-cart'></i> Purchase
             </a>
         ")
-        ->footerRight("
+            ->footerRight("
             <div class='d-none d-md-block d-lg-block'>Powered by <a target='_blank' href='https://www.koolreport.com'>KoolReport</a></div>
         ")
-        ->js("//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js")
-        ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css");
-
+            ->js("//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js")
+            ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css");
     }
 
     /**
@@ -56,41 +56,41 @@ class App extends \koolreport\dashboard\Application
     protected function onInit()
     {
         $themeName = Cookie::themeName();
-        $themeName = ($themeName!==null)?$themeName:"Amazing";
+        $themeName = ($themeName !== null) ? $themeName : "Amazing";
         $this->setTheme($themeName);
     }
 
     protected function login()
     {
         return  Login::create()
-                ->descriptionText("
+            ->descriptionText("
                     <i style='color:#333'>
                     Please log in with <b class='text-danger'>demo</b>/<b class='text-danger'>demo</b>
                     </i>
                 ")
-                ->failedText("Wrong! Please use <b>demo</b> for both username and password!")
-                ->authenticate(function ($username, $password) {
+            ->failedText("Wrong! Please use <b>demo</b> for both username and password!")
+            ->authenticate(function ($username, $password) {
 
-                    //Look for user that have username and password 
-                    $users = AutoMaker::table("users")
-                                ->where("username",$username)
-                                ->where("password",$password)
-                                ->run();
-                                
-                    $user = $users->get(0);//Try to get first user, get associate array contain user information
+                //Look for user that have username and password 
+                $users = AutoMaker::table("users")
+                    ->where("username", $username)
+                    ->where("password", $password)
+                    ->run();
 
-                    if($user!==null) {
-                        //Found a user, return User object
-                        return User::create()
+                $user = $users->get(0); //Try to get first user, get associate array contain user information
+
+                if ($user !== null) {
+                    //Found a user, return User object
+                    return User::create()
                         ->id($user["id"])
                         ->name($user["displayname"])
                         ->avatar("images/8.jpg")
-                        ->roles([$user["role"]]);                        
-                    }
+                        ->roles([$user["role"]]);
+                }
 
-                    //Other: fail to login, return null
-                    return null;
-                });
+                //Other: fail to login, return null
+                return null;
+            });
     }
 
     /**
@@ -130,24 +130,24 @@ class App extends \koolreport\dashboard\Application
     protected function topMenu()
     {
         return [
-            "Mega Menu"=>MegaMenu::create()->sub([
-                "Pages"=>Group::create()->sub([
-                    "Public"=>MenuItem::create()
+            "Mega Menu" => MegaMenu::create()->sub([
+                "Pages" => Group::create()->sub([
+                    "Public" => MenuItem::create()
                         ->icon("fa fa-globe")
                         ->onClick(Client::navigate("App/PublicPage")),
-                    "Member"=>MenuItem::create()
+                    "Member" => MenuItem::create()
                         ->icon("fa fa-lock")
                         ->onClick(Client::navigate("App/MemberPage")),
                 ]),
-                "Themes"=>Group::create()->sub([
-                    "Amazing"=>MenuItem::create()->onClick(Client::app()->action("changeTheme",["name"=>"Amazing"])),
-                    "AppStack"=>MenuItem::create()->onClick(Client::app()->action("changeTheme",["name"=>"AppStack"])),
+                "Themes" => Group::create()->sub([
+                    "Amazing" => MenuItem::create()->onClick(Client::app()->action("changeTheme", ["name" => "Amazing"])),
+                    "AppStack" => MenuItem::create()->onClick(Client::app()->action("changeTheme", ["name" => "AppStack"])),
                 ])
             ]),
-            "About"=>MenuItem::create()
+            "About" => MenuItem::create()
                 ->href("https://www.koolreport.com/packages/dashboard")
                 ->target("_blank"),
-            "Forums"=>MenuItem::create()
+            "Forums" => MenuItem::create()
                 ->href("https://www.koolreport.com/forum/topics")
                 ->target("_blank"),
         ];
@@ -177,7 +177,7 @@ class App extends \koolreport\dashboard\Application
      */
     protected function setTheme($name)
     {
-        switch($name) {
+        switch ($name) {
             case "Amazing":
                 $this->theme(Amazing::create());
                 break;
@@ -195,8 +195,8 @@ class App extends \koolreport\dashboard\Application
     protected function accountMenu()
     {
         return [
-            "Logout"=>MenuItem::create()
-                ->icon("fa fa-lock")       
+            "Logout" => MenuItem::create()
+                ->icon("fa fa-lock")
                 ->onClick(Client::logout())
         ];
     }
@@ -204,16 +204,56 @@ class App extends \koolreport\dashboard\Application
     protected function export()
     {
         return ExportHandler::create()
-                ->storage(dirname(__DIR__)."/storage")
-                ->csvEngine(
-                    CSVEngine::create()
-                )
-                ->xlsxEngine(
-                    XLSXEngine::create()
-                )
-                ->pdfEngine(
-                    ChromeHeadlessio::create()
+            ->storage(dirname(__DIR__) . "/storage")
+            // ->csvEngine(
+            //     CSVEngine::create()
+            // )
+            // ->xlsxEngine(
+            //     XLSXEngine::create()
+            // )
+            // ->pdfEngine(
+            //     ChromeHeadlessio::create()
+            //     ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
+            // )
+            // ->engine(
+            //     CSVEngine::create()->defaultConfig([
+            //         // 'delimiter' => ';'
+            //     ])
+            // )
+            // ->engine(
+            //     XLSXEngine::create()
+            // )
+            // ->engine(
+            //     ChromeHeadlessio::create()
+            //     ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
+            // )
+            ->engine(
+                CSVEngine::create('CsvEngine')
+                    // ->delimiter('|')
+                    ->defaultConfig([
+                        'delimiter' => ';'
+                    ])
+                    ->delimiter('|')
+                ,
+                XLSXEngine::create('ExcelEngine')
+                    ->defaultConfig([
+                        'useTable' => true
+                    ])
+                    ->useTable(false)
+                ,
+                LocalExport::create('LocalPdfEngine')
+                    ->defaultConfig([
+                        // 'format' => 'A4',
+                        // 'margin' => '1cm',
+                        // "orientation" => "landscape",
+                    ])
+                    ->settings([
+                        'useLocalTempFolder' => true,
+                        // 'resourceWaiting' => 2000,
+                    ])
+                ,
+                ChromeHeadlessio::create('CloudPdfEngine')
                     ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
-                );
+            );
     }
 }

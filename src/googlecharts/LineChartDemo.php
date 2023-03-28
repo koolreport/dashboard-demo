@@ -14,8 +14,8 @@ class LineChartDemo extends LineChart
     protected function onInit()
     {
         $this->title("AutoMaker's Revenue in 2022")
-        ->colorScheme(ColorList::random())
-        ->height("360px");
+            ->colorScheme(ColorList::random())
+            ->height("360px");
     }
 
     protected function excelSetting()
@@ -41,13 +41,14 @@ class LineChartDemo extends LineChart
 
         return [
             "excelStyle" => [
-                "header" => function($colName) use ($styleArray) { 
-                    return $styleArray; 
+                "header" => function ($colName) use ($styleArray) {
+                    return $styleArray;
                 },
-                "cell" => function($colName, $value, $row) use ($styleArray)  { 
-                    return $styleArray; 
+                "cell" => function ($colName, $value, $row) use ($styleArray) {
+                    return $styleArray;
                 },
             ],
+            "layout" => null // to show chart in MacOS's Number
         ];
     }
 
