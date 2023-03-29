@@ -71,7 +71,8 @@ use koolreport\dashboard\pages\Main;
                 
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
                     "PDF"=>pdf\PDFBoard::create()->title("PDF Export"),
-                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("NEW"),
+                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel"),
+                    "Export Views"=>exports\ExportBoard::create()->title("Export Views")->badge("NEW"),
                 ]),
                 "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore"),
             ]),
