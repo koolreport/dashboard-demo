@@ -19,7 +19,7 @@ class ExcelCSVBoard extends Dashboard
         $this->xlsxExportable([
             // "useTable" => true,
             // 'viewDir' => __DIR__,
-            // 'viewFile' => 'ExcelCSVBoardExcel',
+            'viewFile' => 'ExcelCSVBoardExcel',
             'engine' => 'ExcelEngine'
         ]);
         $this->csvExportable([
@@ -89,7 +89,7 @@ class ExcelCSVBoard extends Dashboard
                         'rawData' => true,
                         "useTable" => false,
                         // 'viewDir' => __DIR__ . '/../googlecharts/',
-                        // 'viewFile' => './LineChartDemoExcel',
+                        'viewFile' => './LineChartDemoExcel',
                     ])
                     ->csvExportable([
                         // 'delimiter' => '||'
@@ -100,7 +100,7 @@ class ExcelCSVBoard extends Dashboard
                         'rawData' => true,
                         "useTable" => false,
                         // 'viewDir' => __DIR__ . '/../googlecharts/',
-                        // 'viewFile' => './BarChartDemoExcel',
+                        'viewFile' => './BarChartDemoExcel',
                     ])
                     ->csvExportable(true)
             ])
