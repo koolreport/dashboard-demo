@@ -26,7 +26,7 @@ class PDFBoard extends Dashboard
         $this->pdfExportable([
             // "format" => "A4",
             // "orientation" => "landscape",
-            'margin' => '1cm',
+            // 'margin' => '1cm',
             // "margin" => [
             //     "top" => "1in",
             //     "bottom" => "1in",
