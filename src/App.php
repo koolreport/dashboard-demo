@@ -228,46 +228,10 @@ class App extends \koolreport\dashboard\Application
             //     ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
             // )
             ->engine(
-                CSVEngine::create('CsvEngine')
-                    // ->delimiter('|')
-                    ->defaultConfig([
-                        'delimiter' => ';'
-                    ])
-                    ->delimiter('|')
-                ,
-                XLSXEngine::create('ExcelEngine')
-                    ->defaultConfig([
-                        'useTable' => true
-                    ])
-                    ->useTable(false)
-                ,
-                LocalExport::create('LocalPdfEngine')
-                    ->defaultConfig([
-                        'format' => 'A4',
-                        "margin" => [
-                            "top" => "1cm",
-                            "bottom" => "1cm",
-                            "left" => "1cm",
-                            "right" => "1cm",
-                        ],
-                        // "orientation" => "landscape",
-                    ])
-                    ->settings([
-                        // 'useLocalTempFolder' => true,
-                        // 'resourceWaiting' => 2000,
-                    ])
-                ,
+                CSVEngine::create('CsvEngine'),
+                XLSXEngine::create('ExcelEngine'),
+                LocalExport::create('LocalPdfEngine'),
                 ChromeHeadlessio::create('CloudPdfEngine')
-                    ->defaultConfig([
-                        'format' => 'A4',
-                        "margin" => [
-                            "top" => "1cm",
-                            "bottom" => "1cm",
-                            "left" => "1cm",
-                            "right" => "1cm",
-                        ],
-                        // 'landscape' => true,
-                    ])                
                     ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
             );
     }

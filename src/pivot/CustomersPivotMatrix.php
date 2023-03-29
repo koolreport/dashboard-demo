@@ -65,4 +65,27 @@ class CustomersPivotMatrix extends PivotMatrix
         ];
     }
 
+    protected function excelSetting()
+    {
+        return [
+            // 'rowDimension'=>'row',
+            // 'measures'=>array(
+            //   'dollar_sales - sum', 
+            // //   'dollar_sales - count',
+            // ),
+            'rowSort' => array(
+              'dollar_sales - sum' => 'desc',
+            ),
+            'rowCollapseLevels' => array(0),
+            // 'totalName' => 'All',
+            // 'width' => '100%',
+            'map' => array(
+                'dataField' => [
+                    'dollar_sales - sum' => 'Sales (in USD)',
+                    'dollar_sales - count' => 'Number of Sales',
+                ]
+            )
+        ];
+    }    
+    
 }

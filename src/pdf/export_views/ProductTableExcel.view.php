@@ -1,5 +1,5 @@
 <div>
-    <div>Chart Excel Export</div>
+    <div>Chart Data Excel Export</div>
     <div>
         <?php
         $styleArray = [
@@ -21,7 +21,7 @@
         // echo get_class($report);
         // echo get_class($widget);
         // $widget->renderXLSXWidget();
-        // \koolreport\excel\ColumnChart::create([
+        // \koolreport\excel\LineChart::create([
         \koolreport\excel\Table::create([
             "dataSource" => $widget->exportedData(),
             "excelStyle" => [

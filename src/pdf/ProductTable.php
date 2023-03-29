@@ -16,10 +16,8 @@ class ProductTable extends Table
     protected function onInit()
     {
         $this
-        ->showFooter(true)
         ->pageSize(10)
-        // ->pdfExportable(true) //Turn on pdf exportable for table
-        ; 
+        ->pdfExportable(true); //Turn on pdf exportable for table
     }
 
     protected function onExporting($params)
@@ -30,46 +28,6 @@ class ProductTable extends Table
         return true;
     }
 
-    protected function excelSetting()
-    {
-        // return [];
-
-        $styleArray = [
-            'font' => [
-                'name' => 'Calibri', //'Verdana', 'Arial'
-                'size' => 30,
-                'bold' => true,
-                'italic' => true,
-                'underline' => 'none', //'double', 'doubleAccounting', 'single', 'singleAccounting'
-                'strikethrough' => FALSE,
-                'superscript' => false,
-                'subscript' => false,
-                'color' => [
-                    'rgb' => '808080',
-                    'argb' => 'FF000000',
-                ]
-            ],
-        ];
-
-        return [
-            // "columns" => [
-            //     "buyPrice" =>[
-            //         "footer" => "sum"
-            //     ]
-            // ],
-            // "showHeader" => false,
-            "showFooter" => true,
-            // "excelStyle" => [
-            //     "header" => function($colName) use ($styleArray) { 
-            //         return $styleArray; 
-            //     },
-            //     "cell" => function($colName, $value, $row) use ($styleArray)  { 
-            //         return $styleArray; 
-            //     },
-            // ]
-        ];
-    }
-
     public function exportedView()
     {
         return  Html::div([
@@ -78,11 +36,20 @@ class ProductTable extends Table
                 $this->view();
     }
 
+    protected function excelSetting()
+    {
+        return [
+            "showFooter" => true,
+            "excelStyle" => [
+                // ...
+            ]
+        ];
+    }
+
     protected function dataSource()
     {
-        $qb = AutoMaker::table("products")
+        return AutoMaker::table("products")
                 ->select("productName","productVendor","quantityInStock","buyPrice");
-        return $qb;
     }
 
     protected function fields()
@@ -91,8 +58,7 @@ class ProductTable extends Table
             Text::create("productName"),
             Text::create("productVendor"),
             Number::create("quantityInStock"),
-            Currency::create("buyPrice")->label('Buy Price')->USD()->symbol()
-                ->footer("sum")
+            Currency::create("buyPrice")->USD()->symbol()
         ];
     }
 
