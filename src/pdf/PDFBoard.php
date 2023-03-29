@@ -25,16 +25,16 @@ class PDFBoard extends Dashboard
 
         $this->pdfExportable([
             // "format" => "A4",
-            "orientation" => "landscape",
-            "margin" => [
-                "top" => "1in",
-                "bottom" => "1in",
-                "left" => "1in",
-                "right" => "1in",
-            ],
+            // "orientation" => "landscape",
             'margin' => '1cm',
+            // "margin" => [
+            //     "top" => "1in",
+            //     "bottom" => "1in",
+            //     "left" => "1in",
+            //     "right" => "1in",
+            // ],
 
-            'viewFile' => 'PDFBoardPDF',
+            // 'viewFile' => 'PDFBoardPDF',
             // 'viewFile' => 'PDFBoardPDF2',
             'engine' => 'LocalPdfEngine',
             // 'engine' => 'CloudPdfEngine',
@@ -48,7 +48,7 @@ class PDFBoard extends Dashboard
                 Dropdown::create("exportOptions")
                     ->title("<i class='far fa-file-pdf'></i> Export To PDF")
                     ->items([
-                        "Export Dashboard" => MenuItem::create()
+                        "Dashboard Local Export" => MenuItem::create()
                             ->onClick(
                                 Client::showLoader() .
                                     Client::dashboard($this)->exportToPDF("PDFBoard", [
@@ -56,7 +56,7 @@ class PDFBoard extends Dashboard
                                         // 'engine' => 'CloudPdfEngine'
                                     ])
                             ),
-                        "Export Table's current page" => MenuItem::create()
+                        "Table's current page Local Export" => MenuItem::create()
                             ->onClick(
                                 Client::showLoader() .
                                     Client::widget("ProductTable")->exportToPDF("Products - Current Page", [
@@ -65,7 +65,7 @@ class PDFBoard extends Dashboard
                                         // 'engine' => 'CloudPdfEngine'
                                     ])
                             ),
-                        "Export Table's all pages" => MenuItem::create()
+                        "Table's all pages Local Export" => MenuItem::create()
                             ->onClick(
                                 Client::showLoader() .
                                     Client::widget("ProductTable")->exportToPDF("All Products", [
@@ -74,6 +74,32 @@ class PDFBoard extends Dashboard
                                         // 'engine' => 'CloudPdfEngine'
                                     ])
                             ),
+                        "Dashboard Cloud Export" => MenuItem::create()
+                            ->onClick(
+                                Client::showLoader() .
+                                    Client::dashboard($this)->exportToPDF("PDFBoard", [
+                                        // 'viewFile' => 'PDFBoardPDF',
+                                        'engine' => 'CloudPdfEngine'
+                                    ])
+                            ),
+                        "Table's current page Cloud Export" => MenuItem::create()
+                            ->onClick(
+                                Client::showLoader() .
+                                    Client::widget("ProductTable")->exportToPDF("Products - Current Page", [
+                                        "all" => false,
+                                        // 'viewFile' => 'ProductTablePDF',
+                                        'engine' => 'CloudPdfEngine'
+                                    ])
+                            ),
+                        "Table's all pages Cloud Export" => MenuItem::create()
+                            ->onClick(
+                                Client::showLoader() .
+                                    Client::widget("ProductTable")->exportToPDF("All Products", [
+                                        "all" => true,
+                                        // 'viewFile' => 'ProductTablePDF',
+                                        'engine' => 'CloudPdfEngine'
+                                    ])
+                            ),                            
                         // Dropdown::menuItem()
                         //     ->text("Export to Excel")
                         //     ->icon("far fa-file-excel")

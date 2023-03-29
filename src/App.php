@@ -243,16 +243,31 @@ class App extends \koolreport\dashboard\Application
                 ,
                 LocalExport::create('LocalPdfEngine')
                     ->defaultConfig([
-                        // 'format' => 'A4',
-                        // 'margin' => '1cm',
+                        'format' => 'A4',
+                        "margin" => [
+                            "top" => "1cm",
+                            "bottom" => "1cm",
+                            "left" => "1cm",
+                            "right" => "1cm",
+                        ],
                         // "orientation" => "landscape",
                     ])
                     ->settings([
-                        'useLocalTempFolder' => true,
+                        // 'useLocalTempFolder' => true,
                         // 'resourceWaiting' => 2000,
                     ])
                 ,
                 ChromeHeadlessio::create('CloudPdfEngine')
+                    ->defaultConfig([
+                        'format' => 'A4',
+                        "margin" => [
+                            "top" => "1cm",
+                            "bottom" => "1cm",
+                            "left" => "1cm",
+                            "right" => "1cm",
+                        ],
+                        // 'landscape' => true,
+                    ])                
                     ->token("716168c297fb0486d4cf24458ac2f860364f277f081630d640e16ac313aba310")
             );
     }

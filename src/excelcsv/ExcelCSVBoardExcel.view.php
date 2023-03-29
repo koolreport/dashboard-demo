@@ -6,7 +6,7 @@
         $LineChartDemo = $dashboard->widget("LineChartDemo");
         // $LineChartDemo->renderXLSXWidget();
         // echo get_class($LineChartDemo);
-        \koolreport\excel\LineChart::create([
+        \koolreport\excel\BarChart::create([
             "dataSource" => $LineChartDemo->exportedData(),
             'layout' => null, // false
         ]);
@@ -17,7 +17,7 @@
         // $dashboard = $this->params['target'];
         $BarChartDemo = $dashboard->widget("BarChartDemo");
         // echo get_class($LineChartDemo);
-        \koolreport\excel\BarChart::create([
+        \koolreport\excel\LineChart::create([
             "dataSource" => $BarChartDemo->exportedData(),
             'layout' => null, // false
         ]);
