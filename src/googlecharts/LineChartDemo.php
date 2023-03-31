@@ -14,9 +14,23 @@ class LineChartDemo extends LineChart
     protected function onInit()
     {
         $this->title("AutoMaker's Revenue in 2022")
-        ->colorScheme(ColorList::random())
-        ->height("360px");
+            ->colorScheme(ColorList::random())
+            ->height("360px");
     }
+
+    protected function excelSetting()
+    {
+        return [
+            // ...
+        ];
+    }
+
+    // protected function onExporting($params)
+    // {
+    //     if($params["dataOnly"]===true) {
+    //     }
+    //     return true;
+    // }
 
     protected function dataSource()
     {

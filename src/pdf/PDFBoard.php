@@ -14,19 +14,29 @@ use \koolreport\dashboard\containers\Html;
 
 class PDFBoard extends Dashboard
 {
+    protected function onInit()
+    {
+        $this->pdfExportable(true); //Turn on pdf exportable for dashboard
+    }
+    
     protected function content()
     {
         return [
             Panel::create()->header("PDF Export")->type("danger")->sub([
                 Dropdown::create("exportOptions")
-                ->title("<i class='far fa-file-pdf'></i> Export To PDF")
+                ->title("<i class='far fa-file-pdf'></i> Export to PDF")
                 ->items([
-                    "Export Current Page"=>MenuItem::create()
+                    "Dashboard"=>MenuItem::create()
+                        ->onClick(
+                            Client::showLoader().
+                            Client::dashboard($this)->exportToPDF("PDFBoard")
+                        ),
+                    "Table's Current Page"=>MenuItem::create()
                         ->onClick(
                             Client::showLoader().
                             Client::widget("ProductTable")->exportToPDF("Products - Current Page",["all"=>false])
                         ),
-                    "Export All"=>MenuItem::create()
+                    "Table's All Pages"=>MenuItem::create()
                         ->onClick(
                             Client::showLoader().
                             Client::widget("ProductTable")->exportToPDF("All Products",["all"=>true])

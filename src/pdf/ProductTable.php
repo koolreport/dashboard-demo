@@ -36,6 +36,16 @@ class ProductTable extends Table
                 $this->view();
     }
 
+    protected function excelSetting()
+    {
+        return [
+            "showFooter" => true,
+            "excelStyle" => [
+                // ...
+            ]
+        ];
+    }
+
     protected function dataSource()
     {
         return AutoMaker::table("products")

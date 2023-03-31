@@ -18,6 +18,13 @@ class BarChartDemo extends BarChart
         ->height("240px");
     }
 
+    protected function excelSetting()
+    {
+        return [
+            "direction" => null, // to show vertical column chart in MacOS's Number
+            "layout" => null // to show chart in MacOS's Number
+        ];
+    }
     protected function dataSource()
     {
         return AutoMaker::table("payments")

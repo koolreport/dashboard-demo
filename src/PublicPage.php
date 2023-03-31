@@ -70,8 +70,10 @@ use koolreport\dashboard\pages\Main;
                 ]),
                 
                 "Exporting"=>Group::create()->icon("fas fa-file-export")->sub([
-                    "PDF"=>pdf\PDFBoard::create()->title("PDF Export"),
-                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel")->badge("NEW"),
+                    "PDF"=>pdf\PDFBoard::create()->title("PDF"),
+                    "Excel & CSV"=>excelcsv\ExcelCSVBoard::create()->icon("fas fa-file-excel"),
+                    "With Views"=>export_views\ExportViewBoard::create()->title("With Views")->badge("NEW"),
+                    "Engine Selection"=>export_engines\ExportEngineBoard::create()->title("Engine Selection")->badge("NEW"),
                 ]),
                 "Notification"=>notifications\NotificationBoard::create()->icon("far fa-window-restore"),
             ]),
