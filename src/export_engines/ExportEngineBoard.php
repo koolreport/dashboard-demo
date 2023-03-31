@@ -18,7 +18,7 @@ class ExportEngineBoard extends Dashboard
     protected function content()
     {
         return [
-            Panel::create()->header("Export using view files")->type("danger")->sub([
+            Panel::create()->header("Exporting with view files")->type("danger")->sub([
                 Dropdown::create("exportOptions")
                     ->title("<i class='far fa-file-pdf'></i> Export to PDF with")
                     ->items([
