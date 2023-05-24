@@ -76,6 +76,14 @@ class ExportViewBoard extends Dashboard
                         'viewFile' => './excel_views/LineChartDemo',
                     ]),
 
+                BarChartDemo::create()
+                    ->pdfExportable([
+                        'viewFile' => './pdf_views/BarChartDemo',
+                    ])
+                    ->xlsxExportable([
+                        'viewFile' => './excel_views/BarChartDemo',
+                    ]),
+
                 ProductTable::create()
                     ->pdfExportable([
                         'viewFile' => './export_views/ProductTablePDF',
