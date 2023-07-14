@@ -18,34 +18,35 @@ class PDFBoard extends Dashboard
     {
         $this->pdfExportable(true); //Turn on pdf exportable for dashboard
     }
-    
+
     protected function content()
     {
         return [
             Panel::create()->header("PDF Export")->type("danger")->sub([
                 Dropdown::create("exportOptions")
-                ->title("<i class='far fa-file-pdf'></i> Export to PDF")
-                ->items([
-                    "Dashboard"=>MenuItem::create()
-                        ->onClick(
-                            Client::showLoader().
-                            Client::dashboard($this)->exportToPDF("PDFBoard")
-                        ),
-                    "Table's Current Page"=>MenuItem::create()
-                        ->onClick(
-                            Client::showLoader().
-                            Client::widget("ProductTable")->exportToPDF("Products - Current Page",["all"=>false])
-                        ),
-                    "Table's All Pages"=>MenuItem::create()
-                        ->onClick(
-                            Client::showLoader().
-                            Client::widget("ProductTable")->exportToPDF("All Products",["all"=>true])
-                        ),
-                ])
-                ->align("right")
-                ->cssStyle("margin-bottom:5px;")
-                ->cssClass("text-right"),
+                    ->title("<i class='far fa-file-pdf'></i> Export to PDF")
+                    ->items([
+                        "Dashboard" => MenuItem::create()
+                            ->onClick(
+                                Client::showLoader() .
+                                    Client::dashboard($this)->exportToPDF("PDFBoard")
+                            ),
+                        "Table's Current Page" => MenuItem::create()
+                            ->onClick(
+                                Client::showLoader() .
+                                    Client::widget("ProductTable")->exportToPDF("Products - Current Page", ["all" => false])
+                            ),
+                        "Table's All Pages" => MenuItem::create()
+                            ->onClick(
+                                Client::showLoader() .
+                                    Client::widget("ProductTable")->exportToPDF("All Products", ["all" => true])
+                            ),
+                    ])
+                    ->align("right")
+                    ->cssStyle("margin-bottom:5px;")
+                    ->cssClass("text-right"),
                 ProductTable::create()
+                    ->pdfExportable(true)
             ]),
 
             \demo\CodeDemo::create("
