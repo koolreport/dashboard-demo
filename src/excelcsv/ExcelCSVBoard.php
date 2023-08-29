@@ -26,21 +26,21 @@ class ExcelCSVBoard extends Dashboard
                             ->icon("far fa-file-excel")
                             ->onClick(
                                 Client::widget("LineChartDemo")
-                                    ->exportToXLSX("Revenue 2022", ['useTable' => false])
+                                    ->exportToXLSX("Revenue 2023", ['useTable' => false])
                             ),
                         Dropdown::menuItem()
                             ->text("Data to Excel")
                             ->icon("far fa-file-excel")
                             ->onClick(
                                 Client::widget("LineChartDemo")
-                                    ->exportToXLSX("Revenue 2022")
+                                    ->exportToXLSX("Revenue 2023")
                             ),
                         Dropdown::menuItem()
                             ->text("Data to CSV")
                             ->icon("fa fa-file-csv")
                             ->onClick(
                                 Client::widget("LineChartDemo")
-                                    ->exportToCSV("Revenue 2022")
+                                    ->exportToCSV("Revenue 2023")
                             ),
                     ]),
                 ])->class("text-right"),

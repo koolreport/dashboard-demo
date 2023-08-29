@@ -67,7 +67,7 @@ class ExportViewBoard extends Dashboard
                     ->align("right")
                     ->cssStyle("margin-bottom:5px;")
                     ->cssClass("text-right"),
-
+                
                 LineChartDemo::create()
                     ->pdfExportable([
                         'viewFile' => './pdf_views/LineChartDemo',
