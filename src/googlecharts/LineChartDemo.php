@@ -15,7 +15,8 @@ class LineChartDemo extends LineChart
     {
         $this->title("AutoMaker's Revenue in 2023")
             ->colorScheme(ColorList::random())
-            ->height("360px");
+            ->height("360px")
+        ;
     }
 
     protected function excelSetting()

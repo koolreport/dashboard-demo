@@ -18,6 +18,14 @@ class GoogleChartsBoard extends Dashboard
                     ColumnChartDemo::create()
                 ]),
                 Panel::create()->header("<b>BarChart</b>")->width(1/2)->sub([
+                    LineChartDemo::create()
+                ]),
+            ]),
+            Row::create([
+                Panel::create()->header("<b>ColumnChart</b>")->width(1/2)->sub([
+                    ComboChartDemo::create()
+                ]),
+                Panel::create()->header("<b>BarChart</b>")->width(1/2)->sub([
                     BarChartDemo::create()
                 ]),
             ]),
@@ -31,9 +39,6 @@ class GoogleChartsBoard extends Dashboard
             ]),
 
             Row::create([
-                Panel::create()->header("<b>LineChart</b>")->width(1/2)->sub([
-                    LineChartDemo::create()
-                ]),
                 Panel::create()->header("<b>GeoChart (AutoMaker's Sale Worldwide)</b>")->width(1/2)->sub([
                     GeoChartDemo::create()
                 ]),

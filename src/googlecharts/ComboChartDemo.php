@@ -2,16 +2,17 @@
 
 namespace demo\googlecharts;
 
-use \koolreport\dashboard\widgets\google\PieChart;
+use \koolreport\dashboard\widgets\google\ComboChart;
 use \koolreport\dashboard\fields\Text;
+use \koolreport\dashboard\fields\Number;
 use \koolreport\dashboard\fields\Currency;
 use \koolreport\dashboard\ColorList;
 
 use  \demo\AutoMaker;
 
-class PieChartDemo extends PieChart
+class ComboChartDemo extends ComboChart
 {
-    protected function onInit()
+    protected function onCreated()
     {
         $this->title("Top 5 paid customers")
         ->colorScheme(ColorList::random())
@@ -23,8 +24,9 @@ class PieChartDemo extends PieChart
         return AutoMaker::table("payments")
                 ->leftJoin("customers","customers.customerNumber","=","payments.customerNumber")
                 ->groupBy("payments.customerNumber")
-                ->select("customers.customerName")
                 ->sum("amount")->alias("total")
+                ->sum("customers.customerNumber * 200")->alias("totalCustomerNumber")
+                ->select("customers.customerName")
                 ->orderBy("total","desc")
                 ->limit(5);
     }
@@ -33,9 +35,13 @@ class PieChartDemo extends PieChart
     {
         return [
             Text::create("customerName"),
+            Number::create("totalCustomerNumber")
+                ->chartType("line")
+                ,
             Currency::create("total")
                 ->USD()->symbol()
-                ->decimals(0),
+                ->decimals(0)
+                ,
         ];
     }
 }

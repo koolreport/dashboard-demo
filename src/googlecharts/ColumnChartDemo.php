@@ -11,14 +11,14 @@ use \koolreport\dashboard\ColorList;
 
 use  \demo\AutoMaker;
 
-// class ColumnChartDemo extends ColumnChart
-class ColumnChartDemo extends ComboChart
+class ColumnChartDemo extends ColumnChart
+// class ColumnChartDemo extends ComboChart
 {
     protected function onCreated()
     {
         $this->title("Top 5 paid customers")
         ->colorScheme(ColorList::random())
-        ->height("240px");
+        ->height("360px");
     }
 
     protected function dataSource()
@@ -27,7 +27,7 @@ class ColumnChartDemo extends ComboChart
                 ->leftJoin("customers","customers.customerNumber","=","payments.customerNumber")
                 ->groupBy("payments.customerNumber")
                 ->sum("amount")->alias("total")
-                ->sum("customers.customerNumber * 500")->alias("totalCustomerNumber")
+                // ->sum("customers.customerNumber * 500")->alias("totalCustomerNumber")
                 ->select("customers.customerName")
                 ->orderBy("total","desc")
                 ->limit(5);
@@ -37,9 +37,9 @@ class ColumnChartDemo extends ComboChart
     {
         return [
             Text::create("customerName"),
-            Number::create("totalCustomerNumber")
-                ->chartType("line")
-                ,
+            // Number::create("totalCustomerNumber")
+            //     ->chartType("line")
+            //     ,
             Currency::create("total")
                 ->USD()->symbol()
                 ->decimals(0)

@@ -15,7 +15,7 @@ class BarChartDemo extends BarChart
     {
         $this->title("Top 5 paid customers")
         ->colorScheme(ColorList::random())
-        ->height("240px");
+        ->height("360px");
     }
 
     protected function excelSetting()
