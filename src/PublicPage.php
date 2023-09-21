@@ -40,6 +40,7 @@ use koolreport\dashboard\pages\Main;
                     "Google Charts"=>googlecharts\GoogleChartsBoard::create()->icon("fa fa-chart-line"),
                     "D3"=>d3\D3ChartsBoard::create()->icon("fa fa-chart-area"),
                     "ChartJs"=>chartjs\ChartJsBoard::create()->icon("fa fa-chart-bar"),
+                    "ApexCharts"=>apexcharts\ApexChartsBoard::create()->icon("fa fa-chart-bar"),
                     "DrillDown"=>drilldown\DrillDownBoard::create()->icon("fa fa-chart-pie"),
                     "Pivot"=>pivot\PivotBoard::create()->icon("fas fa-border-all"),
                     "KWidget"=>kwidgets\KWidgetsBoard::create()->icon("fas fa-gift"),
@@ -47,6 +48,7 @@ use koolreport\dashboard\pages\Main;
                     "Detail Modal"=>detailmodal\DetailModalBoard::create()->icon("far fa-window-restore"),
                     "AutoUpdate"=>autoupdate\AutoUpdateBoard::create()->icon("fas fa-sync"),    
                     "FlexView"=>flexview\FlexViewBoard::create()->icon("fas fa-sync")->badge("NEW"),    
+                    "VisualQuery"=>visualquery\VisualQueryBoard::create()->icon("fas fa-sync")->badge("NEW"),    
                 ]),
 
                 "Containers"=>Group::create()->icon("fas fa-boxes")->sub([

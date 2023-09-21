@@ -25,7 +25,7 @@ class ComboChartDemo extends ComboChart
                 ->leftJoin("customers","customers.customerNumber","=","payments.customerNumber")
                 ->groupBy("payments.customerNumber")
                 ->sum("amount")->alias("total")
-                ->sum("customers.customerNumber * 200")->alias("totalCustomerNumber")
+                ->sum("customers.customerNumber * 200")->alias("CustomerNumber")
                 ->select("customers.customerName")
                 ->orderBy("total","desc")
                 ->limit(5);
@@ -35,7 +35,7 @@ class ComboChartDemo extends ComboChart
     {
         return [
             Text::create("customerName"),
-            Number::create("totalCustomerNumber")
+            Number::create("CustomerNumber")
                 ->chartType("line")
                 ,
             Currency::create("total")
