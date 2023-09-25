@@ -45,7 +45,8 @@ class App extends \koolreport\dashboard\Application
             <div class='d-none d-md-block d-lg-block'>Powered by <a target='_blank' href='https://www.koolreport.com'>KoolReport</a></div>
         ")
             ->js("//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js")
-            ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css");
+            ->css("https://cdn.koolreport.com/examples/assets/theme/tomorrow.css")
+            ;
     }
 
     /**

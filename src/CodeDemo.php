@@ -97,8 +97,14 @@ class CodeDemo extends Widget
             ")->raw(true),
             Html::script("
                 document.querySelectorAll('pre>code').forEach(function(el){
-                    hljs.highlightElement(el);
+                    // console.log('before: ', el);
+                    if (!el.classList.contains('hljs-highlighted')) {
+                        hljs.highlightElement(el);
+                        el.classList.add('hljs-highlighted');
+                    }
+                    // console.log('after: ', el);
                 });
+                // hljs.highlightAll();
             ")->raw(true)
         ]);
     }

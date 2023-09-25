@@ -22,7 +22,7 @@ class GoogleChartsBoard extends Dashboard
                 ]),
             ]),
             Row::create([
-                Panel::create()->header("<b>ColumnChart</b>")->width(1/2)->sub([
+                Panel::create()->header("<b>ComboChart</b>")->width(1/2)->sub([
                     ComboChartDemo::create()
                 ]),
                 Panel::create()->header("<b>BarChart</b>")->width(1/2)->sub([
