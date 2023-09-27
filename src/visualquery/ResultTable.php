@@ -21,7 +21,7 @@ class ResultTable extends Table
         $qb = $visualQueryDemo->toQueryBuilder();
         $qb->whereRaw("1 > 0");
 
-        $query = \demo\Automaker::new()
+        $query = \demo\AutoMaker::new()
         ->querybuilder($qb)
         ->useSqlParams(true)
         ;
@@ -31,7 +31,7 @@ class ResultTable extends Table
         ]);
         // echo "queryStr: $queryStr<br>";
         $sqlParams = $qb->getSQLParams();
-        $query = \demo\Automaker::new()
+        $query = \demo\AutoMaker::new()
         ->directSQL($queryStr)
         ->params($sqlParams)
         ;
@@ -39,7 +39,7 @@ class ResultTable extends Table
         $queryStr = $qb->toMySQL();
         // echo "queryStr: $queryStr<br>";
         // // $query = \demo\AutomakerLocal::rawSQL($queryStr);
-        $query = \demo\Automaker::new()
+        $query = \demo\AutoMaker::new()
         // $query = \demo\AutoMakerMySQLiLocal::new()
         ->directSQL($queryStr);
 
