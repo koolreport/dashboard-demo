@@ -1,12 +1,4 @@
 <div class="homeboard">
-    <div class="mb-3">
-        <a  title="Merry Christmas with 30% OFF KoolReport Pro & Dashboard Framework!" 
-            href="https://www.koolreport.com/koolreport-pro-pricing?pcode=merrychristmas2023#choose-your-license" 
-            style="padding:0px;text-decoration: none;">
-            <img class="img-fluid rounded d-none d-sm-block" src="https://www.koolreport.com/assets/images/editor/c5/image65729c7d8a310.png"/>
-            <img class="img-fluid rounded d-block d-sm-none" src="https://www.koolreport.com/assets/images/editor/c5/image65729c7d8a310.png"/>
-        </a>
-    </div>
     <div class="card">
         <div class="card-body">
             <h1>Introduction</h1>
