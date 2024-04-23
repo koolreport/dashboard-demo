@@ -4,6 +4,7 @@ namespace demo\admin\customer;
 
 use demo\admin\order\Order;
 use demo\AdminAutoMaker;
+use koolreport\dashboard\admin\actions\ExportAction;
 use koolreport\dashboard\admin\actions\DeleteAction;
 use koolreport\dashboard\admin\actions\DetailAction;
 use koolreport\dashboard\admin\actions\InlineEditAction;
@@ -57,6 +58,12 @@ class Customer extends Resource
     protected function actions()
     {
         return [
+            ExportAction::create()
+                ->formatOptions(["csv","xlsx","pdf"]) // Other options include "png" and "jpg"
+                ->rangeOptions(["current-page","all-pages"])
+                ->csv([
+                    "delimiter"=>";",
+                ]),
             EmailAction::create()->showOnDetail(true),
             DetailAction::create(),
             UpdateAction::create()->showOnTable(false),
