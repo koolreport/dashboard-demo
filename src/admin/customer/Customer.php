@@ -60,7 +60,7 @@ class Customer extends Resource
         return [
             ExportAction::create()
                 ->formatOptions(["csv","xlsx","pdf"]) // Other options include "png" and "jpg"
-                ->rangeOptions(["current-page","all-pages"])
+                ->rangeOptions(["selected-rows","current-page","all-pages"])
                 ->csv([
                     "delimiter"=>";",
                 ]),
