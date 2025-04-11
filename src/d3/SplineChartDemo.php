@@ -2,14 +2,14 @@
 
 namespace demo\d3;
 
-use \koolreport\dashboard\widgets\d3\LineChart;
+use \koolreport\dashboard\widgets\d3\SplineChart;
 use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Currency;
 use \koolreport\dashboard\ColorList;
 
 use  \demo\AutoMaker;
 
-class LineChartDemo extends LineChart
+class SplineChartDemo extends SplineChart
 {
     protected function onInit()
     {

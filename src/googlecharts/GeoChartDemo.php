@@ -14,8 +14,8 @@ class GeoChartDemo extends GeoChart
     protected function onInit()
     {
         $this->title("AutoMaker's Sale Worldwide")
-        ->colorScheme([])
-        ->height("360px");
+            ->colorScheme([])
+            ->height("360px");
     }
 
     protected function dataSource()
@@ -29,13 +29,13 @@ class GeoChartDemo extends GeoChart
             JOIN customers ON customers.customerNumber = payments.customerNumber
             GROUP BY country
         ")
-        ->run()
-        ->process(Custom::process(function($row){
-            if($row["country"]=="USA") {
-                $row["country"] = "United States";
-            }
-            return $row;
-        }));
+            ->run()
+            ->process(Custom::process(function ($row) {
+                if ($row["country"] == "USA") {
+                    $row["country"] = "United States";
+                }
+                return $row;
+            }));
     }
 
     protected function fields()

@@ -15,14 +15,14 @@ class TimelineDemo extends Timeline
     protected function onInit()
     {
         $this->settings([
-            "options"=>[
+            "options" => [
                 "showText" => true,
                 "textPadding" => 4,
                 "colorScheme" => [
                     ['blue', 'red', 'green'],
                     ['00FFFF', 'rgba(0,255,0,0.3)']
                 ],
-                "backgroundOpacity" => 0.5,    
+                "backgroundOpacity" => 0.5,
             ]
         ]);
     }

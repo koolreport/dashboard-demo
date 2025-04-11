@@ -1,21 +1,20 @@
 <?php
 
-namespace demo\d3;
+namespace demo\chartjs;
 
-use \koolreport\dashboard\widgets\d3\LineChart;
+use \koolreport\dashboard\widgets\chartjs\AreaChart;
 use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Currency;
 use \koolreport\dashboard\ColorList;
 
 use  \demo\AutoMaker;
 
-class LineChartDemo extends LineChart
+class AreaChartDemo extends AreaChart
 {
     protected function onInit()
     {
-        $this
-            ->colorScheme(ColorList::random())
-            ->height("360px");
+        $this->title("AutoMaker's Revenue in 2023")
+            ->colorScheme(ColorList::random());
     }
 
     protected function dataSource()

@@ -14,8 +14,8 @@ class BarChartDemo extends BarChart
     protected function onInit()
     {
         $this->title("Top 5 paid customers")
-        ->colorScheme(ColorList::random())
-        ->height("360px");
+            ->colorScheme(ColorList::random())
+            ->height("360px");
     }
 
     protected function excelSetting()
@@ -28,12 +28,12 @@ class BarChartDemo extends BarChart
     protected function dataSource()
     {
         return AutoMaker::table("payments")
-                ->leftJoin("customers","customers.customerNumber","=","payments.customerNumber")
-                ->groupBy("payments.customerNumber")
-                ->sum("amount")->alias("total")
-                ->select("customers.customerName")
-                ->orderBy("total","desc")
-                ->limit(5);
+            ->leftJoin("customers", "customers.customerNumber", "=", "payments.customerNumber")
+            ->groupBy("payments.customerNumber")
+            ->sum("amount")->alias("total")
+            ->select("customers.customerName")
+            ->orderBy("total", "desc")
+            ->limit(5);
     }
 
     protected function fields()

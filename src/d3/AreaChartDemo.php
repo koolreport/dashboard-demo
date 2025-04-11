@@ -2,20 +2,19 @@
 
 namespace demo\d3;
 
-use \koolreport\dashboard\widgets\d3\LineChart;
+use \koolreport\dashboard\widgets\d3\AreaChart;
 use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Currency;
 use \koolreport\dashboard\ColorList;
 
 use  \demo\AutoMaker;
 
-class LineChartDemo extends LineChart
+class AreaChartDemo extends AreaChart
 {
     protected function onInit()
     {
         $this
-            ->colorScheme(ColorList::random())
-            ->height("360px");
+            ->colorScheme(ColorList::random());
     }
 
     protected function dataSource()

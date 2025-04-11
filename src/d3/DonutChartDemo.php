@@ -14,19 +14,19 @@ class DonutChartDemo extends DonutChart
     protected function onInit()
     {
         $this
-        ->colorScheme(ColorList::random())
-        ->height("240px");
+            ->colorScheme(ColorList::random())
+            ->height("240px");
     }
 
     protected function dataSource()
     {
         return AutoMaker::table("payments")
-                ->leftJoin("customers","customers.customerNumber","=","payments.customerNumber")
-                ->groupBy("payments.customerNumber")
-                ->select("customers.customerName")
-                ->sum("amount")->alias("total")
-                ->orderBy("total","desc")
-                ->limit(5);
+            ->leftJoin("customers", "customers.customerNumber", "=", "payments.customerNumber")
+            ->groupBy("payments.customerNumber")
+            ->select("customers.customerName")
+            ->sum("amount")->alias("total")
+            ->orderBy("total", "desc")
+            ->limit(5);
     }
 
     protected function fields()

@@ -1,21 +1,22 @@
 <?php
 
-namespace demo\d3;
+namespace demo\googlecharts;
 
-use \koolreport\dashboard\widgets\d3\LineChart;
+use \koolreport\dashboard\widgets\google\AreaChart;
 use \koolreport\dashboard\fields\Text;
 use \koolreport\dashboard\fields\Currency;
 use \koolreport\dashboard\ColorList;
 
 use  \demo\AutoMaker;
 
-class LineChartDemo extends LineChart
+class AreaChartDemo extends AreaChart
 {
     protected function onInit()
     {
-        $this
+        $this->title("AutoMaker's Revenue in 2023")
             ->colorScheme(ColorList::random())
-            ->height("360px");
+            ->height("360px")
+        ;
     }
 
     protected function dataSource()

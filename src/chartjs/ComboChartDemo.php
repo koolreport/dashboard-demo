@@ -15,20 +15,20 @@ class ComboChartDemo extends ComboChart
     protected function onCreated()
     {
         $this->title("Top 5 paid customers")
-            ->colorScheme(ColorList::random())
-            ->height("360px");
+        ->colorScheme(ColorList::random())
+        ->height("360px");
     }
 
     protected function dataSource()
     {
         return AutoMaker::table("payments")
-            ->leftJoin("customers", "customers.customerNumber", "=", "payments.customerNumber")
-            ->groupBy("payments.customerNumber")
-            ->sum("amount")->alias("total")
-            ->sum("customers.customerNumber * 200")->alias("CustomerNumber")
-            ->select("customers.customerName")
-            ->orderBy("total", "desc")
-            ->limit(5);
+                ->leftJoin("customers","customers.customerNumber","=","payments.customerNumber")
+                ->groupBy("payments.customerNumber")
+                ->sum("amount")->alias("total")
+                ->sum("customers.customerNumber * 200")->alias("CustomerNumber")
+                ->select("customers.customerName")
+                ->orderBy("total","desc")
+                ->limit(5);
     }
 
     protected function fields()
@@ -36,10 +36,12 @@ class ComboChartDemo extends ComboChart
         return [
             Text::create("customerName"),
             Number::create("CustomerNumber")
-                ->chartType("line"),
+                ->chartType("line")
+                ,
             Currency::create("total")
                 ->USD()->symbol()
-                ->decimals(0),
+                ->decimals(0)
+                ,
         ];
     }
 }

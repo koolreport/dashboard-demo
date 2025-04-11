@@ -14,7 +14,7 @@ class LineChartDemo extends LineChart
     protected function onInit()
     {
         $this->title("AutoMaker's Revenue in 2023")
-        ->colorScheme(ColorList::random());
+            ->colorScheme(ColorList::random());
     }
 
     protected function dataSource()

@@ -14,24 +14,44 @@ class D3ChartsBoard extends Dashboard
     {
         return [
             Row::create([
-                Panel::create()->header("<b>ColumnChart</b>")->width(1/2)->sub([
+                Panel::create()->header("<b>ColumnChart</b>")->width(1 / 2)->sub([
                     ColumnChartDemo::create()
                 ]),
-                Panel::create()->header("<b>BarChart</b>")->width(1/2)->sub([
+                Panel::create()->header("<b>BarChart</b>")->width(1 / 2)->sub([
                     BarChartDemo::create()
                 ]),
             ]),
             Row::create([
-                Panel::create()->header("<b>PieChart</b>")->width(1/2)->sub([
+                Panel::create()->header("<b>PieChart</b>")->width(1 / 2)->sub([
                     PieChartDemo::create()
                 ]),
-                Panel::create()->header("<b>DonutChart</b>")->width(1/2)->sub([
+                Panel::create()->header("<b>DonutChart</b>")->width(1 / 2)->sub([
                     DonutChartDemo::create()
                 ]),
             ]),
-
-            Panel::create()->header("<b>LineChart</b>")->sub([
-                LineChartDemo::create()
+            Row::create([
+                Panel::create()->header("<b>LineChart</b>")->sub([
+                    LineChartDemo::create()
+                ]),
+                Panel::create()->header("<b>SplineChart</b>")->sub([
+                    SplineChartDemo::create()
+                ]),
+            ]),
+            Row::create([
+                Panel::create()->header("<b>AreaChart</b>")->width(1 / 2)->sub([
+                    AreaChartDemo::create()
+                ]),
+                Panel::create()->header("<b>ScatterChart</b>")->width(1 / 2)->sub([
+                    ScatterChartDemo::create()
+                ]),
+            ]),
+            Row::create([
+                Panel::create()->header("<b>FunnelChart</b>")->sub([
+                    FunnelChartDemo::create()
+                ]),
+                Panel::create()->header("<b>GaugeChart</b>")->sub([
+                    GaugeChartDemo::create()
+                ]),
             ]),
             Panel::create()->header("<b>Waterfall</b>")->sub([
                 WaterfallDemo::create()
@@ -45,6 +65,6 @@ class D3ChartsBoard extends Dashboard
                 The great advantage of D3 over GoogleChart is that it does not requires library to load from internet.
                 If you plan to build intranet dashboard for your company, propably D3 will be best option.
             ")->raw(true)
-    ];
+        ];
     }
 }
